@@ -1,0 +1,346 @@
+@use '../abstract/variables' as v;
+
+.nosotros-hero {
+    padding: 100px 0;
+    background-color: v.$color-primario;
+    text-align: center;
+    color: v.$color-blanco;
+
+    // Imagen de fondo con overlay (capa de color)
+    background: linear-gradient(rgba(v.$color-primario, 0.85),
+            rgba(v.$color-primario, 0.7)),
+        url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    &__title {
+        font-family: v.$font-titles;
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+
+        // --- EFECTO GRADIENTE CAPI ---
+        background: linear-gradient(135deg,
+                v.$color-blanco 20%,
+                v.$color-dorado-capi 50%,
+                v.$color-secundario 90%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+        filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.3));
+
+        @media (max-width: 767px) {
+            font-size: 2.5rem;
+        }
+    }
+
+    &__text {
+        font-size: 1.2rem;
+        ;
+    }
+}
+
+.historia {
+    padding: 80px 0;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    // El grid de arriba (Historia + Imagen)
+    &__main-grid {
+        display: flex;
+        gap: 60px;
+        align-items: center;
+
+        @media (max-width: 991px) {
+            order: 2;
+            flex-direction: column; // En móvil, la imagen va arriba del texto inicial
+        }
+    }
+
+    @media (max-width: 767px) {
+        flex-direction: column; // Asegura que se apilen verticalmente
+    }
+
+    .section-title {
+        width: 100%; // Desktop: Ocupa todo el ancho arriba
+        text-align: center;
+
+        @media (max-width: 767px) {
+            order: 1; // Primero en móvil
+            margin-bottom: 30px;
+        }
+    }
+
+    &__content {
+        flex: 1;
+        min-width: 300px;
+
+        @media (max-width: 767px) {
+            order: 3; // Tercero en móvil
+            padding-top: 10px;
+            text-align: center; // Opcional: centra el texto para mejor lectura en móvil
+        }
+
+        p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: v.$color-texto;
+            font-family: v.$font-body;
+
+            strong {
+                color: v.$color-primario; // O v.$color-secundario si quieres que resalten más
+                font-weight: 800;
+            }
+        }
+    }
+
+    &__image {
+        flex: 1;
+        min-width: 300px;
+
+        @media (max-width: 767px) {
+            order: 2; // Segundo en móvil
+            width: 100%;
+        }
+
+        img {
+            width: 100%; // Importante para que no se desborde
+            border-radius: 20px;
+            box-shadow: v.$sombra-suave;
+        }
+    }
+
+    .historia__filosofia {
+        margin-top: 40px;
+        padding: 30px;
+        background-color: v.$color-fondo-claro; // Un fondo suave para diferenciarlo
+        border-left: 5px solid v.$color-secundario; // Un detalle visual elegante
+        border-radius: 0 15px 15px 0;
+
+        p {
+            font-style: italic; // Opcional: le da un tono más reflexivo
+            font-size: 1.1rem;
+            color: v.$color-primario;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        @media (max-width: 767px) {
+            order: 3;
+            padding: 25px;
+            text-align: left;
+
+            p {
+                font-size: 1rem;
+                text-align: left;
+            }
+        }
+    }
+}
+
+.fundadoras {
+    padding: 80px 0;
+    background-color: v.$color-fondo-claro;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-top: 50px;
+    }
+}
+
+.perfil {
+    text-align: center;
+
+    &__img {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 20px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid v.$color-dorado-capi;
+        box-shadow: v.$sombra-suave;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
+        }
+
+        &:hover img {
+            transform: scale(1.1); // Efecto de zoom suave al pasar el mouse
+        }
+    }
+
+    &__name {
+        font-family: v.$font-titles;
+        color: v.$color-primario;
+        font-size: 1.5rem;
+    }
+
+    &__role {
+        color: v.$color-secundario;
+        font-weight: 600;
+        font-family: v.$font-body;
+    }
+}
+
+// Clase genérica para títulos de sección
+.section-title {
+    font-family: v.$font-titles;
+    color: v.$color-primario;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+
+    &.text-center {
+        text-align: center;
+    }
+}
+
+.valores {
+    padding: 80px 0;
+    background-color: v.$color-blanco;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+    }
+}
+
+.valor-card {
+    text-align: center;
+    padding: 40px 30px;
+    border-radius: 15px;
+    background-color: v.$color-fondo-claro;
+    transition: all 0.3s ease;
+    border-bottom: 4px solid transparent;
+
+    &:hover {
+        transform: translateY(-10px);
+        border-bottom: 4px solid v.$color-dorado-capi;
+        box-shadow: v.$sombra-suave;
+    }
+
+    &__icon {
+        width: 70px;
+        height: 70px;
+        background-color: v.$color-primario;
+        color: v.$color-blanco;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        font-size: 1.8rem;
+        transition: background 0.3s ease;
+    }
+
+    &:hover &__icon {
+        background-color: v.$color-secundario; // Cambia a verde al hacer hover
+    }
+
+    &__title {
+        font-family: v.$font-titles;
+        color: v.$color-primario;
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    &__text {
+        font-family: v.$font-body;
+        color: v.$color-texto;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
+
+.nosotros-cta {
+    padding: 100px 0;
+    background-color: v.$color-blanco; // Fondo blanco para separar del footer
+    text-align: center;
+    border-top: 1px solid rgba(v.$color-primario, 0.1); // Una línea muy sutil para marcar el inicio
+
+    &__content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    &__title {
+        font-family: v.$font-titles;
+        color: v.$color-primario; // Volvemos al azul/turquesa
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+
+        @media (max-width: 767px) {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__text {
+        font-family: v.$font-body;
+        color: v.$color-texto;
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+        line-height: 1.6;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+
+        @media (max-width: 767px) {
+            flex-direction: column;
+            align-items: center;
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    }
+}
+
+// Estilo para el botón outline sobre fondo claro
+.btn--outline-light {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 2px solid v.$color-primario;
+    color: v.$color-primario;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-family: v.$font-titles;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: v.$color-primario;
+        color: v.$color-blanco;
+    }
+}
+
+.btn--primary {
+    &:hover {
+        background-color: v.$color-blanco;
+        color: v.$color-secundario;
+    }
+}

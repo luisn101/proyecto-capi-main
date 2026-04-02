@@ -1,0 +1,156 @@
+@use '../abstract/variables' as v;
+
+.footer {
+    background: linear-gradient(to bottom,
+            v.$color-primario,
+            darken(v.$color-primario, 5%));
+    color: v.$color-blanco;
+    padding: 80px 0 0; // Padding superior para dar aire
+
+    &__wrapper {
+        display: grid;
+        // Esto crea 4 columnas iguales, pero en tablets/móviles se ajusta solo
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        padding-bottom: 60px;
+
+        @media (max-width: 767px) {
+            text-align: center; // Centra todos los textos
+            display: flex;
+            flex-direction: column;
+            align-items: center; // Centra las columnas en el eje vertical
+        }
+    }
+
+    &__column {
+        &:first-child {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        @media (max-width: 767px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center; // Asegura que los elementos internos (como el logo) se centren
+            width: 100%;
+        }
+    }
+
+    &__logo {
+        height: 80px;
+        width: 80px;
+        object-fit: contain;
+        background-color: v.$color-blanco;
+        padding: 10px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    &__title {
+        font-family: v.$font-titles;
+        margin-bottom: 25px;
+        color: v.$color-dorado-capi; // Usamos el dorado para los títulos del footer
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        position: relative; // CLAVE para la barrita dorada
+        display: inline-block; // Para que el after se base en el ancho del texto
+
+        // Ajuste de la línea decorativa para que también se centre en móvil
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 40px;
+            height: 2px;
+            background-color: v.$color-dorado-capi;
+
+            @media (max-width: 767px) {
+                left: 50%;
+                transform: translateX(-50%); // Centra la barrita dorada
+            }
+
+        }
+    }
+
+    &__tagline {
+        font-style: italic;
+        font-size: 0.9rem;
+        max-width: 200px; // Limitamos el ancho para que el texto rompa en dos líneas y se vea más estético centrado
+        margin: 0 auto;
+    }
+
+    &__links,
+    &__contact {
+        padding: 0;
+
+        li {
+            color: rgba(v.$color-blanco, 0.8);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            a {
+                color: rgba(v.$color-blanco, 0.8); // Blanco suavizado
+                transition: all 0.3s ease;
+
+                &:hover {
+                    color: v.$color-dorado-capi;
+                    padding-left: 5px; // Pequeño efecto de desplazamiento
+                }
+            }
+
+            i {
+                color: rgba(v.$color-blanco, 0.8);
+            }
+
+            @media (max-width: 767px) {
+                justify-content: center; // Centra los iconos con el texto
+            }
+        }
+    }
+
+    &__social {
+        display: flex;
+        gap: 15px;
+
+        @media (max-width: 767px) {
+            justify-content: center; // Centra las burbujas de redes sociales
+        }
+
+        a {
+            background: rgba(v.$color-blanco, 0.1); // Fondo semi-transparente
+            color: v.$color-blanco;
+            border: 1px solid rgba(v.$color-blanco, 0.5);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+
+            &:hover {
+                background: v.$color-dorado-capi;
+                border-color: v.$color-dorado-capi;
+                color: v.$color-blanco;
+                box-shadow: 0 0 15px rgba(v.$color-dorado-capi, 0.4);
+                transform: translateY(-3px);
+            }
+        }
+    }
+
+    &__bottom {
+        background-color: darken(v.$color-primario, 8%);
+        padding: 25px 0;
+        text-align: center;
+        font-size: 0.85rem;
+        border-top: 1px solid rgba(v.$color-blanco, 0.05);
+        opacity: 0.7;
+    }
+}

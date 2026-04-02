@@ -1,0 +1,106 @@
+@use '../abstract/variables' as v;
+
+.programas {
+    padding: 80px 0;
+    background-color: v.$color-fondo-claro; // Diferenciamos la sección de la anterior
+
+    &__header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    &__title {
+        color: v.$color-primario;
+        font-size: 2rem;
+        margin-bottom: 10px;
+
+        @media (min-width: 768px) {
+            font-size: 2.5rem;
+        }
+    }
+
+    &__subtitle {
+        color: v.$color-texto;
+        font-family: v.$font-body;
+        opacity: 0.8;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+}
+
+.card {
+    background-color: v.$color-blanco;
+    border-radius: 12px;
+    overflow: hidden; // Para que la imagen respete las esquinas redondeadas
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 0 auto;
+    max-width: 400px;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    &__image {
+        height: 200px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+    }
+
+    &:hover &__image img {
+        transform: scale(1.1); // Efecto de zoom suave al pasar el mouse
+    }
+
+    &__content {
+        padding: 25px;
+
+        @media (max-width: 767px) {
+            text-align: center; // Centramos el texto en móviles
+        }
+    }
+
+    &__title {
+        font-family: v.$font-titles;
+        font-size: 1.3rem;
+        color: v.$color-primario;
+        margin-bottom: 15px;
+    }
+
+    &__text {
+        font-family: v.$font-body;
+        font-size: 0.95rem;
+        color: v.$color-texto;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+
+    &__link {
+        font-family: v.$font-titles;
+        color: v.$color-secundario;
+        font-weight: 700;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-transform: uppercase;
+
+        &:hover {
+            color: v.$color-primario;
+        }
+
+        @media (max-width: 767px) {
+            justify-content: center; // Centra el enlace/botón en móvil
+        }
+    }
+}

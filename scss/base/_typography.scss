@@ -1,0 +1,23 @@
+@use '../abstract/variables' as v;
+
+body {
+    font-family: v.$font-body;
+    font-size: v.$base-size;
+    color: v.$color-texto;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: v.$font-titles;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: v.$color-primario; // Usando el color turquesa del logo
+}
+
+p {
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Centro Artístico Pedagógico Integral en Samaipata. Un espacio de referencia dedicado al bienestar emocional, apoyo pedagógico y formación artística para niños y jóvenes.">
+
+    <meta name="keywords"
+        content="CAPI Samaipata, centro cultural Bolivia, apoyo pedagógico, clases de música, artes plásticas, formación integral, bienestar emocional jóvenes">
+
+    <meta name="author" content="C.A.P.I. Samaipata">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.capisamaipata.org/">
+    <meta property="og:title" content="C.A.P.I. - Centro Artístico Pedagógico Integral">
+    <meta property="og:description"
+        content="Un refugio para el talento en Samaipata. Formación en arte, música y apoyo escolar con un enfoque humano.">
+    <meta property="og:image" content="assets/img/og-image.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="C.A.P.I. Samaipata">
+    <meta property="twitter:description"
+        content="Formando talentos, proyectando futuros. Espacio autónomo de dinamización cultural.">
+    <meta property="twitter:image" content="assets/img/og-image.jpg">
+    <title>Apoya la Cultura | Donaciones para el Proyecto C.A.P.I.</title>
+    <link rel="icon" href="assets/icon/capi_icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container navbar__wrapper">
+                <div class="logo">
+                    <a href="index.html"><img src="assets/img/capi.png" alt="Logo CAPI"></a>
+                </div>
+
+                <input type="checkbox" id="menu-check" class="navbar__check">
+
+                <label for="menu-check" class="navbar__burger">
+                    <i class="fa-solid fa-bars burger-open"></i> <i class="fa-solid fa-xmark burger-close"></i>
+                </label>
+
+                <ul class="navbar__links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                    <li><a href="programas.html">Programas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="donar.html"><button class="btn-donar is-active">Donar</button></a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="donar-hero">
+            <div class="container">
+                <h1 class="donar-hero__title">Haz la diferencia hoy</h1>
+                <p class="donar-hero__text">Tu contribución permite que el arte y la educación lleguen a más familias.
+                </p>
+            </div>
+        </section>
+
+        <section class="donacion">
+            <div class="container donacion__wrapper">
+
+                <div class="donacion__info">
+                    <h2 class="donacion__subtitle">¿A dónde va tu donación?</h2>
+                    <!--
+                    <div class="donacion__impacto">
+                        <div class="impacto-item">
+                            <i class="fa-solid fa-paint-brush"></i>
+                            <p><strong>Materiales:</strong> Compra de pinturas, lienzos e instrumentos.</p>
+                        </div>
+                        <div class="impacto-item">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <p><strong>Becas:</strong> Apoyo económico para alumnos con talento.</p>
+                        </div>
+                        <div class="impacto-item">
+                            <i class="fa-solid fa-hand-sparkles"></i>
+                            <p><strong>Mantenimiento:</strong> Cuidado, limpieza y mejora de nuestras instalaciones.</p>
+                        </div>
+                    </div>
+                    -->
+                    <div class="donacion__impacto">
+                        <div class="impacto-item">
+                            <i class="fa-solid fa-guitar"></i>
+                            <p><strong>Compra de instrumentos:</strong> Adquisición de instrumentos de cuerda para
+                                asegurar que cada estudiante tenga acceso a uno para sus prácticas y ensayos.</p>
+                        </div>
+
+                        <div class="impacto-item">
+                            <i class="fa-solid fa-masks-theater"></i>
+                            <p><strong>Cultura Viva:</strong> Sostenimiento de festivales, conciertos, presentaciones de
+                                teatro y cine independiente que fortalecen el tejido social de Samaipata.</p>
+                        </div>
+
+                        <div class="impacto-item">
+                            <i class="fa-solid fa-shield-heart"></i>
+                            <p><strong>Espacio Seguro:</strong> Mantenimiento y adquisición de un seguro para el
+                                establecimiento, garantizando un entorno protegido y la continuidad de nuestras
+                                operaciones.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="donacion__form-card">
+                    <h3>Selecciona un monto</h3>
+                    <div class="donacion__grid-montos">
+                        <button class="btn-monto">$10</button>
+                        <button class="btn-monto">$25</button>
+                        <button class="btn-monto">$50</button>
+                        <button class="btn-monto">$100</button>
+                        <button class="btn-monto btn-monto--custom" id="btn-custom">Otro monto</button>
+                    </div>
+
+                    <div class="donacion__custom-input" id="custom-amount-wrapper">
+                        <div class="input-group">
+                            <span class="input-group__symbol">$</span>
+                            <input type="number" id="custom-amount" placeholder="Ingresa el monto" min="1" step="any">
+                        </div>
+                    </div>
+
+                    <button class="btn btn--primary btn--full">Continuar con la donación</button>
+                    <p class="donacion__secure"><i class="fa-solid fa-lock"></i> Pago 100% seguro y encriptado</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__column">
+                    <img src="assets/img/capi_footer.jpg" alt="Logo CAPI" class="footer__logo">
+                    <p class="footer__tagline">Formando talentos, proyectando futuros.</p>
+                </div>
+
+                <div class="footer__column">
+                    <h4 class="footer__title">Enlaces</h4>
+                    <ul class="footer__links">
+                        <li><a href="quienes-somos.html">Sobre Nosotros</a></li>
+                        <li><a href="programas.html">Programas</a></li>
+                        <li><a href="#">Colabora</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h4 class="footer__title">Contacto</h4>
+                    <ul class="footer__contact">
+                        <li><i class="fa-solid fa-location-dot"></i> Calle Bolívar S/N. Samaipata, Bolivia</li>
+                        <li><i class="fa-solid fa-phone"></i> +591 6542 7789</li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h4 class="footer__title">Síguenos</h4>
+                    <div class="footer__social">
+                        <a href="https://www.facebook.com/profile.php?id=100078096283586&sk=about&locale=es_LA"
+                            target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/capi_samaipata/#" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container">
+                <p>&copy; 2026 C.A.P.I. - Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

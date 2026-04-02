@@ -1,0 +1,8 @@
+@use '../abstract/variables' as v;
+
+.container {
+    max-width: 1200px; // El ancho máximo del contenido
+    margin: 0 auto; // Centra el contenido
+    padding: 0 20px; // Margen interno de seguridad para móviles
+    width: 100%; // Asegura que ocupe el ancho disponible hasta los 1200px
+}

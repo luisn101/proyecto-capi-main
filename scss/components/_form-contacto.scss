@@ -1,0 +1,129 @@
+@use '../abstract/variables' as v;
+
+.contacto {
+    padding: 80px 0;
+    background-color: v.$color-blanco;
+
+    &__wrapper {
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__info {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    &__title {
+        color: v.$color-primario;
+        font-family: v.$font-titles;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-align: center;
+
+        @media (min-width: 768px) {
+            font-size: 2.2rem;
+            text-align: left;
+        }
+    }
+
+    &__text {
+        font-family: v.$font-body;
+        color: v.$color-texto;
+        margin-bottom: 25px;
+        text-align: center;
+
+        @media (min-width: 768px) {
+            text-align: left;
+        }
+    }
+
+    &__list {
+        li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: v.$color-secundario;
+            font-weight: 600;
+            justify-content: center;
+            font-size: 1rem;
+
+            i {
+                font-size: 1.2rem; // El icono es un 20% más grande que el texto
+                min-width: 25px; // Ancho fijo para que los textos empiecen siempre en el mismo punto
+                display: flex;
+                justify-content: center;
+                transition: transform 0.3s ease;
+            }
+
+            &:hover i {
+                transform: scale(1.2); // Efecto sutil al pasar el mouse por el item
+            }
+
+            @media (min-width: 768px) {
+                justify-content: flex-start;
+                width: 100%;
+                font-size: 1.1rem;
+
+                i {
+                    font-size: 1.4rem;
+                    min-width: 30px;
+                }
+            }
+        }
+    }
+}
+
+.form {
+    flex: 1;
+    min-width: 300px;
+    background-color: v.$color-fondo-claro;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: v.$sombra-suave;
+
+    @media (min-width: 768px) {
+        padding: 40px;
+    }
+
+    &__group {
+        margin-bottom: 20px;
+    }
+
+    &__input {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid rgba(v.$color-primario, 0.2);
+        border-radius: 5px;
+        font-family: v.$font-body;
+        font-size: v.$base-size;
+
+        &:focus {
+            outline: none;
+            border-color: v.$color-primario;
+            box-shadow: 0 0 5px rgba(v.$color-primario, 0.3);
+        }
+
+        &--textarea {
+            height: 120px;
+            resize: none;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        text-align: center;
+        transition: all 0.3s ease;
+
+        &:hover {
+            color: v.$color-secundario;
+        }
+
+        &:active {
+            transform: scale(0.98); // Efecto de pulsación en móvil
+        }
+    }
+}

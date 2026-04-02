@@ -1,0 +1,209 @@
+@use '../abstract/variables' as v;
+
+.navbar {
+    position: fixed;
+    background-color: v.$color-blanco;
+    box-shadow: v.$sombra-suave;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); // Transición más fluida
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        transition: all 0.4s ease;
+        margin: 0 auto;
+
+        @media (max-width: 767px) {
+            padding: 30px; // Un poco más de aire en móviles si prefieres
+        }
+
+    }
+
+    .logo img {
+        height: 80px;
+        width: auto;
+        object-fit: contain;
+        display: block;
+        transition: all 0.4s ease;
+
+        @media (min-width: 768px) {
+            height: 100px;
+        }
+    }
+
+    // --- ESTADO CUANDO BAJAMOS (SCROLL) ---
+    &.scrolled {
+        // --- EFECTO TRANSPARENTE Y DESENFOQUE ---
+        background-color: rgba(v.$color-blanco, 0.85); // 85% de opacidad
+        backdrop-filter: blur(10px); // El "truco" del vidrio esmerilado
+        -webkit-backdrop-filter: blur(10px); // Compatibilidad para Safari
+        padding: 1px 0; // El header se vuelve más delgado
+        box-shadow: v.$sombra-suave; // Sombra para separarlo del contenido
+
+        .logo img {
+            height: 60px; // El logo se reduce significativamente
+
+            @media (min-width: 768px) {
+                height: 65px;
+            }
+        }
+    }
+
+    // El checkbox debe estar oculto siempre
+    &__check {
+        display: none;
+    }
+
+    @media (max-width: 767px) {
+        .navbar__links a.is-active {
+            background-color: rgba(v.$color-primario, 0.1); // Un fondo suave detrás del texto
+            padding: 5px 15px;
+            border-radius: 5px;
+            color: v.$color-primario;
+
+            &::after {
+                display: none; // Quitamos la línea en móvil para que no se vea raro
+            }
+        }
+    }
+
+    // Hamburguesa oculta en desktop, visible en mobile
+    &__burger {
+        display: none; // Oculto en desktop
+        cursor: pointer;
+        font-size: 1.8rem;
+        color: v.$color-primario;
+        position: relative;
+        width: 30px;
+        height: 30px;
+
+        @media (max-width: 767px) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        i {
+            position: absolute; // Superponemos uno encima del otro
+            transition: all 0.4s ease;
+        }
+
+        .burger-close {
+            opacity: 0;
+            transform: rotate(-180deg); // La X empieza rotada e invisible
+        }
+    }
+
+    // --- LÓGICA DE INTERCAMBIO ---
+
+    // 1. Cuando el checkbox está marcado, ocultamos las rayas
+    &__check:checked~&__burger {
+        .burger-open {
+            opacity: 0;
+            transform: rotate(180deg);
+        }
+
+        // 2. Y mostramos la X
+        .burger-close {
+            opacity: 1;
+            transform: rotate(0deg);
+        }
+    }
+
+    &__links {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+        align-items: center;
+
+        // Estilos Mobile
+        @media (max-width: 767px) {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: v.$color-blanco;
+            padding: 0; // Empezamos sin padding para que no ocupe espacio
+            // --- EL TRUCO DE LA TRANSICIÓN ---
+            max-height: 0; // Altura cero al inicio
+            opacity: 0; // Invisible
+            overflow: hidden; // No deja ver el contenido
+            visibility: hidden; // Evita que se pueda hacer click estando oculto
+            transition: all 0.4s ease-in-out; // La transición sutil
+
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+        }
+
+        a {
+            text-decoration: none;
+            color: v.$color-primario;
+            font-family: v.$font-titles;
+            font-weight: 400;
+            transition: color 0.3s;
+            position: relative;
+            padding: 5px 0;
+
+            &:hover {
+                color: v.$color-secundario;
+            }
+
+            // --- ESTADO ACTIVO ---
+            &:not(.btn-donar).is-active {
+                color: v.$color-primario;
+
+                // Línea decorativa debajo (opcional)
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -2px; // Justo al borde del padding
+                    left: 10%; // Empieza al 10% para dejar 10% al final
+                    width: 80%; // Ocupa el 80% del ancho total
+                    height: 3px; // Grosor de la línea
+                    background-color: v.$color-acento;
+                    border-radius: 2px;
+                }
+            }
+        }
+    }
+
+    // Lógica de apertura: Cuando el checkbox esté marcado, mostrar el menú
+    &__check:checked~&__links {
+        @media (max-width: 767px) {
+            max-height: 100vh; // Se expande hasta mostrar todo
+            opacity: 1; // Se vuelve visible
+            visibility: visible;
+            padding: 40px 0; // Recupera su espacio
+
+            // Animación extra para los items del menú (cascada)
+            li {
+                opacity: 1;
+                transform: translateY(0);
+                transition: all 0.4s ease;
+
+                // Retrasos incrementales para efecto cascada real
+                @for $i from 1 through 5 {
+                    &:nth-child(#{$i}) {
+                        transition-delay: #{$i * 0.05}s;
+                    }
+                }
+            }
+        }
+    }
+
+    // Cuando el menú está abierto, el icono puede rotar o cambiar
+    &__check:checked~&__burger i {
+        transform: rotate(90deg);
+        transition: transform 0.3s ease;
+        // Si usas FontAwesome, podrías cambiar el contenido aquí, 
+        // pero la rotación ya da un feedback visual excelente.
+    }
+}

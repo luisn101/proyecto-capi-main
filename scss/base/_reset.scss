@@ -1,0 +1,41 @@
+@use '../abstract/variables' as v;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: v.$color-blanco;
+    overflow-x: hidden; // Evita scroll horizontal no deseado
+    padding-top: 140px;
+
+    &.body-error {
+        padding-top: 0 !important;
+    }
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+}
