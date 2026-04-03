@@ -1,4 +1,5 @@
 @use '../abstract/variables' as v;
+@use '../abstract/mixins' as m;
 
 .nosotros-hero {
     padding: 100px 0;
@@ -21,15 +22,7 @@
         margin-bottom: 1rem;
 
         // --- EFECTO GRADIENTE CAPI ---
-        background: linear-gradient(135deg,
-                v.$color-blanco 20%,
-                v.$color-dorado-capi 50%,
-                v.$color-secundario 90%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        display: inline-block;
-        filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.3));
+        @include m.gradient-gold();
 
         @media (max-width: 767px) {
             font-size: 2.5rem;
@@ -201,18 +194,6 @@
     }
 }
 
-// Clase genérica para títulos de sección
-.section-title {
-    font-family: v.$font-titles;
-    color: v.$color-primario;
-    font-size: 2.2rem;
-    margin-bottom: 10px;
-
-    &.text-center {
-        text-align: center;
-    }
-}
-
 .valores {
     padding: 80px 0;
     background-color: v.$color-blanco;
@@ -343,5 +324,81 @@
     &:hover {
         background-color: v.$color-blanco;
         color: v.$color-secundario;
+    }
+}
+
+// Sección de testimonios (página nosotros)
+.testimonios {
+    padding: 80px 0;
+    background-color: v.$color-blanco; // Contraste suave con el fondo claro de historia
+
+    .section-title {
+        text-align: center;
+    }
+
+    &__grid {
+        display: grid;
+        //grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-top: 40px;
+
+        @media (max-width: 991px) {
+            grid-template-columns: 1fr; // Una sola columna
+        }
+
+        // En pantallas muy grandes (Full HD), si prefieres 4 en fila, usas esto:
+        @media (min-width: 1200px) {
+            grid-template-columns: repeat(2, 1fr); // Mantenemos 2x2 para mejor lectura
+            max-width: 900px; // Estrechamos el contenedor para que no se estiren demasiado
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.testimonio-card {
+    background: v.$color-fondo-claro;
+    padding: 30px;
+    border-radius: 15px;
+    position: relative;
+    transition: transform 0.3s ease;
+    box-shadow: v.$sombra-suave;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    i {
+        font-size: 2rem;
+        color: v.$color-secundario;
+        opacity: 0.2;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+    }
+
+    &__text {
+        font-style: italic;
+        color: v.$color-texto;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__autor {
+        display: flex;
+        flex-direction: column;
+
+        .nombre {
+            font-family: v.$font-titles;
+            color: v.$color-primario;
+            font-weight: bold;
+        }
+
+        .edad {
+            font-size: 0.85rem;
+            color: v.$color-secundario;
+        }
     }
 }

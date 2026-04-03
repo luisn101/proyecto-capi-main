@@ -2,22 +2,25 @@
 @use 'base/reset';
 @use 'base/typography';
 @use 'base/animations';
+@use 'base/utilities';
 
-// Componentes y Layout
+// Layout global
 @use 'layout/container';
+@use 'layout/footer';
+@use 'layout/error';
+
+// Componentes reutilizables
 @use 'components/buttons';
 @use 'components/navbar';
-@use 'components/form-contacto';
+@use 'components/form';
 @use 'components/modals';
 @use 'components/lightbox-galeria';
-@use 'layout/hero';
-@use 'layout/pilars';
-@use 'layout/programas';
-@use 'layout/contacto';
-@use 'layout/footer';
-@use 'layout/donar';
-@use 'layout/nosotros';
-@use 'layout/programas-detalle';
-@use 'layout/galeria-page';
-@use 'layout/testimonios';
-@use 'layout/error';
+@use 'components/hero';
+
+// Páginas específicas
+@use 'pages/home';
+@use 'pages/contacto';
+@use 'pages/donar';
+@use 'pages/nosotros';
+@use 'pages/programas-detalle';
+@use 'pages/galeria-page';

@@ -1,4 +1,5 @@
 @use '../abstract/variables' as v;
+@use '../abstract/mixins' as m;
 
 .donar-hero {
     padding: 100px 0;
@@ -19,20 +20,10 @@
         margin-bottom: 1rem;
 
         // --- EFECTO GRADIENTE ---
-        background: linear-gradient(135deg,
-                v.$color-blanco 20%,
-                v.$color-dorado-capi 50%,
-                v.$color-secundario 90%);
-        -webkit-background-clip: text; // Corta el fondo con la forma del texto
-        background-clip: text;
-        -webkit-text-fill-color: transparent; // Hace el color sólido transparente para ver el fondo
-        display: inline-block; // Asegura que el gradiente se aplique bien al bloque de texto
-
-        // Sombra de apoyo (drop-shadow funciona mejor que text-shadow con gradientes)
-        filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.4));
+        @include m.gradient-gold();
 
         @media (max-width: 767px) {
-            font-size: 2.5rem; // Ajuste para móvil
+            font-size: v.$font-size-xxxl; // Ajuste para móvil
         }
     }
 

@@ -121,6 +121,7 @@
         list-style: none;
         gap: 20px;
         align-items: center;
+        font-size: v.$font-size-base;
 
         // Estilos Mobile
         @media (max-width: 767px) {

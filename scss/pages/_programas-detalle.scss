@@ -1,4 +1,5 @@
 @use '../abstract/variables' as v;
+@use '../abstract/mixins' as m;
 
 .programas-hero {
     padding: 100px 0;
@@ -11,10 +12,7 @@
     &__title {
         font-family: v.$font-titles;
         font-size: 2.8rem;
-        background: linear-gradient(135deg, v.$color-blanco 20%, v.$color-dorado-capi 50%, v.$color-secundario 90%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+        @include m.gradient-gold();
         font-weight: 800;
         margin-bottom: 1rem;
 

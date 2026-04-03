@@ -8,3 +8,10 @@ body {
 body.is-loaded {
     opacity: 1;
 }
+
+// Animación de carga (spinner) para botones
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

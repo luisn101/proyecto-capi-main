@@ -1,0 +1,25 @@
+@use '../abstract/variables' as v;
+
+// Clase genérica para títulos de sección
+.section-title {
+    font-family: v.$font-titles;
+    color: v.$color-primario;
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+
+    &.text-center {
+        text-align: center;
+    }
+}
+
+// Clase genérica para introducciones de sección
+.section-intro {
+    color: v.$color-texto;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+}
+
+// Clase utility para centrado de texto
+.text-center {
+    text-align: center;
+}

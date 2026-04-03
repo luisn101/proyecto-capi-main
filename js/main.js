@@ -12,7 +12,7 @@ const customInput = document.getElementById('custom-amount');
 const menuCheck = document.getElementById('menu-check');
 
 // Elementos para el formulario de contacto
-const contactForm = document.querySelector('form-container');
+const contactForm = document.querySelector('.form-container');
 
 // ==========================================
 // INICIALIZACIÓN DE LA PÁGINA
