@@ -1,14 +1,15 @@
 // Configuración base
 @use 'base/reset';
 @use 'base/typography';
+@use 'base/animations';
 
 // Componentes y Layout
 @use 'layout/container';
 @use 'components/buttons';
 @use 'components/navbar';
 @use 'components/form-contacto';
-@use 'components/animations';
 @use 'components/modals';
+@use 'components/lightbox-galeria';
 @use 'layout/hero';
 @use 'layout/pilars';
 @use 'layout/programas';
@@ -17,6 +18,6 @@
 @use 'layout/donar';
 @use 'layout/nosotros';
 @use 'layout/programas-detalle';
-@use 'layout/galeria';
+@use 'layout/galeria-page';
 @use 'layout/testimonios';
 @use 'layout/error';

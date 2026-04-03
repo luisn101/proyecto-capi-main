@@ -1,7 +1,8 @@
 @use '../abstract/variables' as v;
+@use '../abstract/mixins' as m;
 
 .contacto-hero {
-    padding: 100px 0;
+    padding: v.$spacing-xxl 0;
     text-align: center;
     background: linear-gradient(rgba(v.$color-primario, 0.85), rgba(v.$color-primario, 0.7)),
         url('https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=2070&auto=format&fit=crop');
@@ -10,42 +11,37 @@
 
     &__title {
         font-family: v.$font-titles;
-        font-size: 2.8rem;
-        background: linear-gradient(135deg, v.$color-blanco 20%, v.$color-dorado-capi 50%, v.$color-secundario 90%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+        font-size: v.$font-size-xxxl;
+        @include m.gradient-text();
         font-weight: 800;
-        margin-bottom: 1rem;
+        margin-bottom: v.$spacing-sm;
 
-        @media (max-width: 767px) {
-            font-size: 2.5rem;
+        @media (max-width: v.$bp-mobile) {
+            font-size: v.$font-size-xxl;
         }
     }
 
     &__text {
         color: v.$color-blanco;
         font-family: v.$font-body;
-        font-size: 1.2rem;
+        font-size: v.$font-size-lg;
         opacity: 0.9;
     }
 }
 
 .contacto-seccion {
-    padding: 80px 0;
+    padding: v.$spacing-xl 0;
     background-color: v.$color-fondo-claro;
 
     &__wrapper {
         display: grid;
         grid-template-columns: 1fr 1.2fr;
-        gap: 60px;
-        //flex-wrap: wrap;
+        gap: v.$spacing-xl;
 
-        @media (max-width: 991px) {
-            /* En móvil, forzamos la dirección a columna */
+        @media (max-width: v.$bp-desktop) {
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: v.$spacing-lg;
         }
     }
 }

@@ -206,7 +206,7 @@
     font-family: v.$font-titles;
     color: v.$color-primario;
     font-size: 2.2rem;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 
     &.text-center {
         text-align: center;
@@ -323,12 +323,13 @@
 // Estilo para el botón outline sobre fondo claro
 .btn--outline-light {
     display: inline-block;
-    padding: 12px 25px;
+    padding: 17px 25px;
     border: 2px solid v.$color-primario;
     color: v.$color-primario;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 700;
+    font-size: v.$font-size-base;
     font-family: v.$font-titles;
     transition: all 0.3s ease;
 

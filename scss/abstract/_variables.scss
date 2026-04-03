@@ -14,5 +14,42 @@ $font-body: 'Open Sans', sans-serif;
 // Tamaños base
 $base-size: 16px;
 
-// Mixins básicos (opcional, pero útil)
-$sombra-suave: 0 4px 6px rgba(0, 0, 0, 0.1);
+// Espaciado (spacing scale)
+$spacing-xs: 0.5rem; // 8px
+$spacing-sm: 1rem;   // 16px
+$spacing-md: 1.5rem; // 24px
+$spacing-lg: 2rem;   // 32px
+$spacing-xl: 3rem;   // 48px
+$spacing-xxl: 4rem;  // 64px
+
+// Breakpoints responsivos
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-desktop: 992px;
+$bp-large: 1200px;
+
+// Tamaños de fuente (typography scale)
+$font-size-xs: 0.8rem;  // 12.8px
+$font-size-sm: 0.9rem;  // 14.4px
+$font-size-base: 1rem;  // 16px
+$font-size-lg: 1.2rem;  // 19.2px
+$font-size-xl: 1.5rem;  // 24px
+$font-size-xxl: 2rem;   // 32px
+$font-size-xxxl: 2.5rem; // 40px
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 20px;
+$border-radius-full: 50%;
+
+// Sombras
+$sombra-suave: 0 2px 4px rgba(0, 0, 0, 0.1);
+$sombra-media: 0 4px 6px rgba(0, 0, 0, 0.1);
+$sombra-fuerte: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+// Transiciones
+$transition-fast: 0.2s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.5s ease;

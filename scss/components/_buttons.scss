@@ -5,71 +5,46 @@
     color: v.$color-blanco !important;
     padding: 10px 25px !important;
     font-family: v.$font-titles;
-    border-radius: 4px;
+    border-radius: v.$border-radius-sm;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    font-size: v.$font-size-sm;
     font-weight: 200;
     border: none;
     cursor: pointer;
-    //transition: background 0.3s;
-    transition: all 0.3s ease-in-out;
+    transition: all v.$transition-normal;
 
-    @media (min-width: 768px) {
-        margin-left: 20px;
-        width: 85%; // Que sea un botón prominente en móvil
-
+    @media (min-width: v.$bp-tablet) {
+        margin-left: v.$spacing-sm;
+        width: 85%;
     }
 
     &:hover {
-        //background-color: darken(v.$color-secundario, 10%);
         color: v.$color-blanco !important;
         background-color: v.$color-acento;
-        //transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: v.$sombra-media;
     }
 
-    // --- ESTADO ACTIVO ---
     &.is-active {
-        // background: linear-gradient(135deg,
-        //        v.$color-blanco 10%,
-        //        v.$color-dorado-capi 10%,
-        //        v.$color-secundario 90%);
-        // -webkit-background-clip: text;
-        // background-clip: text;
-        // -webkit-text-fill-color: transparent;
-        // background-color: v.$color-secundario !important;
-        // border: 2px solid v.$color-secundario;
-        // font-weight: bold;
-        // box-shadow: v.$sombra-suave;
-
-
         background-color: v.$color-acento;
-        //border: 1px solid v.$color-acento;
-        // Efecto gradiente en texto
-        // background: linear-gradient(135deg, v.$color-primario 0%, v.$color-acento 100%);
-        // -webkit-background-clip: text;
-        // background-clip: text;
-        // -webkit-text-fill-color: transparent;
-        // font-weight: bold;
-        //box-shadow: v.$sombra-suave;
         box-shadow: 0 4px 8px rgba(224, 122, 6, 0.8);
     }
 }
 
 .btn {
     display: inline-block;
-    padding: 12px 30px;
-    border-radius: 5px;
+    padding: v.$spacing-sm v.$spacing-lg;
+    border-radius: v.$border-radius-md;
     text-decoration: none;
     font-family: v.$font-titles;
     font-weight: 600;
-    transition: all 0.3s ease-in-out;
+    transition: all v.$transition-normal;
     cursor: pointer;
 
     &--primary {
         background-color: v.$color-secundario;
         color: v.$color-blanco;
         border: 2px solid v.$color-secundario;
+        font-size: v.$font-size-base;
 
         &:hover {
             background-color: transparent;

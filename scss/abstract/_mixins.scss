@@ -1,0 +1,64 @@
+// Mixins reutilizables para el proyecto CAPI
+
+@use 'variables' as v;
+
+// Mixin para texto con gradiente
+@mixin gradient-text($color1: v.$color-blanco, $color2: v.$color-dorado-capi, $color3: v.$color-secundario) {
+    background: linear-gradient(135deg, $color1 20%, $color2 50%, $color3 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+// Mixin para hover con elevación
+@mixin hover-lift {
+    transition: transform 0.3s ease;
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+// Mixin para media queries responsivas
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == mobile {
+        @media (max-width: 767px) { @content; }
+    } @else if $breakpoint == tablet {
+        @media (min-width: 768px) { @content; }
+    } @else if $breakpoint == desktop {
+        @media (min-width: 992px) { @content; }
+    } @else if $breakpoint == large {
+        @media (min-width: 1200px) { @content; }
+    }
+}
+
+// Mixin para reset de botones
+@mixin button-reset {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+// Mixin para centrar con flexbox
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Mixin para sombras
+@mixin box-shadow($intensity: light) {
+    @if $intensity == light {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    } @else if $intensity == medium {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    } @else if $intensity == heavy {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+}
+
+// Mixin para transiciones estándar
+@mixin transition-all {
+    transition: all 0.3s ease-in-out;
+}

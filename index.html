@@ -59,7 +59,7 @@
         </nav>
     </header>
     <main>
-        
+        <!--
         <section class="hero">
             <div class="hero__container">
                 <div class="hero__content">
@@ -74,6 +74,30 @@
                         <a href="quienes-somos.html" class="btn btn--outline">Conócenos</a>
                     </div>
                 </div>
+            </div>
+        </section>
+        -->
+        <section class="hero">
+            <div class="hero__video-box">
+                <video autoplay muted loop playsinline class="hero__video-bg">
+                    <source src="assets/videos/video_index.mp4" type="video/mp4">
+                </video>
+            <div class="hero__overlay"></div> </div>
+
+            <div class="hero__container">
+                <div class="hero__content">
+                    <span class="hero__tagline">Centro Artístico Pedagógico Integral</span>
+                    <h1 class="hero__title">Formando talentos, proyectando futuros.</h1>
+                    <p class="hero__description">
+                        Un espacio de referencia en Samaipata dedicado al bienestar emocional y el desarrollo creativo.
+                        Somos un centro autónomo que impulsa el sentido de pertenencia y la participación consciente.
+                    </p>
+                <div class="hero__actions">
+                    <a href="programas.html" class="btn btn--primary">Nuestros Programas</a>
+                    <a href="quienes-somos.html" class="btn btn--outline">Conócenos</a>
+                </div>
+            </div>
+        </div>
             </div>
         </section>
         
@@ -225,6 +249,14 @@
                             <div class="galeria__overlay"><i class="fa-solid fa-eye"></i></div>
                         </a>
                     </div>
+                    <div class="galeria__item">
+                        <a href="assets/img/momentos9.webp"
+                            class="galeria-link">
+                            <img src="assets/img/momentos9.webp"
+                                alt="Taller de pintura" loading="lazy">
+                            <div class="galeria__overlay"><i class="fa-solid fa-eye"></i></div>
+                        </a>
+                    </div>
                 </div>
                 <div class="galeria__footer">
                     <a href="galeria.html" class="btn btn--primary">
@@ -286,7 +318,7 @@
                     <h4 class="footer__title">Contacto</h4>
                     <ul class="footer__contact">
                         <li><i class="fa-solid fa-location-dot"></i> Calle Bolívar S/N. Samaipata, Bolivia</li>
-                        <li><i class="fa-solid fa-phone"></i> +591 6542 7789</li>
+                        <li><i class="fa-solid fa-phone"></i> +591 7709 8153</li>
                     </ul>
                 </div>
 
@@ -309,19 +341,12 @@
             </div>
         </div>
     </footer>
-    <div id="customLightbox" class="custom-lightbox">
-        <span class="lightbox-close">&times;</span>
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox__close">&times;</span>
+        <img id="lightbox-img" src="" alt="Vista ampliada">
+        <div id="lightbox-caption" class="lightbox__caption"></div>
+        <div id="lightbox-counter" class="lightbox__counter"></div>
         <button class="lightbox-nav prev">&lt;</button>
-
-        <div class="custom-lightbox-content">
-            <img src="" alt="" class="lightbox-img">
-
-            <div class="lightbox-info">
-                <h4 class="caption-text"></h4>
-                <span class="caption-counter"></span>
-            </div>
-        </div>
-
         <button class="lightbox-nav next">&gt;</button>
     </div>
     <script src="js/main.js"></script>

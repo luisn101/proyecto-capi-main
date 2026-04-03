@@ -47,78 +47,109 @@ botonesMonto.forEach(boton => {
 });
 
 // ==========================================
-// GALERÍA CON LIGHTBOX
+// GALERÍA CON LIGHTBOX (GENÉRICO)
 // ==========================================
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Elementos del lightbox
-    const lightbox = document.getElementById('customLightbox');
-    const lightboxImg = lightbox.querySelector('.lightbox-img');
-    const captionText = lightbox.querySelector('.caption-text');
-    const captionCounter = lightbox.querySelector('.caption-counter');
-    const galleryLinks = document.querySelectorAll('.galeria-link');
+document.addEventListener('DOMContentLoaded', () => {
+    const lightbox = document.getElementById('lightbox');
+    if (!lightbox) return; // Salir si no hay lightbox en esta página
+
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxCounter = document.getElementById('lightbox-counter');
+    const nextButton = lightbox.querySelector('.next');
+    const prevButton = lightbox.querySelector('.prev');
+
     let currentIndex = 0;
+    let currentCollection = [];
 
-    // Función para actualizar la imagen en el lightbox
-    function updateImage() {
-        const currentLink = galleryLinks[currentIndex];
-        const fullImgUrl = currentLink.getAttribute('href');
-        const altText = currentLink.querySelector('img').getAttribute('alt');
+    function updateInfo(target) {
+        const img = target.querySelector('img');
+        const caption = target.dataset.caption || img?.alt || '';
 
-        // Efecto de salida
-        lightboxImg.style.opacity = '0';
-
-        lightboxImg.onload = function () {
-            // Actualizamos imagen y textos
-            captionText.innerText = altText;
-            captionCounter.innerText = `Imagen ${currentIndex + 1} de ${galleryLinks.length}`;
-
-            // Efecto de entrada
-            lightboxImg.style.opacity = '1';
-        };
-
-        lightboxImg.src = fullImgUrl;
+        lightboxImg.src = img?.src || '';
+        lightboxCaption.innerText = caption;
+        lightboxCounter.innerText = `${currentIndex + 1} / ${currentCollection.length}`;
     }
 
-    // Eventos de apertura del lightbox
-    galleryLinks.forEach((link, index) => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            currentIndex = index;
-            updateImage();
-            lightbox.classList.add('active');
+    function openLightbox(index, collection) {
+        if (!collection || !collection.length) return;
+        currentIndex = index;
+        currentCollection = collection;
+
+        const target = collection[currentIndex];
+        const img = target.querySelector('img');
+        if (!img) return;
+
+        updateInfo(target);
+        lightbox.classList.add('is-active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('is-active');
+        document.body.style.overflow = 'auto';
+    }
+
+    function showNext() {
+        if (!currentCollection.length) return;
+        currentIndex = (currentIndex + 1) % currentCollection.length;
+        openLightbox(currentIndex, currentCollection);
+    }
+
+    function showPrev() {
+        if (!currentCollection.length) return;
+        currentIndex = (currentIndex - 1 + currentCollection.length) % currentCollection.length;
+        openLightbox(currentIndex, currentCollection);
+    }
+
+    const homeGalleryLinks = Array.from(document.querySelectorAll('.galeria-link'));
+    const pageGalleryItems = Array.from(document.querySelectorAll('.galeria-item'));
+
+    if (homeGalleryLinks.length) {
+        homeGalleryLinks.forEach((link, index) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                openLightbox(index, homeGalleryLinks);
+            });
         });
+    }
+
+    if (pageGalleryItems.length) {
+        pageGalleryItems.forEach((item, index) => {
+            const img = item.querySelector('img');
+            item.dataset.caption = item.querySelector('.galeria-item__text')?.innerText || '';
+
+            item.addEventListener('click', () => {
+                openLightbox(index, pageGalleryItems);
+            });
+        });
+    }
+
+    if (nextButton) nextButton.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+    if (prevButton) prevButton.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
     });
 
-    // Navegación: siguiente imagen
-    document.querySelector('.next').addEventListener('click', (e) => {
-        e.stopPropagation();
-        currentIndex = (currentIndex + 1) % galleryLinks.length;
-        updateImage();
-    });
+    const closeBtn = lightbox.querySelector('.lightbox__close');
+    if (closeBtn) closeBtn.addEventListener('click', (e) => { e.stopPropagation(); closeLightbox(); });
 
-    // Navegación: imagen anterior
-    document.querySelector('.prev').addEventListener('click', (e) => {
-        e.stopPropagation();
-        currentIndex = (currentIndex - 1 + galleryLinks.length) % galleryLinks.length;
-        updateImage();
-    });
-
-    // Cierre del lightbox
-    lightbox.addEventListener('click', () => {
-        lightbox.classList.remove('active');
-    });
-
-    // Evita el cierre al hacer clic en la imagen
-    lightboxImg.addEventListener('click', (e) => e.stopPropagation());
-
-    // Controles de teclado
     document.addEventListener('keydown', (e) => {
-        if (e.key === "Escape") lightbox.classList.remove('active');
-        if (e.key === "ArrowRight") document.querySelector('.next').click();
-        if (e.key === "ArrowLeft") document.querySelector('.prev').click();
+        if (!lightbox.classList.contains('is-active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') showNext();
+        if (e.key === 'ArrowLeft') showPrev();
     });
 });
+
+function closeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    if (!lightbox) return;
+    lightbox.classList.remove('is-active');
+    document.body.style.overflow = 'auto';
+}
 
 // ==========================================
 // EFECTO DE SCROLL EN LA BARRA DE NAVEGACIÓN

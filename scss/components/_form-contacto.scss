@@ -117,6 +117,7 @@
         width: 100%;
         text-align: center;
         transition: all 0.3s ease;
+        font-size: v.$font-size-base;
 
         &:hover {
             color: v.$color-secundario;
