@@ -16,6 +16,10 @@
         font-weight: 800;
         margin-bottom: 1rem;
 
+        @media (max-width: 991px) {
+            font-size: 2.4rem;
+        }
+
         @media (max-width: 767px) {
             font-size: 2.5rem;
         }
@@ -27,11 +31,20 @@
         font-size: 1.2rem;
         max-width: 700px;
         margin: 0 auto;
+
+        @media (max-width: 991px) {
+            font-size: 1.25rem;
+            max-width: 850px;
+        }
     }
 }
 
 .detalle-programas {
     padding: 80px 0;
+
+    @media (max-width: 991px) {
+        padding: 60px 0;
+    }
 }
 
 .programa-item {
@@ -41,9 +54,18 @@
     margin-bottom: 80px;
     align-items: center;
 
+    @media (max-width: 991px) {
+        gap: 32px;
+        margin-bottom: 60px;
+    }
+
     &:last-of-type {
         margin-bottom: 0; // Quitamos el margen exagerado al último
         padding-bottom: 100px; // Pero le damos un respiro antes del footer
+
+        @media (max-width: 991px) {
+            padding-bottom: 80px;
+        }
     }
 
     @media (min-width: 992px) {
@@ -66,8 +88,9 @@
             box-shadow: v.$sombra-suave;
 
             @media (max-width: 991px) {
-                height: 280px;
+                height: 320px;
                 object-fit: cover;
+                max-width: 900px;
             }
         }
     }
@@ -76,7 +99,7 @@
         flex: 1;
 
         @media (max-width: 991px) {
-            text-align: center; // Centrado en móvil como te gusta
+            text-align: center; // Centrado en tablet como te gusta
         }
 
         .categoria {
@@ -87,6 +110,10 @@
             font-size: 0.85rem;
             letter-spacing: 1px;
             margin-bottom: 10px;
+
+            @media (max-width: 991px) {
+                font-size: 0.9rem;
+            }
         }
 
         h2 {
@@ -94,6 +121,10 @@
             color: v.$color-primario;
             font-size: 2.2rem;
             margin-bottom: 20px;
+
+            @media (max-width: 991px) {
+                font-size: 2.4rem;
+            }
         }
 
         p {
@@ -101,6 +132,12 @@
             color: v.$color-texto;
             line-height: 1.8;
             margin-bottom: 25px;
+
+            @media (max-width: 991px) {
+                font-size: 1.05rem;
+                max-width: 900px;
+                margin: 0 auto 25px;
+            }
         }
 
         .lista-beneficios {
@@ -118,7 +155,8 @@
                 color: v.$color-texto;
 
                 @media (max-width: 991px) {
-                    justify-content: flex-start;
+                    margin-bottom: 14px;
+                    font-size: 1rem;
                 }
 
                 i {
@@ -168,6 +206,11 @@
 
     &:hover {
         transform: scale(1.02);
+    }
+
+    @media (max-width: 991px) {
+        padding: 25px;
+        gap: 20px;
     }
 
     @media (max-width: 767px) {

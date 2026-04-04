@@ -16,6 +16,11 @@
     background-position: center;
     background-attachment: fixed;
 
+    @media (max-width: 991px) {
+        background-attachment: scroll;
+        padding: 80px 0;
+    }
+
     &__title {
         font-family: v.$font-titles;
         font-size: 2.8rem;
@@ -24,14 +29,31 @@
         // --- EFECTO GRADIENTE CAPI ---
         @include m.gradient-gold();
 
+        @media (max-width: 991px) {
+            font-size: 2.4rem;
+        }
+
+        @media (max-width: 860px) {
+            font-size: 2.2rem;
+        }
+
         @media (max-width: 767px) {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
         }
     }
 
     &__text {
         font-size: 1.2rem;
-        ;
+
+        @media (max-width: 991px) {
+            font-size: 1.25rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 767px) {
+            font-size: 1.15rem;
+        }
     }
 }
 
@@ -53,8 +75,22 @@
         align-items: center;
 
         @media (max-width: 991px) {
+            flex-direction: column; // En tablet y móvil, apilar verticalmente
+            gap: 40px;
+        }
+
+        @media (max-width: 860px) {
+            gap: 30px;
+        }
+    }
+
+    @media (max-width: 991px) {
+        &__image {
+            order: 1; // La foto va primero en tablets y móviles
+        }
+
+        &__content {
             order: 2;
-            flex-direction: column; // En móvil, la imagen va arriba del texto inicial
         }
     }
 
@@ -76,10 +112,9 @@
         flex: 1;
         min-width: 300px;
 
-        @media (max-width: 767px) {
-            order: 3; // Tercero en móvil
+        @media (max-width: 991px) {
             padding-top: 10px;
-            text-align: center; // Opcional: centra el texto para mejor lectura en móvil
+            text-align: center;
         }
 
         p {
@@ -87,6 +122,10 @@
             line-height: 1.8;
             color: v.$color-texto;
             font-family: v.$font-body;
+
+            @media (max-width: 991px) {
+                font-size: 1.05rem;
+            }
 
             strong {
                 color: v.$color-primario; // O v.$color-secundario si quieres que resalten más
@@ -100,7 +139,7 @@
         min-width: 300px;
 
         @media (max-width: 767px) {
-            order: 2; // Segundo en móvil
+            order: 1; // La foto queda primero también en móvil
             width: 100%;
         }
 
@@ -131,10 +170,26 @@
             }
         }
 
+        @media (max-width: 991px) {
+            padding: 25px;
+            text-align: left;
+            border-left: none;
+            border-top: 5px solid v.$color-secundario;
+            border-radius: 15px;
+
+            p {
+                font-size: 1rem;
+                text-align: left;
+            }
+        }
+
         @media (max-width: 767px) {
             order: 3;
             padding: 25px;
             text-align: left;
+            border-left: none;
+            border-top: 5px solid v.$color-secundario;
+            border-radius: 15px;
 
             p {
                 font-size: 1rem;
@@ -203,6 +258,29 @@
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 30px;
         margin-top: 40px;
+
+        @media (max-width: 991px) {
+            grid-template-columns: repeat(2, minmax(280px, 1fr));
+
+            > .valor-card:nth-child(3) {
+                grid-column: 1 / -1;
+                justify-self: center;
+                max-width: 420px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 640px) {
+            grid-template-columns: 1fr;
+            justify-items: center;
+            gap: 20px;
+
+            > .valor-card {
+                grid-column: auto;
+                max-width: 760px;
+                width: 100%;
+            }
+        }
     }
 }
 
@@ -243,6 +321,10 @@
         color: v.$color-primario;
         font-size: 1.4rem;
         margin-bottom: 15px;
+
+        @media (max-width: 991px) {
+            font-size: 1.5rem;
+        }
     }
 
     &__text {
@@ -250,6 +332,10 @@
         color: v.$color-texto;
         font-size: 0.95rem;
         line-height: 1.6;
+
+        @media (max-width: 991px) {
+            font-size: 1rem;
+        }
     }
 }
 
@@ -334,6 +420,14 @@
 
     .section-title {
         text-align: center;
+
+        @media (max-width: 991px) {
+            font-size: 2rem;
+        }
+
+        @media (max-width: 767px) {
+            font-size: 1.9rem;
+        }
     }
 
     &__grid {
@@ -345,6 +439,18 @@
 
         @media (max-width: 991px) {
             grid-template-columns: 1fr; // Una sola columna
+            max-width: 760px;
+            width: 100%;
+            justify-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            gap: 25px;
+            padding: 0 12px;
+        }
+
+        @media (max-width: 860px) {
+            max-width: 700px;
+            padding: 0 10px;
         }
 
         // En pantallas muy grandes (Full HD), si prefieres 4 en fila, usas esto:
@@ -369,6 +475,15 @@
         transform: translateY(-5px);
     }
 
+    width: 100%;
+    max-width: 760px;
+
+    @media (max-width: 991px) {
+        width: 100%;
+        max-width: 760px;
+        margin: 0 auto;
+    }
+
     i {
         font-size: 2rem;
         color: v.$color-secundario;
@@ -384,6 +499,13 @@
         margin-bottom: 20px;
         position: relative;
         z-index: 1;
+
+        @media (max-width: 991px) {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            max-width: 720px;
+            margin: 0 auto;
+        }
     }
 
     &__autor {

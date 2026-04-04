@@ -170,21 +170,25 @@ window.addEventListener('scroll', function () {
 // ==========================================
 
 // Maneja el toggle del menú móvil y bloquea/desbloquea el scroll
-menuCheck.addEventListener('change', function () {
-    if (this.checked) {
-        // Si el menú se abre, bloqueamos el scroll
-        document.body.style.overflow = 'hidden';
-    } else {
-        // Si se cierra, devolvemos el scroll
-        document.body.style.overflow = 'auto';
-    }
-});
+if (menuCheck) {
+    menuCheck.addEventListener('change', function () {
+        if (this.checked) {
+            // Si el menú se abre, bloqueamos el scroll
+            document.body.style.overflow = 'hidden';
+        } else {
+            // Si se cierra, devolvemos el scroll
+            document.body.style.overflow = 'auto';
+        }
+    });
+}
 
 // Cierra el menú móvil al hacer clic en un enlace de navegación
 const navLinks = document.querySelectorAll('.navbar__links a');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
-        menuCheck.checked = false;
+        if (menuCheck) {
+            menuCheck.checked = false;
+        }
         document.body.style.overflow = 'auto';
     });
 });

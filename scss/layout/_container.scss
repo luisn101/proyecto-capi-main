@@ -5,4 +5,16 @@
     margin: 0 auto; // Centra el contenido
     padding: 0 20px; // Margen interno de seguridad para móviles
     width: 100%; // Asegura que ocupe el ancho disponible hasta los 1200px
+
+    @media (max-width: 991px) {
+        padding: 0 32px; // Más espacio lateral en tablets
+    }
+
+    @media (max-width: 860px) {
+        padding: 0 22px; // Ajuste para pantallas plegables estrechas
+    }
+
+    @media (max-width: 860px) {
+        padding: 0 22px; // Ajuste para pantallas plegables estrechas
+    }
 }

@@ -19,8 +19,8 @@
         transition: all 0.4s ease;
         margin: 0 auto;
 
-        @media (max-width: 767px) {
-            padding: 30px; // Un poco más de aire en móviles si prefieres
+        @media (max-width: 991px) {
+            padding: 30px; // Un poco más de aire en tablets/móviles
         }
 
     }
@@ -60,7 +60,7 @@
         display: none;
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 991px) {
         .navbar__links a.is-active {
             background-color: rgba(v.$color-primario, 0.1); // Un fondo suave detrás del texto
             padding: 5px 15px;
@@ -68,12 +68,12 @@
             color: v.$color-primario;
 
             &::after {
-                display: none; // Quitamos la línea en móvil para que no se vea raro
+                display: none; // Quitamos la línea en móvil/tablet para que no se vea raro
             }
         }
     }
 
-    // Hamburguesa oculta en desktop, visible en mobile
+    // Hamburguesa oculta en desktop, visible en tablets y móviles
     &__burger {
         display: none; // Oculto en desktop
         cursor: pointer;
@@ -83,7 +83,7 @@
         width: 30px;
         height: 30px;
 
-        @media (max-width: 767px) {
+        @media (max-width: 991px) {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -123,8 +123,8 @@
         align-items: center;
         font-size: v.$font-size-base;
 
-        // Estilos Mobile
-        @media (max-width: 767px) {
+        // Estilos tablet/móvil
+        @media (max-width: 991px) {
             display: flex;
             flex-direction: column;
             position: absolute;
@@ -178,7 +178,7 @@
 
     // Lógica de apertura: Cuando el checkbox esté marcado, mostrar el menú
     &__check:checked~&__links {
-        @media (max-width: 767px) {
+        @media (max-width: 991px) {
             max-height: 100vh; // Se expande hasta mostrar todo
             opacity: 1; // Se vuelve visible
             visibility: visible;
