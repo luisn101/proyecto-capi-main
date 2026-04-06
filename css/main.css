@@ -383,11 +383,14 @@ body.is-loaded {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .navbar__wrapper {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
   width: 100%;
   padding: 20px;
+  height: 100%;
   transition: all 0.4s ease;
   margin: 0 auto;
 }
@@ -475,10 +478,12 @@ body.is-loaded {
   list-style: none;
   gap: 20px;
   align-items: center;
+  margin-left: auto;
   font-size: 1rem;
 }
 @media (max-width: 991px) {
   .navbar__links {
+    margin: 0;
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -548,6 +553,40 @@ body.is-loaded {
   .navbar__check:checked ~ .navbar__links li:nth-child(5) {
     transition-delay: 0.25s;
   }
+}
+.navbar__lang {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.85rem;
+  z-index: 1010;
+}
+@media (max-width: 991px) {
+  .navbar__lang {
+    right: 20px;
+    top: 10px;
+  }
+}
+.navbar__lang .lang-link {
+  text-decoration: none;
+  color: #333333;
+  backdrop-filter: blur;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  transition: all 0.3s;
+}
+.navbar__lang .lang-link.is-active {
+  color: #f3b131;
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.navbar__lang .lang-link:hover {
+  opacity: 1;
+  color: #f3b131;
 }
 .navbar__check:checked ~ .navbar__burger i {
   transform: rotate(90deg);
@@ -1150,7 +1189,7 @@ body.is-loaded {
 }
 
 .contacto-hero {
-  padding: 4rem 0;
+  padding: 7rem 0;
   text-align: center;
   background: linear-gradient(rgba(0, 136, 148, 0.85), rgba(0, 136, 148, 0.7)), url("https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=2070&auto=format&fit=crop");
   background-size: cover;
@@ -1297,6 +1336,7 @@ body.is-loaded {
   border: 2px solid #f9f9f9;
   border-radius: 8px;
   font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
   transition: border-color 0.3s;
 }
 .contacto-form .form-group input:focus,

@@ -11,11 +11,14 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); // Transición más fluida
 
     &__wrapper {
+        position:relative;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        max-width: 1200px;
         width: 100%;
         padding: 20px;
+        height: 100%;
         transition: all 0.4s ease;
         margin: 0 auto;
 
@@ -121,10 +124,12 @@
         list-style: none;
         gap: 20px;
         align-items: center;
+        margin-left: auto;
         font-size: v.$font-size-base;
 
         // Estilos tablet/móvil
         @media (max-width: 991px) {
+            margin: 0;
             display: flex;
             flex-direction: column;
             position: absolute;
@@ -196,6 +201,43 @@
                         transition-delay: #{$i * 0.05}s;
                     }
                 }
+            }
+        }
+    }
+
+    &__lang {
+        position: fixed; 
+        top: 10px;          // Lo pegamos un poco al borde superior
+        right: 20px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 0.85rem; // Un poco más pequeño para que sea discreto
+        z-index: 1010;
+    
+        @media (max-width: 991px) {
+            right: 20px;    // Le damos espacio para que no choque con la hamburguesa en móvil
+            top: 10px;
+        }
+
+        .lang-link {
+            text-decoration: none;
+            color: v.$color-texto;
+            backdrop-filter: blur;
+            font-size: 0.8rem;
+            opacity: 0.6; // Por defecto un poco más apagado
+            transition: all 0.3s;
+
+            &.is-active {
+                color: v.$color-dorado-capi;
+                opacity: 1;
+                text-decoration: underline; // Opcional para marcar más el activo
+                text-underline-offset: 4px;
+            }
+
+            &:hover {
+                opacity: 1;
+                color: v.$color-dorado-capi;
             }
         }
     }

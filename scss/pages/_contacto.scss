@@ -2,7 +2,7 @@
 @use '../abstract/mixins' as m;
 
 .contacto-hero {
-    padding: v.$spacing-xxl 0;
+    padding: 7rem 0;
     text-align: center;
     background: linear-gradient(rgba(v.$color-primario, 0.85), rgba(v.$color-primario, 0.7)),
         url('https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=2070&auto=format&fit=crop');
@@ -160,6 +160,7 @@
             border: 2px solid v.$color-fondo-claro;
             border-radius: 8px;
             font-family: v.$font-body;
+            font-size: v.$font-size-base;
             transition: border-color 0.3s;
 
             &:focus {
