@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="{{ lang or 'es' }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Centro Artístico Pedagógico Integral en Samaipata. Un espacio de referencia dedicado al bienestar emocional, apoyo pedagógico y formación artística para niños y jóvenes.">
+
+    <meta name="keywords"
+        content="CAPI Samaipata, centro cultural Bolivia, apoyo pedagógico, clases de música, artes plásticas, formación integral, bienestar emocional jóvenes">
+
+    <meta name="author" content="C.A.P.I. Samaipata">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.capisamaipata.org/">
+    <meta property="og:title" content="C.A.P.I. - Centro Artístico Pedagógico Integral">
+    <meta property="og:description"
+        content="Un refugio para el talento en Samaipata. Formación en arte, música y apoyo escolar con un enfoque humano.">
+    <meta property="og:image" content="assets/img/og-image.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="C.A.P.I. Samaipata">
+    <meta property="twitter:description"
+        content="Formando talentos, proyectando futuros. Espacio autónomo de dinamización cultural.">
+    <meta property="twitter:image" content="assets/img/og-image.jpg">
+    <title>{{ title }}</title>
+    <link rel="icon" href="/assets/icon/capi_icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container navbar__wrapper">
+                <div class="logo">
+                    <a href="index.html"><img src="/assets/img/capi.png" alt="Logo CAPI"></a>
+                </div>
+
+                <input type="checkbox" id="menu-check" class="navbar__check">
+
+                <label for="menu-check" class="navbar__burger">
+                    <i class="fa-solid fa-bars burger-open"></i> <i class="fa-solid fa-xmark burger-close"></i>
+                </label>
+
+                <ul class="navbar__links">
+    <li>
+        <a href="/{{ lang }}/" 
+           class="{% if page.url == '/' + lang + '/' %}is-active{% endif %}">
+            {{ navigation[lang].inicio }}
+        </a>
+    </li>
+
+    <li>
+        <a href="/{{ lang }}/quienes-somos/" 
+           class="{% if page.url == '/' + lang + '/quienes-somos/' %}is-active{% endif %}">
+            {{ navigation[lang].nosotros }}
+        </a>
+    </li>
+
+    <li>
+        <a href="/{{ lang }}/programas/" 
+           class="{% if page.url == '/' + lang + '/programas/' %}is-active{% endif %}">
+            {{ navigation[lang].programas }}
+        </a>
+    </li>
+
+    <li>
+        <a href="/{{ lang }}/galeria/" 
+           class="{% if page.url == '/' + lang + '/galeria/' %}is-active{% endif %}">
+            {{ navigation[lang].galeria }}
+        </a>
+    </li>
+
+    <li>
+        <a href="/{{ lang }}/contacto/" 
+           class="{% if page.url == '/' + lang + '/contacto/' %}is-active{% endif %}">
+            {{ navigation[lang].contacto }}
+        </a>
+    </li>
+    <li>
+        <a href="/{{ lang }}/donar/">
+            <button class="btn-donar {% if page.url == '/' + lang + '/donar/' %}is-active{% endif %}">
+                {{ navigation[lang].donar }}
+            </button>
+        </a>
+    </li>
+</ul>
+
+                <div class="navbar__lang">
+    {# Botón Español #}
+    <a href="{{ page.url | replace('/en/', '/es/') }}" 
+       class="lang-link {% if lang == 'es' %}is-active{% endif %}">
+       ES
+    </a>
+
+    <span class="lang-divider">|</span>
+
+    {# Botón Inglés #}
+    <a href="{{ page.url | replace('/es/', '/en/') }}" 
+       class="lang-link {% if lang == 'en' %}is-active{% endif %}">
+       EN
+    </a>
+</div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {{ content | safe }}
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__column">
+                    <img src="/assets/img/capi_footer.jpg" alt="Logo CAPI" class="footer__logo">
+                    <p class="footer__tagline">Formando talentos, proyectando futuros.</p>
+                </div>
+
+                <div class="footer__column">
+                    <h4 class="footer__title">{{ navigation[lang].f_col1_title }}</h4>
+                    <ul class="footer__links">
+                        <li><a href="quienes-somos.html">{{ navigation[lang].nosotros }}</a></li>
+                        <li><a href="programas.html">{{ navigation[lang].programas }}</a></li>
+                        <li><a href="donar.html">Colabora</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h4 class="footer__title">{{ navigation[lang].f_col2_title }}</h4>
+                    <ul class="footer__contact">
+                        <li><i class="fa-solid fa-location-dot"></i> {{ navigation[lang].f_address }}</li>
+                        <li><i class="fa-solid fa-phone"></i> +591 7709 8153</li>
+                        <li><i class="fa-solid fa-envelope"></i> info@capisamaipata.org</li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h4 class="footer__title">{{ navigation[lang].f_col3_title }}</h4>
+                    <div class="footer__social">
+                        <a href="https://www.facebook.com/profile.php?id=100078096283586&sk=about&locale=es_LA"
+                            target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/capi_samaipata/#" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container">
+                <p>&copy; 2026 C.A.P.I. - {{ navigation[lang].f_rights }}</p>
+            </div>
+        </div>
+    </footer>
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox__close">&times;</span>
+        <img id="lightbox-img" src="" alt="Vista ampliada">
+        <div id="lightbox-caption" class="lightbox__caption"></div>
+        <div id="lightbox-counter" class="lightbox__counter"></div>
+        <button class="lightbox-nav prev">&lt;</button>
+        <button class="lightbox-nav next">&gt;</button>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

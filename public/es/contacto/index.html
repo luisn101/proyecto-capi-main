@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Centro Artístico Pedagógico Integral en Samaipata. Un espacio de referencia dedicado al bienestar emocional, apoyo pedagógico y formación artística para niños y jóvenes.">
+
+    <meta name="keywords"
+        content="CAPI Samaipata, centro cultural Bolivia, apoyo pedagógico, clases de música, artes plásticas, formación integral, bienestar emocional jóvenes">
+
+    <meta name="author" content="C.A.P.I. Samaipata">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.capisamaipata.org/">
+    <meta property="og:title" content="C.A.P.I. - Centro Artístico Pedagógico Integral">
+    <meta property="og:description"
+        content="Un refugio para el talento en Samaipata. Formación en arte, música y apoyo escolar con un enfoque humano.">
+    <meta property="og:image" content="assets/img/og-image.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="C.A.P.I. Samaipata">
+    <meta property="twitter:description"
+        content="Formando talentos, proyectando futuros. Espacio autónomo de dinamización cultural.">
+    <meta property="twitter:image" content="assets/img/og-image.jpg">
+    <title>Contáctanos | C.A.P.I. Samaipata</title>
+    <link rel="icon" href="/assets/icon/capi_icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container navbar__wrapper">
+                <div class="logo">
+                    <a href="index.html"><img src="/assets/img/capi.png" alt="Logo CAPI"></a>
+                </div>
+
+                <input type="checkbox" id="menu-check" class="navbar__check">
+
+                <label for="menu-check" class="navbar__burger">
+                    <i class="fa-solid fa-bars burger-open"></i> <i class="fa-solid fa-xmark burger-close"></i>
+                </label>
+
+                <ul class="navbar__links">
+    <li>
+        <a href="/es/" 
+           class="">
+            Inicio
+        </a>
+    </li>
+
+    <li>
+        <a href="/es/quienes-somos/" 
+           class="">
+            Quiénes Somos
+        </a>
+    </li>
+
+    <li>
+        <a href="/es/programas/" 
+           class="">
+            Programas
+        </a>
+    </li>
+
+    <li>
+        <a href="/es/galeria/" 
+           class="">
+            Galería
+        </a>
+    </li>
+
+    <li>
+        <a href="/es/contacto/" 
+           class="is-active">
+            Contacto
+        </a>
+    </li>
+    <li>
+        <a href="/es/donar/">
+            <button class="btn-donar ">
+                Donar
+            </button>
+        </a>
+    </li>
+</ul>
+
+                <div class="navbar__lang">
+    
+    <a href="/es/contacto/" 
+       class="lang-link is-active">
+       ES
+    </a>
+
+    <span class="lang-divider">|</span>
+
+    
+    <a href="/en/contacto/" 
+       class="lang-link ">
+       EN
+    </a>
+</div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contacto-hero">
+            <div class="container">
+                <h1 class="contacto-hero__title">Estamos para escucharte</h1>
+                <p class="contacto-hero__text">¿Tienes dudas sobre nuestros programas o quieres visitarnos? Escríbenos.
+                </p>
+            </div>
+        </section>
+
+        <section class="contacto-seccion">
+            <div class="container contacto-seccion__wrapper">
+
+                <div class="contacto-datos">
+                    <h2 class="section-title">Información</h2>
+                    <p class="contacto-datos__intro">Visítanos en nuestras instalaciones o contáctanos por estos medios:
+                    </p>
+
+                    <div class="contacto-datos__items">
+                        <div class="dato-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <h3>Ubicación</h3>
+                                <p>Calle Bolívar al lado del Museo, Samaipata, Bolivia</p>
+                            </div>
+                        </div>
+                        <div class="dato-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <h3>Teléfono</h3>
+                                <p>+591 7709 8153</p>
+                            </div>
+                        </div>
+                        <div class="dato-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <h3>Correo</h3>
+                                <p>contacto@capi-centro.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contacto-form">
+                    <form class="form-container">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" placeholder="Ej. Ana García" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" placeholder="ana@ejemplo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">¿En qué podemos ayudarte?</label>
+                            <textarea id="mensaje" rows="5" placeholder="Cuéntanos tu consulta..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--full">Enviar Mensaje</button>
+                    </form>
+                </div>
+                <div class="contacto-mapa-full">
+                    <div class="contacto-datos__mapa">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d473.835668921709!2d-63.87440099738526!3d-18.178403008514152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f0437d7bd0b295%3A0x575c773942302bf0!2sCAPI!5e0!3m2!1ses-419!2sbo!4v1768999805983!5m2!1ses-419!2sbo"
+                            style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__column">
+                    <img src="/assets/img/capi_footer.jpg" alt="Logo CAPI" class="footer__logo">
+                    <p class="footer__tagline">Formando talentos, proyectando futuros.</p>
+                </div>
+
+                <div class="footer__column">
+                    <h4 class="footer__title">Enlaces</h4>
+                    <ul class="footer__links">
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="programas.html">Programas</a></li>
+                        <li><a href="donar.html">Colabora</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h4 class="footer__title">Contacto</h4>
+                    <ul class="footer__contact">
+                        <li><i class="fa-solid fa-location-dot"></i> Calle Bolívar, Samaipata, Bolivia</li>
+                        <li><i class="fa-solid fa-phone"></i> +591 7709 8153</li>
+                        <li><i class="fa-solid fa-envelope"></i> info@capisamaipata.org</li>
+                    </ul>
+                </div>
+
+                <div class="footer__column">
+                    <h4 class="footer__title">Síguenos</h4>
+                    <div class="footer__social">
+                        <a href="https://www.facebook.com/profile.php?id=100078096283586&sk=about&locale=es_LA"
+                            target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/capi_samaipata/#" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <div class="container">
+                <p>&copy; 2026 C.A.P.I. - Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox__close">&times;</span>
+        <img id="lightbox-img" src="" alt="Vista ampliada">
+        <div id="lightbox-caption" class="lightbox__caption"></div>
+        <div id="lightbox-counter" class="lightbox__counter"></div>
+        <button class="lightbox-nav prev">&lt;</button>
+        <button class="lightbox-nav next">&gt;</button>
+    </div>
+    <script src="/js/main.js"></script>
+</body>
+
+</html>

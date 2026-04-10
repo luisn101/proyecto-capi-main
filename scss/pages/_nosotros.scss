@@ -146,7 +146,8 @@
         img {
             width: 100%; // Importante para que no se desborde
             border-radius: 20px;
-            box-shadow: v.$sombra-suave;
+            border: 1px solid rgba(v.$color-dorado-capi, 0.9); // Un borde muy sutil para darle definición
+            box-shadow: v.$sombra-media;
         }
     }
 

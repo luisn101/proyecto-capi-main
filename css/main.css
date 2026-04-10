@@ -152,8 +152,7 @@ body.is-loaded {
 .footer__logo {
   height: 80px;
   width: 80px;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   background-color: #ffffff;
   padding: 10px;
   border-radius: 50%;
@@ -402,8 +401,7 @@ body.is-loaded {
 .navbar .logo img {
   height: 80px;
   width: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   display: block;
   transition: all 0.4s ease;
 }
@@ -556,7 +554,7 @@ body.is-loaded {
 }
 .navbar__lang {
   position: fixed;
-  top: 10px;
+  top: 6px;
   right: 20px;
   display: flex;
   align-items: center;
@@ -962,8 +960,7 @@ body.is-loaded {
 .hero__video-bg {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .hero__overlay {
   position: absolute;
@@ -1037,6 +1034,11 @@ body.is-loaded {
     width: 100%;
     max-width: 300px;
   }
+}
+html[lang=en] .hero {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #27ae60;
 }
 
 .pilares {
@@ -1141,8 +1143,7 @@ body.is-loaded {
 .card__image img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.5s ease;
 }
 .card:hover .card__image img {
@@ -1730,7 +1731,8 @@ body.is-loaded {
 .historia__image img {
   width: 100%;
   border-radius: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(243, 177, 49, 0.9);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .historia .historia__filosofia {
   margin-top: 40px;
@@ -1804,10 +1806,8 @@ body.is-loaded {
 .perfil__img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   transition: transform 0.5s ease;
 }
 .perfil__img:hover img {
@@ -2175,16 +2175,14 @@ body.is-loaded {
 .programa-item__image img {
   width: 100%;
   height: 400px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 @media (max-width: 991px) {
   .programa-item__image img {
     height: 320px;
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     max-width: 900px;
   }
 }
@@ -2601,8 +2599,7 @@ body.is-loaded {
 .galeria-item img, .galeria .galeria__item img, .galeria__item img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 .galeria-item__overlay, .galeria .galeria__overlay, .galeria-item .galeria__overlay, .galeria__item__overlay, .galeria__item .galeria__overlay {

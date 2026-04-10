@@ -1,0 +1,28 @@
+{
+  "es": {
+    "inicio": "Inicio",
+    "nosotros": "Quiénes Somos",
+    "programas": "Programas",
+    "galeria": "Galería",
+    "contacto": "Contacto",
+    "donar": "Donar",
+    "f_col1_title": "Enlaces",
+    "f_col2_title": "Contacto",
+    "f_col3_title": "Síguenos",
+    "f_address": "Calle Bolívar, Samaipata, Bolivia",
+    "f_rights": "Todos los derechos reservados."
+  },
+  "en": {
+    "inicio": "Home",
+    "nosotros": "About Us",
+    "programas": "Programs",
+    "galeria": "Gallery",
+    "contacto": "Contact",
+    "donar": "Donate",
+    "f_col1_title": "Quick Links",
+    "f_col2_title": "Contact",
+    "f_col3_title": "Follow Us",
+    "f_address": "Bolívar Street, Samaipata, Bolivia",
+    "f_rights": "All rights reserved."
+  }
+}
