@@ -2651,29 +2651,26 @@ html[lang=en] .hero {
   position: relative;
   padding-left: 100px;
 }
-.galeria-year::before {
+.galeria-timeline-container {
+  position: relative;
+}
+.galeria-timeline-container::before {
   content: "";
   position: absolute;
   left: 55px;
   width: 2px;
-  background: linear-gradient(to bottom, rgba(243, 177, 49, 1) 0%, rgba(243, 177, 49, 0.2) 100%);
   z-index: 1;
-}
-.galeria-year:first-of-type::before {
   top: 84px;
   bottom: 0;
-}
-.galeria-year:not(:first-of-type)::before {
-  top: 0;
-  bottom: 0;
+  background: linear-gradient(to bottom, rgba(243, 177, 49, 1) 0%, rgba(243, 177, 49, 0.9) 20%, rgba(243, 177, 49, 0.8) 40%, rgba(243, 177, 49, 0.6) 60%, rgba(243, 177, 49, 0.4) 80%, rgba(243, 177, 49, 0.2) 100%);
 }
 @media (max-width: 1200px) {
-  .galeria-year::before {
+  .galeria-timeline-container::before {
     left: 21px;
   }
 }
 @media (max-width: 768px) {
-  .galeria-year::before {
+  .galeria-timeline-container::before {
     display: none;
   }
 }

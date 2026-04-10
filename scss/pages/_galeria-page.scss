@@ -243,63 +243,39 @@
         background-color: v.$color-fondo-claro;
     }
 
-    &::before {
-        content: '';
-        position: absolute;
-        left: 55px;
-        width: 2px;
-        z-index: 1; 
-        top: 0;
-        bottom: 0;
-
-        @media (max-width: 1200px) {
-            left: 21px;
-        }
-
-        @media (max-width: 768px) { display: none; }
-    }
-
-    // --- LÓGICA DE OPACIDAD ESCALONADA ---
-
-    // 2026 (Primer año - 100% opaco)
-    &:nth-child(1)::before {
-        background-color: rgba(v.$color-dorado-capi, 1);
-        top: 84px; // Mantenemos el ajuste de inicio
-    }
-
-    // 2025 (80% opaco)
-    &:nth-child(2)::before {
-        background-color: rgba(v.$color-dorado-capi, 0.8);
-    }
-
-    // 2024 (60% opaco)
-    &:nth-child(3)::before {
-        background-color: rgba(v.$color-dorado-capi, 0.6);
-    }
-
-    // 2023 (40% opaco)
-    &:nth-child(4)::before {
-        background-color: rgba(v.$color-dorado-capi, 0.4);
-    }
-
-    // 2022 (20% opaco)
-    &:nth-child(5)::before {
-        background-color: rgba(v.$color-dorado-capi, 0.2);
-    }
-
-    // 2021 (Último año - Se desvanece a 0)
-    &:last-of-type::before {
-        background: linear-gradient(to bottom, 
-            rgba(v.$color-dorado-capi, 0.2) 0%, 
-            rgba(v.$color-dorado-capi, 0) 100%);
-    }
-
     @media (max-width: 1200px) {
         padding-left: 60px;
     }
 
     @media (max-width: 768px) {
         padding-left: 0;
+    }
+}
+
+.galeria-timeline-container {
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 54px;
+        width: 2px;
+        z-index: 1;
+        top: 84px; // Empieza después del título del primer año
+        bottom: 0; // Llega hasta el final de todos los años
+        background: linear-gradient(to bottom,
+            rgba(v.$color-dorado-capi, 1) 0%,
+            rgba(v.$color-dorado-capi, 0.9) 20%,
+            rgba(v.$color-dorado-capi, 0.8) 40%,
+            rgba(v.$color-dorado-capi, 0.6) 60%,
+            rgba(v.$color-dorado-capi, 0.4) 80%,
+            rgba(v.$color-dorado-capi, 0.2) 100%);
+
+        @media (max-width: 1200px) {
+            left: 21px;
+        }
+
+        @media (max-width: 768px) { display: none; }
     }
 }
 
