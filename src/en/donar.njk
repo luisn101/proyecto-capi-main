@@ -1,0 +1,79 @@
+---
+layout: base.njk
+title: Support Culture | Donations for the C.A.P.I. Project
+description: Support C.A.P.I. Samaipata. Your contribution helps us provide art and education to more families in our community.
+lang: en
+---
+
+<section class="donar-hero">
+  <div class="container">
+    <h1 class="donar-hero__title">Make a difference today</h1>
+    <p class="donar-hero__text">
+      Your contribution allows art and education to reach more families.
+    </p>
+  </div>
+</section>
+
+<section class="donacion">
+  <div class="container donacion__wrapper">
+    <div class="donacion__info">
+      <h2 class="donacion__subtitle">Where does your donation go?</h2>
+      
+      <div class="donacion__impacto">
+        <div class="impacto-item">
+          <i class="fa-solid fa-guitar"></i>
+          <p>
+            <strong>Instrument Purchase:</strong> Acquisition of string instruments to ensure that every student has access to one for their practices and rehearsals.
+          </p>
+        </div>
+
+        <div class="impacto-item">
+          <i class="fa-solid fa-masks-theater"></i>
+          <p>
+            <strong>Living Culture:</strong> Sustaining festivals, concerts, theater performances, and independent cinema that strengthen Samaipata's social fabric.
+          </p>
+        </div>
+
+        <div class="impacto-item">
+          <i class="fa-solid fa-shield-heart"></i>
+          <p>
+            <strong>Safe Space:</strong> Maintenance and insurance for the facility, guaranteeing a protected environment and the continuity of our operations.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="donacion__form-card">
+      <h3>Select an amount</h3>
+      <div class="donacion__grid-montos">
+        <button class="btn-monto">$10</button>
+        <button class="btn-monto">$25</button>
+        <button class="btn-monto">$50</button>
+        <button class="btn-monto">$100</button>
+        <button class="btn-monto btn-monto--custom" id="btn-custom">
+          Other amount
+        </button>
+      </div>
+
+      <div class="donacion__custom-input" id="custom-amount-wrapper">
+        <div class="input-group">
+          <span class="input-group__symbol">$</span>
+          <input
+            type="number"
+            id="custom-amount"
+            placeholder="Enter amount"
+            min="1"
+            step="any"
+          />
+        </div>
+      </div>
+
+      <button class="btn btn--primary btn--full">
+        Continue to donate
+      </button>
+      <p class="donacion__secure">
+        <i class="fa-solid fa-lock"></i> 100% secure and encrypted payment
+      </p>
+    </div>
+  </div>
+</section>
