@@ -2575,6 +2575,7 @@ html[lang=en] .hero {
 }
 
 .galeria-grid, .galeria .galeria__grid, .galeria__grid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   grid-auto-rows: 200px;
@@ -2646,30 +2647,35 @@ html[lang=en] .hero {
 .galeria-page {
   position: relative;
 }
-.galeria-page::before {
-  content: "";
-  position: absolute;
-  top: 400px;
-  bottom: 100px;
-  left: 50px;
-  width: 2px;
-  background: linear-gradient(to bottom, #f3b131 0%, rgba(243, 177, 49, 0.2) 100%);
-  z-index: 1;
-}
-@media (max-width: 1200px) {
-  .galeria-page::before {
-    left: 20px;
-  }
-}
-@media (max-width: 768px) {
-  .galeria-page::before {
-    display: none;
-  }
-}
-
 .galeria-year {
   position: relative;
   padding-left: 100px;
+}
+.galeria-year::before {
+  content: "";
+  position: absolute;
+  left: 55px;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(243, 177, 49, 1) 0%, rgba(243, 177, 49, 0.2) 100%);
+  z-index: 1;
+}
+.galeria-year:first-of-type::before {
+  top: 84px;
+  bottom: 0;
+}
+.galeria-year:not(:first-of-type)::before {
+  top: 0;
+  bottom: 0;
+}
+@media (max-width: 1200px) {
+  .galeria-year::before {
+    left: 21px;
+  }
+}
+@media (max-width: 768px) {
+  .galeria-year::before {
+    display: none;
+  }
 }
 .galeria-year:nth-child(even) {
   background-color: #f9f9f9;
@@ -2695,7 +2701,7 @@ html[lang=en] .hero {
 
 .timeline-dot {
   position: absolute;
-  left: 42px;
+  left: 46px;
   top: 75px;
   width: 18px;
   height: 18px;

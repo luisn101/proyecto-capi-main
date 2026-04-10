@@ -2550,11 +2550,28 @@ html[lang=en] .hero__title {
   scroll-margin-top: 190px;
 }
 
+.galeria-year__title {
+  position: relative;
+}
+.galeria-year__title::before {
+  content: "";
+  position: absolute;
+  left: -51px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: #f3b131;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  z-index: 2;
+}
+
 .year-header {
   font-family: "Montserrat", sans-serif;
   color: #008894;
   font-size: 3rem;
-  margin: 60px 0 30px;
+  margin: 0 0 30px 0;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -2645,41 +2662,54 @@ html[lang=en] .hero__title {
 .galeria-page {
   position: relative;
 }
-.galeria-page::before {
-  content: "";
-  position: absolute;
-  top: 400px;
-  bottom: 100px;
-  left: 50px;
-  width: 2px;
-  background: linear-gradient(to bottom, #f3b131 0%, rgba(243, 177, 49, 0.2) 100%);
-  z-index: 1;
-}
-@media (max-width: 1200px) {
-  .galeria-page::before {
-    left: 20px;
-  }
-}
-@media (max-width: 768px) {
-  .galeria-page::before {
-    display: none;
-  }
-}
 
 .galeria-year {
   position: relative;
   padding-left: 100px;
+  margin: 0;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 .galeria-year:nth-child(even) {
   background-color: #f9f9f9;
-  padding-top: 5px;
 }
-.galeria-year .galeria-item, .galeria-year .galeria .galeria__item, .galeria .galeria-year .galeria__item {
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+.galeria-year::before {
+  content: "";
+  position: absolute;
+  left: 55px;
+  width: 2px;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
 }
-.galeria-year .galeria-item:hover, .galeria-year .galeria .galeria__item:hover, .galeria .galeria-year .galeria__item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+@media (max-width: 1200px) {
+  .galeria-year::before {
+    left: 21px;
+  }
+}
+@media (max-width: 768px) {
+  .galeria-year::before {
+    display: none;
+  }
+}
+.galeria-year:nth-child(1)::before {
+  background-color: #f3b131;
+  top: 84px;
+}
+.galeria-year:nth-child(2)::before {
+  background-color: rgba(243, 177, 49, 0.8);
+}
+.galeria-year:nth-child(3)::before {
+  background-color: rgba(243, 177, 49, 0.6);
+}
+.galeria-year:nth-child(4)::before {
+  background-color: rgba(243, 177, 49, 0.4);
+}
+.galeria-year:nth-child(5)::before {
+  background-color: rgba(243, 177, 49, 0.2);
+}
+.galeria-year:last-of-type::before {
+  background: linear-gradient(to bottom, rgba(243, 177, 49, 0.2) 0%, rgba(243, 177, 49, 0) 100%);
 }
 @media (max-width: 1200px) {
   .galeria-year {
@@ -2694,7 +2724,7 @@ html[lang=en] .hero__title {
 
 .timeline-dot {
   position: absolute;
-  left: 42px;
+  left: 46px;
   top: 75px;
   width: 18px;
   height: 18px;

@@ -112,11 +112,29 @@
     scroll-margin-top: 190px; // Ajusta el scroll para posicionarse justo en el título, considerando el navbar sticky (110px) + padding extra
 }
 
+.galeria-year__title {
+    position: relative;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        left: -51px; // Centrado exacto sobre la línea (55px - radio del círculo)
+        top: 50%;
+        transform: translateY(-50%);
+        width: 12px;
+        height: 12px;
+        background-color: v.$color-dorado-capi;
+        border: 2px solid v.$color-blanco;
+        border-radius: 50%;
+        z-index: 2;
+    }
+}
+
 .year-header {
     font-family: v.$font-titles;
     color: v.$color-primario;
     font-size: 3rem;
-    margin: 60px 0 30px;
+    margin: 0 0 30px 0;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -210,46 +228,70 @@
 
 .galeria-page {
     position: relative;
-
-    // LA LÍNEA VERTICAL
-    &::before {
-        content: '';
-        position: absolute;
-        top: 400px; // Empieza después del Hero
-        bottom: 100px;
-        left: 50px; // Ajuste lateral
-        width: 2px;
-        background: linear-gradient(to bottom, 
-            v.$color-dorado-capi 0%, 
-            rgba(v.$color-dorado-capi, 0.2) 100%);
-        z-index: 1;
-
-        @media (max-width: 1200px) {
-            left: 20px; // Se pega más al borde en pantallas medianas
-        }
-        
-        @media (max-width: 768px) {
-            display: none; // La ocultamos en móvil para ganar espacio
-        }
-    }
 }
 
 .galeria-year {
     position: relative;
-    padding-left: 100px; // Espacio para que la línea no choque con el contenido
+    padding-left: 100px;
+    // Quitamos márgenes para que los años se toquen y la línea sea continua
+    margin: 0; 
+    padding-top: 60px; // El espacio que antes era margen del título
+    padding-bottom: 60px;
 
+    // EL FONDO DE AÑOS PARES (¡Aquí vuelve!)
     &:nth-child(even) {
         background-color: v.$color-fondo-claro;
-        padding-top: 5px;
     }
 
-    // Animación de entrada para los items (opcional)
-    .galeria-item {
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-        &:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    &::before {
+        content: '';
+        position: absolute;
+        left: 55px;
+        width: 2px;
+        z-index: 1; 
+        top: 0;
+        bottom: 0;
+
+        @media (max-width: 1200px) {
+            left: 21px;
         }
+
+        @media (max-width: 768px) { display: none; }
+    }
+
+    // --- LÓGICA DE OPACIDAD ESCALONADA ---
+
+    // 2026 (Primer año - 100% opaco)
+    &:nth-child(1)::before {
+        background-color: rgba(v.$color-dorado-capi, 1);
+        top: 84px; // Mantenemos el ajuste de inicio
+    }
+
+    // 2025 (80% opaco)
+    &:nth-child(2)::before {
+        background-color: rgba(v.$color-dorado-capi, 0.8);
+    }
+
+    // 2024 (60% opaco)
+    &:nth-child(3)::before {
+        background-color: rgba(v.$color-dorado-capi, 0.6);
+    }
+
+    // 2023 (40% opaco)
+    &:nth-child(4)::before {
+        background-color: rgba(v.$color-dorado-capi, 0.4);
+    }
+
+    // 2022 (20% opaco)
+    &:nth-child(5)::before {
+        background-color: rgba(v.$color-dorado-capi, 0.2);
+    }
+
+    // 2021 (Último año - Se desvanece a 0)
+    &:last-of-type::before {
+        background: linear-gradient(to bottom, 
+            rgba(v.$color-dorado-capi, 0.2) 0%, 
+            rgba(v.$color-dorado-capi, 0) 100%);
     }
 
     @media (max-width: 1200px) {
@@ -263,7 +305,7 @@
 
 .timeline-dot {
     position: absolute;
-    left: 42px; // Centrado con la línea (50px - 8px de radio)
+    left: 46px; // Centrado con la línea al usar el radio del dot
     top: 75px; // Alineado con el centro del título H2
     width: 18px;
     height: 18px;
