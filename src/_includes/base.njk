@@ -48,7 +48,9 @@
   </head>
 
   <body>
+    {% if not isErrorPage %}
     <header>
+      {# --- NAVBAR --- #}
       <nav class="navbar">
         <div class="container navbar__wrapper">
           <div class="logo">
@@ -67,84 +69,98 @@
           <ul class="navbar__links">
             <li>
               <a
-                href="/{{ lang }}/"
-                class="{% if page.url == '/' + lang + '/' %}is-active{% endif %}"
+                href="{{ navigation[lang].inicio_url }}"
+                class="{% if page.url == navigation[lang].inicio_url or page.url == navigation[lang].inicio_url + 'index.html' %}is-active{% endif %}"
               >
-                {{ navigation[lang].inicio }}
+                {{ navigation[lang].inicio_label }}
               </a>
             </li>
 
             <li>
               <a
-                href="/{{ lang }}/quienes-somos/"
-                class="{% if page.url == '/' + lang + '/quienes-somos/' %}is-active{% endif %}"
+                href="{{ navigation[lang].nosotros_url }}"
+                class="{% if page.url == navigation[lang].nosotros_url %}is-active{% endif %}"
               >
-                {{ navigation[lang].nosotros }}
+                {{ navigation[lang].nosotros_label }}
               </a>
             </li>
 
             <li>
               <a
-                href="/{{ lang }}/programas/"
-                class="{% if page.url == '/' + lang + '/programas/' %}is-active{% endif %}"
+                href="{{ navigation[lang].programas_url }}"
+                class="{% if page.url == navigation[lang].programas_url %}is-active{% endif %}"
               >
-                {{ navigation[lang].programas }}
+                {{ navigation[lang].programas_label }}
               </a>
             </li>
 
             <li>
               <a
-                href="/{{ lang }}/galeria/"
-                class="{% if page.url == '/' + lang + '/galeria/' %}is-active{% endif %}"
+                href="{{ navigation[lang].galeria_url }}"
+                class="{% if page.url == navigation[lang].galeria_url %}is-active{% endif %}"
               >
-                {{ navigation[lang].galeria }}
+                {{ navigation[lang].galeria_label }}
               </a>
             </li>
 
             <li>
               <a
-                href="/{{ lang }}/contacto/"
-                class="{% if page.url == '/' + lang + '/contacto/' %}is-active{% endif %}"
+                href="{{ navigation[lang].contacto_url }}"
+                class="{% if page.url == navigation[lang].contacto_url %}is-active{% endif %}"
               >
-                {{ navigation[lang].contacto }}
+                {{ navigation[lang].contacto_label }}
               </a>
             </li>
             <li>
-              <a href="/{{ lang }}/donar/">
+              <a href="{{ navigation[lang].donar_url }}">
                 <button
-                  class="btn-donar {% if page.url == '/' + lang + '/donar/' %}is-active{% endif %}"
+                  class="btn-donar {% if page.url == navigation[lang].donar_url %}is-active{% endif %}"
                 >
-                  {{ navigation[lang].donar }}
+                  {{ navigation[lang].donar_label }}
                 </button>
               </a>
             </li>
           </ul>
 
           <div class="navbar__lang">
-            {# Botón Español #}
-            <a
-              href="{{ page.url | replace('/en/', '/es/') }}"
-              class="lang-link {% if lang == 'es' %}is-active{% endif %}"
-            >
-              ES
-            </a>
+  {# --- BOTÓN ESPAÑOL --- #}
+  {% if lang == 'es' %}
+    {# Si ya estoy en español, solo muestro el texto activo #}
+    <span class="lang-link is-active">ES</span>
+  {% else %}
+    {# Si estoy en inglés, busco la versión española de esta misma página #}
+    {% for item in collections.all %}
+      {% if item.data.translationKey == translationKey and item.data.lang == 'es' %}
+        <a href="{{ item.url }}" class="lang-link">ES</a>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
 
-            <span class="lang-divider">|</span>
+  <span class="lang-divider">|</span>
 
-            {# Botón Inglés #}
-            <a
-              href="{{ page.url | replace('/es/', '/en/') }}"
-              class="lang-link {% if lang == 'en' %}is-active{% endif %}"
-            >
-              EN
-            </a>
-          </div>
+  {# --- BOTÓN INGLÉS --- #}
+  {% if lang == 'en' %}
+    {# Si ya estoy en inglés, solo muestro el texto activo #}
+    <span class="lang-link is-active">EN</span>
+  {% else %}
+    {# Si estoy en español, busco la versión inglesa de esta misma página #}
+    {% for item in collections.all %}
+      {% if item.data.translationKey == translationKey and item.data.lang == 'en' %}
+        <a href="{{ item.url }}" class="lang-link">EN</a>
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+</div>
         </div>
       </nav>
     </header>
+    {% endif %}
+    
 
     <main>{{ content | safe }}</main>
 
+    {# --- FOOTER --- #}
+    {% if not isErrorPage %}
     <footer class="footer">
       <div class="container">
         <div class="footer__wrapper">
@@ -155,7 +171,7 @@
               class="footer__logo"
             />
             <p class="footer__tagline">
-              Formando talentos, proyectando futuros.
+              {{ navigation[lang].f_tagline }}
             </p>
           </div>
 
@@ -163,12 +179,12 @@
             <h4 class="footer__title">{{ navigation[lang].f_col1_title }}</h4>
             <ul class="footer__links">
               <li>
-                <a href="quienes-somos.html">{{ navigation[lang].nosotros }}</a>
+                <a href="{{ navigation[lang].nosotros_url }}">{{ navigation[lang].nosotros }}</a>
               </li>
               <li>
-                <a href="programas.html">{{ navigation[lang].programas }}</a>
+                <a href="{{ navigation[lang].programas_url }}">{{ navigation[lang].programas }}</a>
               </li>
-              <li><a href="donar.html">Colabora</a></li>
+              <li><a href="{{ navigation[lang].donar_url }}">{{ navigation[lang].donar }}</a></li>
             </ul>
           </div>
 
@@ -210,6 +226,7 @@
         </div>
       </div>
     </footer>
+    {% endif %}
     <div id="lightbox" class="lightbox">
       <span class="lightbox__close">&times;</span>
       <img id="lightbox-img" src="" alt="Vista ampliada" />
