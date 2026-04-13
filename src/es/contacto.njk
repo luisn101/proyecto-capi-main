@@ -54,10 +54,12 @@ translationKey: "contact"
         data-netlify="true" 
         class="form-container"
       >
+        <input type="hidden" name="form-name" value="contacto-capi" />
         <div class="form-group">
           <label for="nombre">Nombre Completo</label>
           <input
             type="text"
+            name="nombre"
             id="nombre"
             placeholder="Ej. Ana García"
             required
@@ -67,6 +69,7 @@ translationKey: "contact"
           <label for="email">Correo Electrónico</label>
           <input
             type="email"
+            name="email"
             id="email"
             placeholder="ana@ejemplo.com"
             required
@@ -76,6 +79,7 @@ translationKey: "contact"
           <label for="mensaje">¿En qué podemos ayudarte?</label>
           <textarea
             id="mensaje"
+            name="mensaje"
             rows="5"
             placeholder="Cuéntanos tu consulta..."
             required
