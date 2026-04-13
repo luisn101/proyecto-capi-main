@@ -203,3 +203,20 @@
     border-color: #28a745 !important;
     color: white !important;
 }
+
+.section-title {
+    &::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background-color: var(--color-dorado-capi, #d4af37);
+        margin: 10px auto 0;
+    }
+}
+
+.contacto-datos .section-title {
+    &::after {
+        display: none;
+    }
+}

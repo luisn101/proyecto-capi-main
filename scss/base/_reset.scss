@@ -13,11 +13,7 @@ html {
 body {
     background-color: v.$color-blanco;
     overflow-x: hidden; // Evita scroll horizontal no deseado
-    padding-top: 140px;
-
-    &.body-error {
-        padding-top: 0 !important;
-    }
+    padding-top: 120px;
 }
 
 img {

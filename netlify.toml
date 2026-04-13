@@ -1,0 +1,13 @@
+[build]
+  # El comando que ejecutará Netlify para construir el sitio
+  command = "npx @11ty/eleventy"
+  # La carpeta que Netlify debe publicar
+  publish = "public"
+
+[build.environment]
+  NODE_VERSION = "20" # Aseguramos que use una versión moderna de Node
+
+[[redirects]]
+  # Esto es vital para que tu página 404.html funcione correctamente en Netlify
+  from = "/*"
+  status = 404

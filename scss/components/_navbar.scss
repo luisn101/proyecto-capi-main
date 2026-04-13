@@ -1,6 +1,7 @@
 @use '../abstract/variables' as v;
 
 .navbar {
+    padding: 20px 0;
     position: fixed;
     background-color: v.$color-blanco;
     box-shadow: v.$sombra-suave;
@@ -46,7 +47,7 @@
         background-color: rgba(v.$color-blanco, 0.85); // 85% de opacidad
         backdrop-filter: blur(10px); // El "truco" del vidrio esmerilado
         -webkit-backdrop-filter: blur(10px); // Compatibilidad para Safari
-        padding: 1px 0; // El header se vuelve más delgado
+        padding: 0;
         box-shadow: v.$sombra-suave; // Sombra para separarlo del contenido
 
         .logo img {
@@ -55,6 +56,10 @@
             @media (min-width: 768px) {
                 height: 65px;
             }
+        }
+
+        .navbar__wrapper {
+            padding: 10px 20px; // Se estrecha el contenido del navbar
         }
     }
 
@@ -173,8 +178,8 @@
                     bottom: -2px; // Justo al borde del padding
                     left: 10%; // Empieza al 10% para dejar 10% al final
                     width: 80%; // Ocupa el 80% del ancho total
-                    height: 3px; // Grosor de la línea
-                    background-color: v.$color-acento;
+                    height: 1.8px; // Grosor de la línea
+                    background-color: v.$color-dorado-capi; // Color dorado del logo
                     border-radius: 2px;
                 }
             }
@@ -216,7 +221,9 @@
         z-index: 1010;
     
         @media (max-width: 991px) {
-            right: 20px;    // Le damos espacio para que no choque con la hamburguesa en móvil
+            right: auto;
+            left: 50%;
+            transform: translate(-50%);
             top: 10px;
         }
 
@@ -250,3 +257,20 @@
         // pero la rotación ya da un feedback visual excelente.
     }
 }
+
+main {
+    transition: margin-top 0.4s ease;
+}
+/*
+.navbar.scrolled + main {
+    margin-top: -55px;
+}
+
+@media (max-width: 767px) {
+    .navbar.scrolled + main {
+        margin-top: -60px;
+    }
+}
+    */
+    
+    

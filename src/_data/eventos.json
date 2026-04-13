@@ -1,0 +1,91 @@
+{
+  "es": [
+    {
+      "titulo": "Taller de Violín Inicial",
+      "fecha": "2026-05-15",
+      "hora": "16:00",
+      "descripcion": "Clases magistrales para niños y jóvenes.",
+      "categoria": "Musica"
+    },
+    {
+      "titulo": "Encuentro de Danza Contemporánea",
+      "fecha": "2026-05-20",
+      "hora": "10:00",
+      "descripcion": "Espacio de expresión corporal en el patio central.",
+      "categoria": "Danza"
+    },
+    {
+      "titulo": "Cine Foro: Realismo Mágico",
+      "fecha": "2026-06-05",
+      "hora": "19:00",
+      "descripcion": "Proyección y debate sobre clásicos del cine latinoamericano.",
+      "categoria": "Cine"
+    },
+    {
+      "titulo": "Taller de Cerámica Local",
+      "fecha": "2026-06-12",
+      "hora": "15:30",
+      "descripcion": "Técnicas ancestrales de modelado con barro de la región.",
+      "categoria": "Artes Plásticas"
+    },
+    {
+      "titulo": "Concierto de Cuerdas",
+      "fecha": "2026-06-25",
+      "hora": "19:30",
+      "descripcion": "Presentación de gala de la orquesta juvenil CAPI.",
+      "categoria": "Música"
+    },
+    {
+      "titulo": "Laboratorio de Poesía",
+      "fecha": "2026-07-02",
+      "hora": "17:00",
+      "descripcion": "Taller de creación literaria inspirado en los paisajes de Samaipata.",
+      "categoria": "Literatura"
+    }
+  ],
+
+  "en": [
+    {
+      "titulo": "Beginner Violin Workshop",
+      "fecha": "2026-05-15",
+      "hora": "4:00 PM",
+      "descripcion": "Masterclasses for children and youth.",
+      "categoria": "Music"
+    },
+    {
+      "titulo": "Contemporary Dance Gathering",
+      "fecha": "2026-05-20",
+      "hora": "10:00 AM",
+      "descripcion": "Body expression space in the main courtyard.",
+      "categoria": "Dance"
+    },
+    {
+      "titulo": "Cinema Forum: Magical Realism",
+      "fecha": "2026-06-05",
+      "hora": "7:00 PM",
+      "descripcion": "Screening and debate on Latin American cinema classics.",
+      "categoria": "Cinema"
+    },
+    {
+      "titulo": "Local Pottery Workshop",
+      "fecha": "2026-06-12",
+      "hora": "3:30 PM",
+      "descripcion": "Ancestral modeling techniques using local clay.",
+      "categoria": "Visual Arts"
+    },
+    {
+      "titulo": "String Concert",
+      "fecha": "2026-06-25",
+      "hora": "7:30 PM",
+      "descripcion": "Gala performance by the CAPI youth orchestra.",
+      "categoria": "Music"
+    },
+    {
+      "titulo": "Poetry Laboratory",
+      "fecha": "2026-07-02",
+      "hora": "5:00 PM",
+      "descripcion": "Creative writing workshop inspired by Samaipata's landscapes.",
+      "categoria": "Literature"
+    }
+  ]
+}

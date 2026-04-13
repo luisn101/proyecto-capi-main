@@ -102,6 +102,15 @@
         width: 100%; // Desktop: Ocupa todo el ancho arriba
         text-align: center;
 
+        &::after {
+        content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--color-dorado-capi, #d4af37);
+            margin: 10px auto 0;
+        }
+
         @media (max-width: 767px) {
             order: 1; // Primero en móvil
             margin-bottom: 30px;
@@ -523,5 +532,17 @@
             font-size: 0.85rem;
             color: v.$color-secundario;
         }
+    }
+}
+
+// Aplicar el estilo de línea dorada a todos los títulos de sección en la página
+.section-title {
+    &::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background-color: v.$color-dorado-capi;
+        margin: 10px auto 0;
     }
 }

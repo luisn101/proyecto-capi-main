@@ -91,7 +91,7 @@
     background: v.$color-blanco;
     padding: 20px 0;
     position: sticky;
-    top: 110px; // Altura de tu navbar
+    top: 82px; // Altura de tu navbar
     z-index: 100;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     text-align: center;
@@ -235,7 +235,7 @@
     padding-left: 100px;
     // Quitamos márgenes para que los años se toquen y la línea sea continua
     margin: 0; 
-    padding-top: 60px; // El espacio que antes era margen del título
+    padding-top: 80px; // El espacio que antes era margen del título
     padding-bottom: 60px;
 
     // EL FONDO DE AÑOS PARES (¡Aquí vuelve!)
