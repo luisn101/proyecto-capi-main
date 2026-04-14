@@ -23,7 +23,7 @@
         @include m.gradient-gold();
 
         @media (max-width: 767px) {
-            font-size: v.$font-size-xxxl; // Ajuste para móvil
+            font-size: 2rem; // Ajuste para móvil
         }
     }
 

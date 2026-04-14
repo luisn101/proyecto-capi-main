@@ -36,6 +36,10 @@
         background-clip: text;
         -webkit-text-fill-color: transparent; // Hace el color sólido transparente para ver el fondo
         display: inline-block; // Asegura que el gradiente se aplique bien al bloque de texto
+
+        @media (max-width: v.$bp-mobile) {
+            font-size: 2rem;
+        }
     }
 
     &__subtitle {
