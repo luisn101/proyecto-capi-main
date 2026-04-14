@@ -16,6 +16,10 @@ h4 {
     line-height: 1.2;
     margin-bottom: 1.5rem;
     color: v.$color-primario; // Usando el color turquesa del logo
+
+    @media (max-width: v.$bp-mobile) {
+        font-size: 2rem;
+    }
 }
 
 p {
