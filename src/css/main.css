@@ -1192,6 +1192,15 @@ main {
   gap: 30px;
 }
 
+.galeria__title {
+  font-size: 2rem;
+}
+@media (min-width: 768px) {
+  .galeria__title {
+    font-size: 2.5rem;
+  }
+}
+
 .card {
   background-color: #ffffff;
   border-radius: 12px;
