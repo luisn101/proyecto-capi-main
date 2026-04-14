@@ -59,6 +59,12 @@ h3 {
   }
 }
 
+@media (max-width: 480px) {
+  h3 {
+    font-size: 1.2rem;
+  }
+}
+
 p {
   margin-bottom: 0;
 }

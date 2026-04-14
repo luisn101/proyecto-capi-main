@@ -21,6 +21,12 @@ h3 {
     }
 }
 
+h3 {
+   @media (max-width: v.$bp-mobile) {
+        font-size: 1.2rem;
+    } 
+}
+
 p {
     margin-bottom: 0;
 }
