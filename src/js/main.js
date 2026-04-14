@@ -221,35 +221,39 @@ window.onclick = function(event) {
 // FORMULARIO DE CONTACTO
 // ==========================================
 
-// Maneja el envío del formulario de contacto
+// Maneja el envío del formulario de contacto a Netlify (via Ajax)
 if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
-        e.preventDefault(); // Evitamos que la página se recargue
+        e.preventDefault(); // Mantenemos el bloqueo para hacerlo por AJAX
 
-        const btn = this.querySelector('.btn');
+        const btn = this.querySelector(".btn");
         const originalText = btn.innerHTML;
+        const formData = new FormData(contactForm); // Captura todos los campos 'name'
 
         // 1. Activamos el estado de carga
-        btn.classList.add('is-loading');
+        btn.classList.add("is-loading");
         btn.disabled = true;
 
-        // 2. Simulamos el envío (2 segundos)
-        setTimeout(() => {
-            // 3. Quitamos carga y mostramos éxito
-            btn.classList.remove('is-loading');
-            btn.classList.add('btn--success'); // Puedes crear esta clase verde
+        // 2. ENVIAMOS A NETLIFY REALMENTE
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
+        })
+          .then(() => {
+            // 3. Éxito: Quitamos carga y mostramos el check
+            btn.classList.remove("is-loading");
+            btn.classList.add("btn--success");
             btn.innerHTML = '<i class="fa-solid fa-check"></i> ¡Enviado!';
 
-            // 4. Limpiamos el formulario
             contactForm.reset();
 
-            // 5. Opcional: Volver al estado original después de 3 segundos
             setTimeout(() => {
-                btn.classList.remove('btn--success');
-                btn.innerHTML = originalText;
-                btn.disabled = false;
+              btn.classList.remove("btn--success");
+              btn.innerHTML = originalText;
+              btn.disabled = false;
             }, 3000);
-
-        }, 2000);
+          })
+          .catch((error) => alert("Error al enviar: " + error));
     });
 }
