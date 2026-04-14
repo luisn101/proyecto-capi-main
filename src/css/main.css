@@ -1044,6 +1044,7 @@ main {
   .hero__content {
     text-align: center;
     margin: 0 auto;
+    padding: 0 1rem;
   }
 }
 .hero__tagline {
@@ -1075,9 +1076,11 @@ main {
     font-size: 1.8rem;
   }
 }
-html[lang=en] .hero__title {
-  font-size: 3.5rem;
-  letter-spacing: 1px;
+@media (min-width: 481px) {
+  html[lang=en] .hero__title {
+    font-size: 3.2rem;
+    letter-spacing: 1px;
+  }
 }
 .hero__description {
   font-size: 1.2rem;
@@ -2935,4 +2938,6 @@ html[lang=en] .hero__title {
   .timeline-dot {
     display: none;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */

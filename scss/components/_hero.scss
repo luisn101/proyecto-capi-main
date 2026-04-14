@@ -122,6 +122,7 @@
         @media (max-width: v.$bp-mobile) {
             text-align: center;
             margin: 0 auto;
+            padding: 0 1rem; // Add padding for better spacing on mobile
         }
     }
 
@@ -150,10 +151,12 @@
             font-size: 1.8rem; // Título más pequeño para que no rompa
         }
 
-        // Solo para la versión en Inglés
-        html[lang="en"] & {
-            font-size: 3.5rem; // Quizás el título en inglés queda mejor un poco más pequeño
-            letter-spacing: 1px;
+        // Solo para la versión en Inglés en desktop
+        @media (min-width: calc(v.$bp-mobile + 1px)) {
+            html[lang="en"] & {
+                font-size: 3.2rem; // Título un poco más pequeño para inglés en desktop
+                letter-spacing: 1px;
+            }
         }
     }
 
