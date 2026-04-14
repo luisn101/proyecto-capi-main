@@ -1403,6 +1403,17 @@ main {
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(243, 177, 49, 0.4);
+}
+@media (max-width: 991px) {
+  .contacto-form {
+    padding: 30px;
+  }
+}
+@media (max-width: 767px) {
+  .contacto-form {
+    padding: 20px;
+  }
 }
 @media (max-width: 767px) {
   .contacto-form {

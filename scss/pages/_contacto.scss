@@ -136,6 +136,15 @@
     padding: 40px;
     border-radius: 20px;
     box-shadow: v.$sombra-suave;
+    border: 1px solid rgba(v.$color-dorado-capi, 0.4);
+
+     @media (max-width: 991px) {
+        padding: 30px;
+    }
+
+     @media (max-width: 767px) {
+        padding: 20px;
+    }
 
     @media (max-width: 767px) {
         padding: 20px;
