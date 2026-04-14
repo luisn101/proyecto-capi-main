@@ -430,13 +430,14 @@
 
     .section-title {
         text-align: center;
+        font-size: 2.5rem;
 
         @media (max-width: 991px) {
             font-size: 2rem;
         }
 
         @media (max-width: 767px) {
-            font-size: 1.9rem;
+            font-size: 2rem;
         }
     }
 
@@ -537,6 +538,12 @@
 
 // Aplicar el estilo de línea dorada a todos los títulos de sección en la página
 .section-title {
+    font-size: 2.5rem;
+
+    @media (max-width: 767px) {
+        font-size: 2rem;
+    }
+
     &::after {
         content: '';
         display: block;

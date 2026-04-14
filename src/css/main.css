@@ -2082,6 +2082,7 @@ main {
 }
 .testimonios .section-title {
   text-align: center;
+  font-size: 2.5rem;
 }
 @media (max-width: 991px) {
   .testimonios .section-title {
@@ -2090,7 +2091,7 @@ main {
 }
 @media (max-width: 767px) {
   .testimonios .section-title {
-    font-size: 1.9rem;
+    font-size: 2rem;
   }
 }
 .testimonios__grid {
@@ -2185,6 +2186,14 @@ main {
   color: #27ae60;
 }
 
+.section-title {
+  font-size: 2.5rem;
+}
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
 .section-title::after {
   content: "";
   display: block;
