@@ -182,15 +182,37 @@ translationKey: "home"
                 </ul>
             </div>
 
-            <form class="form">
+            <form 
+                class="form"
+                name="contacto-capi"
+                method="POST"
+                data-netlify="true"
+            >
+                <input type="hidden" name="form-name" value="contacto-capi" />
                 <div class="form__group">
-                    <input type="text" placeholder="Full name" class="form__input" required>
+                    <input 
+                        type="text" 
+                        name="nombre"
+                        placeholder="Full name" 
+                        class="form__input" 
+                        required>
                 </div>
                 <div class="form__group">
-                    <input type="email" placeholder="Email address" class="form__input" required>
+                    <input 
+                        type="email"
+                        name="email"
+                        placeholder="Email address"
+                        class="form__input"
+                        required
+                    >
                 </div>
                 <div class="form__group">
-                    <textarea placeholder="How can we help you?" class="form__input form__input--textarea" required></textarea>
+                    <textarea 
+                        name="mensaje"
+                        placeholder="How can we help you?" 
+                        class="form__input form__input--textarea"
+                        required
+                    ></textarea>
                 </div>
                 <button type="submit" class="btn btn--primary form__button">Send Message</button>
             </form>
