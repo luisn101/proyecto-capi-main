@@ -84,6 +84,7 @@
     padding: 20px;
     border-radius: 15px;
     box-shadow: v.$sombra-suave;
+    border: 1px solid rgba(v.$color-dorado-capi, 0.4);
 
     @media (min-width: 768px) {
         padding: 40px;
