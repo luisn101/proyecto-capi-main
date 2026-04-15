@@ -19,8 +19,24 @@ const contactForm = document.querySelector('.form-container');
 // ==========================================
 
 // Agrega clase 'is-loaded' al body cuando el DOM esté listo
-window.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('is-loaded');
+window.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("is-loaded");
+
+  // ==========================================
+  // EFECTO DE SCROLL EN LA BARRA DE NAVEGACIÓN
+  // ==========================================
+
+  // Agrega/quita clase 'scrolled' al navbar según el scroll
+  const header = document.querySelector(".navbar");
+  if (header) {
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+      } else {
+        header.classList.remove("scrolled");
+      }
+    });
+  }
 });
 
 // ==========================================
@@ -29,6 +45,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // --- Lógica de la página de donaciones ---
 (function () {
+  if (!document.querySelector(".donacion")) return;
+
   const BASE_URL = "https://donorbox.org/c-a-p-i";
   const isEnglish = window.location.pathname.startsWith("/en/");
   const errorMsg = isEnglish
@@ -39,22 +57,30 @@ window.addEventListener('DOMContentLoaded', () => {
   // Selección de montos predefinidos
   document.querySelectorAll(".btn-monto:not(#btn-custom)").forEach((btn) => {
     btn.addEventListener("click", function () {
-      document.querySelectorAll(".btn-monto").forEach((b) => b.classList.remove("is-active"));
+      document
+        .querySelectorAll(".btn-monto")
+        .forEach((b) => b.classList.remove("is-active"));
       this.classList.add("is-active");
       montoSeleccionado = this.dataset.monto;
 
       // Ocultar input personalizado si estaba abierto
-      document.getElementById("custom-amount-wrapper").classList.remove("is-visible");
+      document
+        .getElementById("custom-amount-wrapper")
+        .classList.remove("is-visible");
       document.getElementById("custom-amount").value = "";
     });
   });
 
   // Botón "Otro monto"
   document.getElementById("btn-custom").addEventListener("click", function () {
-    document.querySelectorAll(".btn-monto").forEach((b) => b.classList.remove("is-active"));
+    document
+      .querySelectorAll(".btn-monto")
+      .forEach((b) => b.classList.remove("is-active"));
     this.classList.add("is-active");
     montoSeleccionado = null;
-    document.getElementById("custom-amount-wrapper").classList.toggle("is-visible");
+    document
+      .getElementById("custom-amount-wrapper")
+      .classList.toggle("is-visible");
   });
 
   // Botón principal — redirige a Donorbox con el monto
@@ -195,20 +221,6 @@ function closeLightbox() {
     lightbox.classList.remove('is-active');
     document.body.style.overflow = 'auto';
 }
-
-// ==========================================
-// EFECTO DE SCROLL EN LA BARRA DE NAVEGACIÓN
-// ==========================================
-
-// Agrega/quita clase 'scrolled' al navbar según el scroll
-window.addEventListener('scroll', function () {
-    const header = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-});
 
 // ==========================================
 // MENÚ MÓVIL
