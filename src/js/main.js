@@ -27,7 +27,52 @@ window.addEventListener('DOMContentLoaded', () => {
 // LÓGICA DE DONACIONES
 // ==========================================
 
+// --- Lógica de la página de donaciones ---
+(function () {
+  const BASE_URL = "https://donorbox.org/c-a-p-i";
+  const isEnglish = window.location.pathname.startsWith("/en/");
+  const errorMsg = isEnglish
+    ? "Please select or enter an amount to continue."
+    : "Por favor seleccioná o ingresá un monto para continuar.";
+  let montoSeleccionado = null;
+
+  // Selección de montos predefinidos
+  document.querySelectorAll(".btn-monto:not(#btn-custom)").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".btn-monto").forEach((b) => b.classList.remove("is-active"));
+      this.classList.add("is-active");
+      montoSeleccionado = this.dataset.monto;
+
+      // Ocultar input personalizado si estaba abierto
+      document.getElementById("custom-amount-wrapper").classList.remove("is-visible");
+      document.getElementById("custom-amount").value = "";
+    });
+  });
+
+  // Botón "Otro monto"
+  document.getElementById("btn-custom").addEventListener("click", function () {
+    document.querySelectorAll(".btn-monto").forEach((b) => b.classList.remove("is-active"));
+    this.classList.add("is-active");
+    montoSeleccionado = null;
+    document.getElementById("custom-amount-wrapper").classList.toggle("is-visible");
+  });
+
+  // Botón principal — redirige a Donorbox con el monto
+  document.getElementById("btn-donar").addEventListener("click", function () {
+    const customInput = document.getElementById("custom-amount").value;
+    const monto = montoSeleccionado || customInput;
+
+    if (!monto || isNaN(monto) || Number(monto) <= 0) {
+      alert(errorMsg);
+      return;
+    }
+
+    window.open(`${BASE_URL}?amount=${monto}`, "_blank");
+  });
+})();
+
 // Maneja los clics en los botones de monto de donación
+/*
 botonesMonto.forEach(boton => {
     boton.addEventListener('click', () => {
         // Remueve la clase activa de todos los botones
@@ -45,7 +90,7 @@ botonesMonto.forEach(boton => {
         }
     });
 });
-
+*/
 // ==========================================
 // GALERÍA CON LIGHTBOX (GENÉRICO)
 // ==========================================

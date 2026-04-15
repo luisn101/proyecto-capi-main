@@ -67,10 +67,10 @@ translationKey: "donate"
     <div class="donacion__form-card">
       <h3>Selecciona un monto</h3>
       <div class="donacion__grid-montos">
-        <button class="btn-monto">$10</button>
-        <button class="btn-monto">$25</button>
-        <button class="btn-monto">$50</button>
-        <button class="btn-monto">$100</button>
+        <button class="btn-monto" data-monto="10">$10</button>
+        <button class="btn-monto" data-monto="25">$25</button>
+        <button class="btn-monto" data-monto="50">$50</button>
+        <button class="btn-monto" data-monto="100">$100</button>
         <button class="btn-monto btn-monto--custom" id="btn-custom">
           Otro monto
         </button>
@@ -89,7 +89,7 @@ translationKey: "donate"
         </div>
       </div>
 
-      <button class="btn btn--primary btn--full">
+      <button class="btn btn--primary btn--full" id="btn-donar">
         Continuar con la donación
       </button>
       <p class="donacion__secure">
