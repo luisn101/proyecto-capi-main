@@ -53,6 +53,7 @@ window.addEventListener("DOMContentLoaded", () => {
     ? "Please select or enter an amount to continue."
     : "Por favor seleccioná o ingresá un monto para continuar.";
   let montoSeleccionado = null;
+  const langParam = isEnglish ? "&language=en" : "&language=es";
 
   // Selección de montos predefinidos
   document.querySelectorAll(".btn-monto:not(#btn-custom)").forEach((btn) => {
@@ -93,7 +94,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    window.open(`${BASE_URL}?amount=${monto}`, "_blank");
+    window.open(`${BASE_URL}?amount=${monto}${langParam}`, "_blank");
   });
 })();
 

@@ -23,6 +23,7 @@
         border-radius: 8px;
         box-shadow: 0 0 30px rgba(0,0,0,0.5);
         animation: zoomIn 0.3s ease;
+        transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
     &__close {
@@ -70,6 +71,7 @@
         justify-content: center;
         cursor: pointer;
         z-index: 3100;
+        transition: background 0.3s ease;
     }
 
     .lightbox-nav.prev { left: 22px; }

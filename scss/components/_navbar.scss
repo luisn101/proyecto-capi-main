@@ -261,6 +261,10 @@
 main {
     transition: margin-top 0.4s ease;
 }
+
+.navbar.scrolled + main {
+  margin-top: -20px; /* Compensa cuando el navbar se encoge */
+}
 /*
 .navbar.scrolled + main {
     margin-top: -55px;
