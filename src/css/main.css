@@ -24,7 +24,7 @@ html {
 body {
   background-color: #ffffff;
   overflow-x: hidden;
-  padding-top: 120px;
+  padding-top: 0;
 }
 
 img {
@@ -435,7 +435,7 @@ body:has(.error-page-fullscreen) {
 }
 
 .navbar {
-  padding: 20px 0;
+  padding: 10px 0;
   position: fixed;
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -452,18 +452,18 @@ body:has(.error-page-fullscreen) {
   align-items: center;
   max-width: 1200px;
   width: 100%;
-  padding: 20px;
+  padding: 15px;
   height: 100%;
   transition: all 0.4s ease;
   margin: 0 auto;
 }
 @media (max-width: 991px) {
   .navbar__wrapper {
-    padding: 30px;
+    padding: 20px;
   }
 }
 .navbar .logo img {
-  height: 50px;
+  height: 70px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -471,7 +471,7 @@ body:has(.error-page-fullscreen) {
 }
 @media (min-width: 768px) {
   .navbar .logo img {
-    height: 80px;
+    height: 90px;
   }
 }
 .navbar.scrolled {
@@ -482,11 +482,11 @@ body:has(.error-page-fullscreen) {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .navbar.scrolled .logo img {
-  height: 60px;
+  height: 55px;
 }
 @media (min-width: 768px) {
   .navbar.scrolled .logo img {
-    height: 65px;
+    height: 60px;
   }
 }
 .navbar.scrolled .navbar__wrapper {
@@ -544,6 +544,7 @@ body:has(.error-page-fullscreen) {
   gap: 20px;
   align-items: center;
   margin-left: auto;
+  margin-right: 120px;
   font-size: 1rem;
 }
 @media (max-width: 991px) {
@@ -563,7 +564,7 @@ body:has(.error-page-fullscreen) {
     visibility: hidden;
     transition: all 0.4s ease-in-out;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    z-index: 999;
+    z-index: 1000;
   }
 }
 .navbar__links a {
@@ -621,7 +622,7 @@ body:has(.error-page-fullscreen) {
 }
 .navbar__lang {
   position: fixed;
-  top: 6px;
+  top: 10px;
   right: 20px;
   display: flex;
   align-items: center;
@@ -633,8 +634,8 @@ body:has(.error-page-fullscreen) {
   .navbar__lang {
     right: auto;
     left: 50%;
-    transform: translate(-50%);
     top: 10px;
+    transform: translateX(-50%);
   }
 }
 .navbar__lang .lang-link {
@@ -661,9 +662,20 @@ body:has(.error-page-fullscreen) {
 }
 
 main {
+  padding-top: 110px;
   transition: margin-top 0.4s ease;
 }
 
+@media (max-width: 767px) {
+  main {
+    padding-top: 90px;
+  }
+}
+@media (min-width: 768px) {
+  main {
+    padding-top: 110px;
+  }
+}
 .navbar.scrolled + main {
   margin-top: -20px; /* Compensa cuando el navbar se encoge */
 }

@@ -1,7 +1,7 @@
 @use '../abstract/variables' as v;
 
 .navbar {
-    padding: 20px 0;
+    padding: 10px 0;
     position: fixed;
     background-color: v.$color-blanco;
     box-shadow: v.$sombra-suave;
@@ -18,26 +18,26 @@
         align-items: center;
         max-width: 1200px;
         width: 100%;
-        padding: 20px;
+        padding: 15px;
         height: 100%;
         transition: all 0.4s ease;
         margin: 0 auto;
 
         @media (max-width: 991px) {
-            padding: 30px; // Un poco más de aire en tablets/móviles
+            padding: 20px; // Un poco más de aire en tablets/móviles
         }
 
     }
 
     .logo img {
-        height: 50px;
+        height: 70px;
         width: auto;
         object-fit: contain;
         display: block;
         transition: all 0.4s ease;
 
         @media (min-width: 768px) {
-            height: 80px;
+            height: 90px;
         }
     }
 
@@ -51,10 +51,10 @@
         box-shadow: v.$sombra-suave; // Sombra para separarlo del contenido
 
         .logo img {
-            height: 60px; // El logo se reduce significativamente
+            height: 55px; // El logo se reduce significativamente
 
             @media (min-width: 768px) {
-                height: 65px;
+                height: 60px;
             }
         }
 
@@ -130,6 +130,7 @@
         gap: 20px;
         align-items: center;
         margin-left: auto;
+        margin-right: 120px;
         font-size: v.$font-size-base;
 
         // Estilos tablet/móvil
@@ -151,7 +152,7 @@
             transition: all 0.4s ease-in-out; // La transición sutil
 
             box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-            z-index: 999;
+            z-index: 1000;
         }
 
         a {
@@ -211,20 +212,20 @@
     }
 
     &__lang {
-        position: fixed; 
-        top: 6px;          // Lo pegamos un poco al borde superior
+        position: fixed;
+        top: 10px;
         right: 20px;
         display: flex;
         align-items: center;
         gap: 5px;
-        font-size: 0.85rem; // Un poco más pequeño para que sea discreto
+        font-size: 0.85rem;
         z-index: 1010;
-    
+
         @media (max-width: 991px) {
             right: auto;
             left: 50%;
-            transform: translate(-50%);
             top: 10px;
+            transform: translateX(-50%);
         }
 
         .lang-link {
@@ -259,7 +260,20 @@
 }
 
 main {
+    padding-top: 110px;
     transition: margin-top 0.4s ease;
+}
+
+@media (max-width: 767px) {
+    main {
+        padding-top: 90px;
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        padding-top: 110px;
+    }
 }
 
 .navbar.scrolled + main {
