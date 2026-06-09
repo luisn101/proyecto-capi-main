@@ -349,6 +349,7 @@ body.is-loaded {
 .error-page-fullscreen .error-grid h2 {
   font-size: 1.8rem;
   margin-bottom: 10px;
+  color: var(--color-blanco, #ffffff);
   text-shadow: 2px 2px 4px rgba(8, 8, 8, 0.5);
 }
 @media (max-width: 480px) {
@@ -395,11 +396,11 @@ body:has(.error-page-fullscreen) {
 }
 .btn-donar:hover {
   color: #ffffff !important;
-  background-color: #3399ff;
+  background-color: #c19d53;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .btn-donar.is-active {
-  background-color: #3399ff;
+  background-color: #c19d53;
   box-shadow: 0 4px 8px #c19d53;
 }
 
@@ -462,7 +463,7 @@ body:has(.error-page-fullscreen) {
   }
 }
 .navbar .logo img {
-  height: 80px;
+  height: 50px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -470,7 +471,7 @@ body:has(.error-page-fullscreen) {
 }
 @media (min-width: 768px) {
   .navbar .logo img {
-    height: 100px;
+    height: 80px;
   }
 }
 .navbar.scrolled {

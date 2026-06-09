@@ -20,12 +20,12 @@
 
     &:hover {
         color: v.$color-blanco !important;
-        background-color: v.$color-acento;
+        background-color: v.$color-dorado-capi;
         box-shadow: v.$sombra-media;
     }
 
     &.is-active {
-        background-color: v.$color-acento;
+        background-color: v.$color-dorado-capi;
         box-shadow: 0 4px 8px v.$color-dorado-capi;
     }
 }

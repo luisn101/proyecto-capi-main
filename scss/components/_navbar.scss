@@ -30,14 +30,14 @@
     }
 
     .logo img {
-        height: 80px;
+        height: 50px;
         width: auto;
         object-fit: contain;
         display: block;
         transition: all 0.4s ease;
 
         @media (min-width: 768px) {
-            height: 100px;
+            height: 80px;
         }
     }
 
