@@ -1,6 +1,10 @@
 @use '../abstract/variables' as v;
 
 .btn-donar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     background-color: v.$color-primario;
     color: v.$color-blanco !important;
     padding: 10px 25px !important;
@@ -13,6 +17,10 @@
     cursor: pointer;
     transition: all v.$transition-normal;
 
+    i {
+        transition: transform v.$transition-normal;
+    }
+
     @media (min-width: v.$bp-tablet) {
         margin-left: v.$spacing-sm;
         width: 85%;
@@ -22,6 +30,10 @@
         color: v.$color-blanco !important;
         background-color: v.$color-dorado-capi;
         box-shadow: v.$sombra-media;
+
+        i {
+            transform: scale(1.2);
+        }
     }
 
     &.is-active {

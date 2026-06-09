@@ -112,14 +112,15 @@
               </a>
             </li>
             <li>
-              <a href="{{ navigation[lang].donar_url }}">
-                <button
-                  class="btn-donar {% if page.url == navigation[lang].donar_url %}is-active{% endif %}"
-                >
-                  {{ navigation[lang].donar_label }}
-                </button>
+              <a 
+                href="{{ navigation[lang].donar_url }}" 
+                class="btn-donar {% if page.url == navigation[lang].donar_url %}is-active{% endif %}"
+              >
+                <i class="fas fa-heart"></i>
+                {{ navigation[lang].donar_label }}
+    
               </a>
-            </li>
+          </li>
           </ul>
 
           <div class="navbar__lang">
