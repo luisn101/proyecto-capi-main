@@ -26,10 +26,13 @@
         width: 85%;
     }
 
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
         color: v.$color-blanco !important;
         background-color: v.$color-dorado-capi;
         box-shadow: v.$sombra-media;
+        outline: none;
 
         i {
             transform: scale(1.2);
@@ -37,7 +40,7 @@
     }
 
     &.is-active {
-        background-color: v.$color-dorado-capi;
+        background-color: v.$color-dorado-capi !important;
         box-shadow: 0 4px 8px v.$color-dorado-capi;
     }
 }

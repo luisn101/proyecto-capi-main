@@ -406,16 +406,17 @@ body:has(.error-page-fullscreen) main {
     width: 85%;
   }
 }
-.btn-donar:hover {
+.btn-donar:hover, .btn-donar:active, .btn-donar:focus {
   color: #ffffff !important;
   background-color: #c19d53;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  outline: none;
 }
-.btn-donar:hover i {
+.btn-donar:hover i, .btn-donar:active i, .btn-donar:focus i {
   transform: scale(1.2);
 }
 .btn-donar.is-active {
-  background-color: #c19d53;
+  background-color: #c19d53 !important;
   box-shadow: 0 4px 8px #c19d53;
 }
 
