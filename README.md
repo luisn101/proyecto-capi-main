@@ -1,4 +1,4 @@
-# C.A.P.I. Website - Guía de Trabajo
+# CAPI Website - Guía de Trabajo
 
 ### Estructura
 - `/src`: Aquí es donde editamos todo. **Nunca edites la carpeta /public**.
