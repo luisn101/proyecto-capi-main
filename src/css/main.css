@@ -375,6 +375,11 @@ body:has(.error-page-fullscreen) {
   overflow: hidden;
 }
 
+body:has(.error-page-fullscreen) main {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
 .btn-donar {
   background-color: #001e54;
   color: #ffffff !important;
@@ -3030,4 +3035,6 @@ main {
   .timeline-dot {
     display: none;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */

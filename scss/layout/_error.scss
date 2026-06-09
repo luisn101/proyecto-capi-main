@@ -105,3 +105,8 @@ body:has(.error-page-fullscreen) {
     padding-top: 0 !important;
     overflow: hidden; // Evita scroll innecesario en la 404
 }
+
+body:has(.error-page-fullscreen) main {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
