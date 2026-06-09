@@ -407,7 +407,7 @@ body:has(.error-page-fullscreen) main {
   }
 }
 .btn-donar:hover, .btn-donar:active, .btn-donar:focus {
-  color: #ffffff !important;
+  color: #001e54 !important;
   background-color: #c19d53;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   outline: none;
@@ -416,6 +416,7 @@ body:has(.error-page-fullscreen) main {
   transform: scale(1.2);
 }
 .btn-donar.is-active {
+  color: #001e54 !important;
   background-color: #c19d53 !important;
   box-shadow: 0 4px 8px #c19d53;
 }

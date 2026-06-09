@@ -67,3 +67,12 @@ $sombra-fuerte: 0 8px 16px rgba(0, 0, 0, 0.2);
 $transition-fast: 0.2s ease;
 $transition-normal: 0.3s ease;
 $transition-slow: 0.5s ease;
+
+// Z-Index Scale
+$z-index-dropdown: 100;
+$z-index-sticky: 200; // Navbar
+$z-index-fixed: 300;  // Botones flotantes, idiomas
+$z-index-modal-backdrop: 400;
+$z-index-modal: 500;  // Lightbox, Modales
+$z-index-popover: 600;
+$z-index-tooltip: 700;
