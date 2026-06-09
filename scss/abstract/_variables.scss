@@ -1,12 +1,26 @@
 // Colores CAPI
-$color-primario: #008894; // Turquesa oscuro (del pavo real)
-$color-secundario: #27ae60; // Verde pedagógico
-$color-acento: #f39c12; // Ocre/Dorado
-$color-texto: #333333;
-$color-blanco: #ffffff;
-$color-dorado-capi: #f3b131; // Dorado para detalles y acentos
-$color-fondo-claro: #f9f9f9;
 
+$color-primario: #001e54; // Turquesa oscuro (del pavo real)
+$color-secundario: #00919e; // Verde pedagógico
+$color-acento: #3399ff; // Ocre/Dorado
+$color-texto: #1a2536;
+$color-blanco: #ffffff;
+$color-dorado-capi: #c19d53; // Dorado para detalles y acentos
+$color-fondo-claro: #f4f6f9;
+
+// --- NUEVA PALETA C.A.P.I. (Basada en la identidad 2026) ---
+/*
+$color-primario:      #001e54; // Azul Marino Profundo (El del texto "CAPI" - Perfecto para Navbar, Títulos y Botones principales)
+$color-secundario:    #00919e; // Turquesa Orgánico (La gota superior y curvas - Para enlaces activos, Hover y detalles pedagógicos)
+$color-celeste-capi:  #3399ff; // Celeste Vivo (Los pétalos intermedios - Excelente para tags de categorías de eventos)
+$color-azul-pétalo:   #0055d4; // Azul Eléctrico (Los pétalos centrales - Para acentos secundarios)
+$color-dorado-capi:   #c19d53; // Dorado Elegante (El hilo sutil del logo - Para líneas decorativas, bordes de tarjetas y acentos artísticos)
+
+// --- COLORES DE SOPORTE ---
+$color-texto:         #1a2536; // Un gris casi negro azulado (Mucho más orgánico que el #333)
+$color-blanco:        #ffffff;
+$color-fondo-claro:   #f4f6f9; // Gris claro limpio con un toque frío para que contrasten las tarjetas blancas
+*/
 // Tipografías
 $font-titles: 'Montserrat', sans-serif;
 $font-body: 'Open Sans', sans-serif;

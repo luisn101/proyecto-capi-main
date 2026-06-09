@@ -1,4 +1,16 @@
 @charset "UTF-8";
+/*
+$color-primario:      #001e54; // Azul Marino Profundo (El del texto "CAPI" - Perfecto para Navbar, Títulos y Botones principales)
+$color-secundario:    #00919e; // Turquesa Orgánico (La gota superior y curvas - Para enlaces activos, Hover y detalles pedagógicos)
+$color-celeste-capi:  #3399ff; // Celeste Vivo (Los pétalos intermedios - Excelente para tags de categorías de eventos)
+$color-azul-pétalo:   #0055d4; // Azul Eléctrico (Los pétalos centrales - Para acentos secundarios)
+$color-dorado-capi:   #c19d53; // Dorado Elegante (El hilo sutil del logo - Para líneas decorativas, bordes de tarjetas y acentos artísticos)
+
+// --- COLORES DE SOPORTE ---
+$color-texto:         #1a2536; // Un gris casi negro azulado (Mucho más orgánico que el #333)
+$color-blanco:        #ffffff;
+$color-fondo-claro:   #f4f6f9; // Gris claro limpio con un toque frío para que contrasten las tarjetas blancas
+*/
 * {
   margin: 0;
   padding: 0;
@@ -38,7 +50,7 @@ button {
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
-  color: #333333;
+  color: #1a2536;
   line-height: 1.6;
 }
 
@@ -49,7 +61,7 @@ h3 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1.5rem;
-  color: #008894;
+  color: #001e54;
 }
 @media (max-width: 480px) {
   h1,
@@ -85,7 +97,7 @@ body.is-loaded {
 }
 .section-title {
   font-family: "Montserrat", sans-serif;
-  color: #008894;
+  color: #001e54;
   font-size: 2.4rem;
   margin-bottom: 10px;
 }
@@ -94,7 +106,7 @@ body.is-loaded {
 }
 
 .section-intro {
-  color: #333333;
+  color: #1a2536;
   mix-blend-mode: normal;
   opacity: 0.8;
 }
@@ -126,7 +138,7 @@ body.is-loaded {
 }
 
 .footer {
-  background: linear-gradient(to bottom, #008894, rgb(0, 112.5675675676, 122.5));
+  background: linear-gradient(to bottom, #001e54, rgb(0, 20.8928571429, 58.5));
   color: #ffffff;
   padding: 80px 0 0;
 }
@@ -171,7 +183,7 @@ body.is-loaded {
 .footer__title {
   font-family: "Montserrat", sans-serif;
   margin-bottom: 25px;
-  color: #f3b131;
+  color: #c19d53;
   font-size: 1.2rem;
   text-transform: uppercase;
   position: relative;
@@ -184,7 +196,7 @@ body.is-loaded {
   bottom: -8px;
   width: 40px;
   height: 2px;
-  background-color: #f3b131;
+  background-color: #c19d53;
 }
 @media (max-width: 991px) {
   .footer__title::after {
@@ -214,7 +226,7 @@ body.is-loaded {
   transition: all 0.3s ease;
 }
 .footer__links li a:hover, .footer__contact li a:hover {
-  color: #f3b131;
+  color: #c19d53;
   padding-left: 5px;
 }
 .footer__links li i, .footer__contact li i {
@@ -247,14 +259,14 @@ body.is-loaded {
   transition: 0.3s;
 }
 .footer__social a:hover {
-  background: #f3b131;
-  border-color: #f3b131;
+  background: #c19d53;
+  border-color: #c19d53;
   color: #ffffff;
-  box-shadow: 0 0 15px rgba(243, 177, 49, 0.4);
+  box-shadow: 0 0 15px rgba(193, 157, 83, 0.4);
   transform: translateY(-3px);
 }
 .footer__bottom {
-  background-color: rgb(0, 98.5081081081, 107.2);
+  background-color: rgb(0, 15.4285714286, 43.2);
   padding: 20px 0;
   margin: 0;
   text-align: center;
@@ -363,7 +375,7 @@ body:has(.error-page-fullscreen) {
 }
 
 .btn-donar {
-  background-color: #008894;
+  background-color: #001e54;
   color: #ffffff !important;
   padding: 10px 25px !important;
   font-family: "Montserrat", sans-serif;
@@ -383,12 +395,12 @@ body:has(.error-page-fullscreen) {
 }
 .btn-donar:hover {
   color: #ffffff !important;
-  background-color: #f39c12;
+  background-color: #3399ff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .btn-donar.is-active {
-  background-color: #f39c12;
-  box-shadow: 0 4px 8px #f3b131;
+  background-color: #3399ff;
+  box-shadow: 0 4px 8px #c19d53;
 }
 
 .btn {
@@ -402,9 +414,9 @@ body:has(.error-page-fullscreen) {
   cursor: pointer;
 }
 .btn--primary {
-  background-color: #27ae60;
+  background-color: #00919e;
   color: #ffffff;
-  border: 2px solid #27ae60;
+  border: 2px solid #00919e;
   font-size: 1rem;
 }
 .btn--primary:hover {
@@ -418,7 +430,7 @@ body:has(.error-page-fullscreen) {
 }
 .btn--outline:hover {
   background-color: #ffffff;
-  color: #008894;
+  color: #001e54;
 }
 
 .navbar {
@@ -484,10 +496,10 @@ body:has(.error-page-fullscreen) {
 }
 @media (max-width: 991px) {
   .navbar .navbar__links a.is-active {
-    background-color: rgba(0, 136, 148, 0.1);
+    background-color: rgba(0, 30, 84, 0.1);
     padding: 5px 15px;
     border-radius: 5px;
-    color: #008894;
+    color: #001e54;
   }
   .navbar .navbar__links a.is-active::after {
     display: none;
@@ -497,7 +509,7 @@ body:has(.error-page-fullscreen) {
   display: none;
   cursor: pointer;
   font-size: 1.8rem;
-  color: #008894;
+  color: #001e54;
   position: relative;
   width: 30px;
   height: 30px;
@@ -555,7 +567,7 @@ body:has(.error-page-fullscreen) {
 }
 .navbar__links a {
   text-decoration: none;
-  color: #008894;
+  color: #001e54;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   transition: color 0.3s;
@@ -563,10 +575,10 @@ body:has(.error-page-fullscreen) {
   padding: 5px 0;
 }
 .navbar__links a:hover {
-  color: #27ae60;
+  color: #00919e;
 }
 .navbar__links a:not(.btn-donar).is-active {
-  color: #008894;
+  color: #001e54;
 }
 .navbar__links a:not(.btn-donar).is-active::after {
   content: "";
@@ -575,7 +587,7 @@ body:has(.error-page-fullscreen) {
   left: 10%;
   width: 80%;
   height: 1.8px;
-  background-color: #f3b131;
+  background-color: #c19d53;
   border-radius: 2px;
 }
 @media (max-width: 991px) {
@@ -626,21 +638,21 @@ body:has(.error-page-fullscreen) {
 }
 .navbar__lang .lang-link {
   text-decoration: none;
-  color: #333333;
+  color: #1a2536;
   backdrop-filter: blur;
   font-size: 0.8rem;
   opacity: 0.6;
   transition: all 0.3s;
 }
 .navbar__lang .lang-link.is-active {
-  color: #f3b131;
+  color: #c19d53;
   opacity: 1;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
 .navbar__lang .lang-link:hover {
   opacity: 1;
-  color: #f3b131;
+  color: #c19d53;
 }
 .navbar__check:checked ~ .navbar__burger i {
   transform: rotate(90deg);
@@ -681,7 +693,7 @@ main {
   min-width: 300px;
 }
 .contacto__title {
-  color: #008894;
+  color: #001e54;
   font-family: "Montserrat", sans-serif;
   font-size: 2rem;
   margin-bottom: 20px;
@@ -695,7 +707,7 @@ main {
 }
 .contacto__text {
   font-family: "Open Sans", sans-serif;
-  color: #333333;
+  color: #1a2536;
   margin-bottom: 25px;
   text-align: center;
 }
@@ -709,7 +721,7 @@ main {
   align-items: center;
   gap: 15px;
   margin-bottom: 15px;
-  color: #27ae60;
+  color: #00919e;
   font-weight: 600;
   justify-content: center;
   font-size: 1rem;
@@ -739,11 +751,11 @@ main {
 .form {
   flex: 1;
   min-width: 300px;
-  background-color: #f9f9f9;
+  background-color: #f4f6f9;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(243, 177, 49, 0.4);
+  border: 1px solid rgba(193, 157, 83, 0.4);
 }
 @media (min-width: 768px) {
   .form {
@@ -756,15 +768,15 @@ main {
 .form__input {
   width: 100%;
   padding: 12px 15px;
-  border: 1px solid rgba(0, 136, 148, 0.2);
+  border: 1px solid rgba(0, 30, 84, 0.2);
   border-radius: 5px;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
 }
 .form__input:focus {
   outline: none;
-  border-color: #008894;
-  box-shadow: 0 0 5px rgba(0, 136, 148, 0.3);
+  border-color: #001e54;
+  box-shadow: 0 0 5px rgba(0, 30, 84, 0.3);
 }
 .form__input--textarea {
   height: 120px;
@@ -777,7 +789,7 @@ main {
   font-size: 1rem;
 }
 .form__button:hover {
-  color: #27ae60;
+  color: #00919e;
 }
 .form__button:active {
   transform: scale(0.98);
@@ -806,7 +818,7 @@ main {
   width: 90%;
   max-width: 600px;
   position: relative;
-  border-top: 5px solid #f3b131;
+  border-top: 5px solid #c19d53;
   animation: modalFade 0.4s ease;
 }
 @media (max-width: 480px) {
@@ -822,13 +834,13 @@ main {
   top: 15px;
   font-size: 28px;
   cursor: pointer;
-  color: #008894;
+  color: #001e54;
 }
 .modal__header {
   margin-bottom: 25px;
 }
 .modal__header h3 {
-  color: #008894;
+  color: #001e54;
   margin-bottom: 5px;
   font-size: 1.5rem;
   font-weight: 700;
@@ -839,20 +851,20 @@ main {
   }
 }
 .modal__header .tag {
-  color: #f3b131;
+  color: #c19d53;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 0.9rem;
 }
 .modal__body h4 {
-  color: #008894;
+  color: #001e54;
   margin-top: 20px;
   border-bottom: 1px solid #eee;
   padding-bottom: 5px;
 }
 .modal__body p, .modal__body li {
   font-size: 1rem;
-  color: #333333;
+  color: #1a2536;
   line-height: 1.6;
 }
 .modal__body ul {
@@ -907,7 +919,7 @@ main {
   transition: color 0.3s;
 }
 .lightbox__close:hover {
-  color: #f3b131;
+  color: #c19d53;
 }
 .lightbox__caption {
   margin-top: 5px;
@@ -1087,8 +1099,8 @@ main {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #f39c12;
-  background: linear-gradient(135deg, #ffffff 20%, #f3b131 50%, #27ae60 90%);
+  color: #3399ff;
+  background: linear-gradient(135deg, #ffffff 20%, #c19d53 50%, #00919e 90%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1168,36 +1180,36 @@ main {
   justify-content: center;
   margin: 0 auto 20px;
   font-size: 2.5rem;
-  color: #f39c12;
+  color: #3399ff;
   transition: all 0.3s ease;
 }
 .pilar-item__icon:hover {
-  background-color: #f39c12;
+  background-color: #3399ff;
   color: #ffffff;
 }
 .pilar-item__title {
   font-family: "Montserrat", sans-serif;
-  color: #f39c12;
+  color: #3399ff;
   font-size: 1.5rem;
   margin-bottom: 10px;
 }
 .pilar-item__text {
   font-family: "Open Sans", sans-serif;
-  color: #333333;
+  color: #1a2536;
   font-size: 1rem;
   line-height: 1.5;
 }
 
 .programas {
   padding: 80px 0;
-  background-color: #f9f9f9;
+  background-color: #f4f6f9;
 }
 .programas__header {
   text-align: center;
   margin-bottom: 50px;
 }
 .programas__title {
-  color: #008894;
+  color: #001e54;
   font-size: 2rem;
   margin-bottom: 10px;
 }
@@ -1207,7 +1219,7 @@ main {
   }
 }
 .programas__subtitle {
-  color: #333333;
+  color: #1a2536;
   font-family: "Open Sans", sans-serif;
   opacity: 0.8;
 }
@@ -1263,19 +1275,19 @@ main {
 .card__title {
   font-family: "Montserrat", sans-serif;
   font-size: 1.3rem;
-  color: #008894;
+  color: #001e54;
   margin-bottom: 15px;
 }
 .card__text {
   font-family: "Open Sans", sans-serif;
   font-size: 0.95rem;
-  color: #333333;
+  color: #1a2536;
   margin-bottom: 20px;
   line-height: 1.6;
 }
 .card__link {
   font-family: "Montserrat", sans-serif;
-  color: #27ae60;
+  color: #00919e;
   font-weight: 700;
   font-size: 0.9rem;
   display: flex;
@@ -1284,7 +1296,7 @@ main {
   text-transform: uppercase;
 }
 .card__link:hover {
-  color: #008894;
+  color: #001e54;
 }
 @media (max-width: 767px) {
   .card__link {
@@ -1295,14 +1307,14 @@ main {
 .contacto-hero {
   padding: 7rem 0;
   text-align: center;
-  background: linear-gradient(rgba(0, 136, 148, 0.85), rgba(0, 136, 148, 0.7)), url("https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=2070&auto=format&fit=crop");
+  background: linear-gradient(rgba(0, 30, 84, 0.85), rgba(0, 30, 84, 0.7)), url("https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=2070&auto=format&fit=crop");
   background-size: cover;
   background-position: center;
 }
 .contacto-hero__title {
   font-family: "Montserrat", sans-serif;
   font-size: 2.7rem;
-  background: linear-gradient(135deg, #ffffff 20%, #f3b131 50%, #27ae60 90%);
+  background: linear-gradient(135deg, #ffffff 20%, #c19d53 50%, #00919e 90%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1323,7 +1335,7 @@ main {
 
 .contacto-seccion {
   padding: 3rem 0;
-  background-color: #f9f9f9;
+  background-color: #f4f6f9;
 }
 .contacto-seccion__wrapper {
   display: grid;
@@ -1362,7 +1374,7 @@ main {
 }
 .contacto-datos__intro {
   margin-bottom: 30px;
-  color: #333333;
+  color: #1a2536;
 }
 .contacto-datos__items .dato-item {
   display: flex;
@@ -1371,17 +1383,17 @@ main {
 }
 .contacto-datos__items .dato-item i {
   font-size: 1.5rem;
-  color: #27ae60;
+  color: #00919e;
   margin-top: 5px;
 }
 .contacto-datos__items .dato-item h3 {
   font-family: "Montserrat", sans-serif;
-  color: #008894;
+  color: #001e54;
   font-size: 1.1rem;
   margin-bottom: 5px;
 }
 .contacto-datos__items .dato-item p {
-  color: #333333;
+  color: #1a2536;
   font-size: 0.95rem;
 }
 .contacto-datos__mapa {
@@ -1390,7 +1402,7 @@ main {
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   line-height: 0;
-  border: 1px solid rgba(0, 136, 148, 0.1);
+  border: 1px solid rgba(0, 30, 84, 0.1);
 }
 .contacto-datos__mapa iframe {
   width: 100% !important;
@@ -1416,7 +1428,7 @@ main {
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(243, 177, 49, 0.4);
+  border: 1px solid rgba(193, 157, 83, 0.4);
 }
 @media (max-width: 991px) {
   .contacto-form {
@@ -1440,7 +1452,7 @@ main {
 .contacto-form .form-group label {
   display: block;
   font-family: "Montserrat", sans-serif;
-  color: #008894;
+  color: #001e54;
   margin-bottom: 8px;
   font-weight: 600;
 }
@@ -1448,7 +1460,7 @@ main {
 .contacto-form .form-group textarea {
   width: 100%;
   padding: 12px 15px;
-  border: 2px solid #f9f9f9;
+  border: 2px solid #f4f6f9;
   border-radius: 8px;
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
@@ -1457,7 +1469,7 @@ main {
 .contacto-form .form-group input:focus,
 .contacto-form .form-group textarea:focus {
   outline: none;
-  border-color: #27ae60;
+  border-color: #00919e;
 }
 
 .btn {
@@ -1503,10 +1515,10 @@ main {
 
 .donar-hero {
   padding: 100px 0;
-  background-color: #008894;
+  background-color: #001e54;
   color: #ffffff;
   text-align: center;
-  background: linear-gradient(rgba(0, 136, 148, 0.8), rgba(0, 136, 148, 0.8)), url("https://images.unsplash.com/photo-1453749024858-4bca89bd9edc?q=80&w=2020&auto=format&fit=crop");
+  background: linear-gradient(rgba(0, 30, 84, 0.8), rgba(0, 30, 84, 0.8)), url("https://images.unsplash.com/photo-1453749024858-4bca89bd9edc?q=80&w=2020&auto=format&fit=crop");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1515,7 +1527,7 @@ main {
   font-family: "Montserrat", sans-serif;
   font-size: 2.8rem;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff 20%, #f3b131 50%, #27ae60 90%);
+  background: linear-gradient(135deg, #ffffff 20%, #c19d53 50%, #00919e 90%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1537,7 +1549,7 @@ main {
 
 .donacion {
   padding: 80px 0;
-  background-color: #f9f9f9;
+  background-color: #f4f6f9;
 }
 .donacion__wrapper {
   display: flex;
@@ -1556,7 +1568,7 @@ main {
   min-width: 300px;
 }
 .donacion__info h2 {
-  color: #008894;
+  color: #001e54;
   font-family: "Montserrat", sans-serif;
   margin-bottom: 2rem;
 }
@@ -1581,20 +1593,20 @@ main {
 }
 .donacion__impacto .impacto-item:hover {
   transform: translateX(10px);
-  border-color: rgba(39, 174, 96, 0.3);
+  border-color: rgba(0, 145, 158, 0.3);
   background-color: #fff;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 .donacion__impacto .impacto-item i {
   font-size: 1.8rem;
-  color: #27ae60;
+  color: #00919e;
   flex-shrink: 0;
   margin-top: 5px;
 }
 .donacion__impacto .impacto-item p {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #333333;
+  color: #1a2536;
   margin: 0;
 }
 .donacion__form-card {
@@ -1603,13 +1615,13 @@ main {
   background: #ffffff;
   padding: 40px;
   border-radius: 15px;
-  border: 2px solid rgba(243, 177, 49, 0.3);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 0 15px rgba(243, 177, 49, 0.1);
+  border: 2px solid rgba(193, 157, 83, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08), 0 0 15px rgba(193, 157, 83, 0.1);
   text-align: center;
 }
 .donacion__form-card:hover {
-  border-color: rgba(243, 177, 49, 0.6);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1), 0 0 20px rgba(243, 177, 49, 0.2);
+  border-color: rgba(193, 157, 83, 0.6);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1), 0 0 20px rgba(193, 157, 83, 0.2);
 }
 .donacion__form-card h3 {
   margin-bottom: 1.5rem;
@@ -1629,7 +1641,7 @@ main {
 
 .btn-monto {
   padding: 15px;
-  border: 2px solid #f9f9f9;
+  border: 2px solid #f4f6f9;
   background: transparent;
   font-weight: bold;
   border-radius: 8px;
@@ -1637,14 +1649,14 @@ main {
   transition: all 0.3s;
 }
 .btn-monto:hover {
-  border-color: #27ae60;
-  color: #27ae60;
+  border-color: #00919e;
+  color: #00919e;
 }
 .btn-monto.is-active {
-  background-color: #27ae60;
-  border-color: #27ae60;
+  background-color: #00919e;
+  border-color: #00919e;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 145, 158, 0.3);
   transform: translateY(-2px);
 }
 .btn-monto--custom {
@@ -1670,14 +1682,14 @@ main {
 .input-group {
   display: flex;
   align-items: center;
-  background-color: #f9f9f9;
-  border: 2px solid #008894;
+  background-color: #f4f6f9;
+  border: 2px solid #001e54;
   border-radius: 8px;
   padding: 10px 15px;
 }
 .input-group__symbol {
   font-weight: 700;
-  color: #008894;
+  color: #001e54;
   margin-right: 10px;
   font-family: "Montserrat", sans-serif;
 }
@@ -1688,17 +1700,17 @@ main {
   font-size: 1.2rem;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
-  color: #333333;
+  color: #1a2536;
 }
 .input-group input:focus {
   outline: none;
 }
 .input-group input:focus-within {
-  border-color: #27ae60;
-  box-shadow: 0 0 8px rgba(39, 174, 96, 0.2);
+  border-color: #00919e;
+  box-shadow: 0 0 8px rgba(0, 145, 158, 0.2);
 }
 .input-group input:focus-within .input-group__symbol {
-  color: #27ae60;
+  color: #00919e;
 }
 .input-group input::-webkit-inner-spin-button, .input-group input::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -1709,16 +1721,16 @@ main {
   width: 100%;
 }
 .btn--full:hover {
-  border-color: #27ae60;
-  color: #27ae60;
+  border-color: #00919e;
+  color: #00919e;
 }
 
 .nosotros-hero {
   padding: 100px 0;
-  background-color: #008894;
+  background-color: #001e54;
   text-align: center;
   color: #ffffff;
-  background: linear-gradient(rgba(0, 136, 148, 0.85), rgba(0, 136, 148, 0.7)), url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop");
+  background: linear-gradient(rgba(0, 30, 84, 0.85), rgba(0, 30, 84, 0.7)), url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1733,7 +1745,7 @@ main {
   font-family: "Montserrat", sans-serif;
   font-size: 2.8rem;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff 20%, #f3b131 50%, #27ae60 90%);
+  background: linear-gradient(135deg, #ffffff 20%, #c19d53 50%, #00919e 90%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1841,7 +1853,7 @@ main {
 .historia__content p {
   margin-bottom: 20px;
   line-height: 1.8;
-  color: #333333;
+  color: #1a2536;
   font-family: "Open Sans", sans-serif;
 }
 @media (max-width: 991px) {
@@ -1850,7 +1862,7 @@ main {
   }
 }
 .historia__content p strong {
-  color: #008894;
+  color: #001e54;
   font-weight: 800;
 }
 .historia__image {
@@ -1866,20 +1878,20 @@ main {
 .historia__image img {
   width: 100%;
   border-radius: 20px;
-  border: 1px solid rgba(243, 177, 49, 0.9);
+  border: 1px solid rgba(193, 157, 83, 0.9);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .historia .historia__filosofia {
   margin-top: 40px;
   padding: 30px;
-  background-color: #f9f9f9;
-  border-left: 5px solid #27ae60;
+  background-color: #f4f6f9;
+  border-left: 5px solid #00919e;
   border-radius: 0 15px 15px 0;
 }
 .historia .historia__filosofia p {
   font-style: italic;
   font-size: 1.1rem;
-  color: #008894;
+  color: #001e54;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -1892,7 +1904,7 @@ main {
     padding: 25px;
     text-align: left;
     border-left: none;
-    border-top: 5px solid #27ae60;
+    border-top: 5px solid #00919e;
     border-radius: 15px;
   }
   .historia .historia__filosofia p {
@@ -1906,7 +1918,7 @@ main {
     padding: 25px;
     text-align: left;
     border-left: none;
-    border-top: 5px solid #27ae60;
+    border-top: 5px solid #00919e;
     border-radius: 15px;
   }
   .historia .historia__filosofia p {
@@ -1917,7 +1929,7 @@ main {
 
 .fundadoras {
   padding: 80px 0;
-  background-color: #f9f9f9;
+  background-color: #f4f6f9;
 }
 .fundadoras__grid {
   display: grid;
@@ -1935,7 +1947,7 @@ main {
   margin: 0 auto 20px;
   border-radius: 50%;
   overflow: hidden;
-  border: 5px solid #f3b131;
+  border: 5px solid #c19d53;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .perfil__img img {
@@ -1950,11 +1962,11 @@ main {
 }
 .perfil__name {
   font-family: "Montserrat", sans-serif;
-  color: #008894;
+  color: #001e54;
   font-size: 1.5rem;
 }
 .perfil__role {
-  color: #27ae60;
+  color: #00919e;
   font-weight: 600;
   font-family: "Open Sans", sans-serif;
 }
@@ -1997,19 +2009,19 @@ main {
   text-align: center;
   padding: 40px 30px;
   border-radius: 15px;
-  background-color: #f9f9f9;
+  background-color: #f4f6f9;
   transition: all 0.3s ease;
   border-bottom: 4px solid transparent;
 }
 .valor-card:hover {
   transform: translateY(-10px);
-  border-bottom: 4px solid #f3b131;
+  border-bottom: 4px solid #c19d53;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .valor-card__icon {
   width: 70px;
   height: 70px;
-  background-color: #008894;
+  background-color: #001e54;
   color: #ffffff;
   border-radius: 50%;
   display: flex;
@@ -2020,11 +2032,11 @@ main {
   transition: background 0.3s ease;
 }
 .valor-card:hover .valor-card__icon {
-  background-color: #27ae60;
+  background-color: #00919e;
 }
 .valor-card__title {
   font-family: "Montserrat", sans-serif;
-  color: #008894;
+  color: #001e54;
   font-size: 1.4rem;
   margin-bottom: 15px;
 }
@@ -2035,7 +2047,7 @@ main {
 }
 .valor-card__text {
   font-family: "Open Sans", sans-serif;
-  color: #333333;
+  color: #1a2536;
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -2049,7 +2061,7 @@ main {
   padding: 100px 0;
   background-color: #ffffff;
   text-align: center;
-  border-top: 1px solid rgba(0, 136, 148, 0.1);
+  border-top: 1px solid rgba(0, 30, 84, 0.1);
 }
 .nosotros-cta__content {
   max-width: 800px;
@@ -2058,7 +2070,7 @@ main {
 }
 .nosotros-cta__title {
   font-family: "Montserrat", sans-serif;
-  color: #008894;
+  color: #001e54;
   font-size: 2.2rem;
   margin-bottom: 1.5rem;
 }
@@ -2069,7 +2081,7 @@ main {
 }
 .nosotros-cta__text {
   font-family: "Open Sans", sans-serif;
-  color: #333333;
+  color: #1a2536;
   font-size: 1.1rem;
   margin-bottom: 2.5rem;
   line-height: 1.6;
@@ -2093,8 +2105,8 @@ main {
 .btn--outline-light {
   display: inline-block;
   padding: 17px 25px;
-  border: 2px solid #008894;
-  color: #008894;
+  border: 2px solid #001e54;
+  color: #001e54;
   text-decoration: none;
   border-radius: 8px;
   font-weight: 700;
@@ -2103,13 +2115,13 @@ main {
   transition: all 0.3s ease;
 }
 .btn--outline-light:hover {
-  background-color: #008894;
+  background-color: #001e54;
   color: #ffffff;
 }
 
 .btn--primary:hover {
   background-color: #ffffff;
-  color: #27ae60;
+  color: #00919e;
 }
 
 .testimonios {
@@ -2164,7 +2176,7 @@ main {
 }
 
 .testimonio-card {
-  background: #f9f9f9;
+  background: #f4f6f9;
   padding: 30px;
   border-radius: 15px;
   position: relative;
@@ -2187,7 +2199,7 @@ main {
 }
 .testimonio-card i {
   font-size: 2rem;
-  color: #27ae60;
+  color: #00919e;
   opacity: 0.2;
   position: absolute;
   top: 20px;
@@ -2195,7 +2207,7 @@ main {
 }
 .testimonio-card__text {
   font-style: italic;
-  color: #333333;
+  color: #1a2536;
   margin-bottom: 20px;
   position: relative;
   z-index: 1;
@@ -2214,12 +2226,12 @@ main {
 }
 .testimonio-card__autor .nombre {
   font-family: "Montserrat", sans-serif;
-  color: #008894;
+  color: #001e54;
   font-weight: bold;
 }
 .testimonio-card__autor .edad {
   font-size: 0.85rem;
-  color: #27ae60;
+  color: #00919e;
 }
 
 .section-title {
@@ -2235,21 +2247,21 @@ main {
   display: block;
   width: 60px;
   height: 3px;
-  background-color: #f3b131;
+  background-color: #c19d53;
   margin: 10px auto 0;
 }
 
 .programas-hero {
   padding: 100px 0;
   text-align: center;
-  background: linear-gradient(rgba(0, 136, 148, 0.85), rgba(0, 136, 148, 0.7)), url("https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=2073&auto=format&fit=crop");
+  background: linear-gradient(rgba(0, 30, 84, 0.85), rgba(0, 30, 84, 0.7)), url("https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=2073&auto=format&fit=crop");
   background-size: cover;
   background-position: center;
 }
 .programas-hero__title {
   font-family: "Montserrat", sans-serif;
   font-size: 2.8rem;
-  background: linear-gradient(135deg, #ffffff 20%, #f3b131 50%, #27ae60 90%);
+  background: linear-gradient(135deg, #ffffff 20%, #c19d53 50%, #00919e 90%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2349,7 +2361,7 @@ main {
 }
 .programa-item__info .categoria {
   display: inline-block;
-  color: #27ae60;
+  color: #00919e;
   font-weight: 700;
   text-transform: uppercase;
   font-size: 0.85rem;
@@ -2363,7 +2375,7 @@ main {
 }
 .programa-item__info h2 {
   font-family: "Montserrat", sans-serif;
-  color: #008894;
+  color: #001e54;
   font-size: 2.2rem;
   margin-bottom: 20px;
 }
@@ -2374,7 +2386,7 @@ main {
 }
 .programa-item__info p {
   font-family: "Open Sans", sans-serif;
-  color: #333333;
+  color: #1a2536;
   line-height: 1.8;
   margin-bottom: 25px;
 }
@@ -2397,7 +2409,7 @@ main {
   align-items: flex-start;
   justify-content: flex-start;
   gap: 12px;
-  color: #333333;
+  color: #1a2536;
 }
 @media (max-width: 991px) {
   .programa-item__info .lista-beneficios li {
@@ -2406,7 +2418,7 @@ main {
   }
 }
 .programa-item__info .lista-beneficios li i {
-  background-color: rgba(39, 174, 96, 0.1);
+  background-color: rgba(0, 145, 158, 0.1);
   padding: 6px;
   border-radius: 50%;
   font-size: 0.8rem;
@@ -2418,11 +2430,11 @@ main {
 
 .proximos-talleres {
   padding: 80px 0;
-  background-color: #f9f9f9;
+  background-color: #f4f6f9;
 }
 .proximos-talleres .section-intro {
   margin-bottom: 40px;
-  color: #333333;
+  color: #1a2536;
   font-family: "Open Sans", sans-serif;
   text-align: center;
 }
@@ -2462,7 +2474,7 @@ main {
   }
 }
 .taller-card__fecha {
-  background-color: #008894;
+  background-color: #001e54;
   color: #ffffff;
   min-width: 80px;
   height: 80px;
@@ -2488,7 +2500,7 @@ main {
 .taller-card__info h3 {
   line-height: 1.2;
   font-family: "Montserrat", sans-serif;
-  color: #008894;
+  color: #001e54;
   margin-bottom: 8px;
   font-size: 1.3rem;
 }
@@ -2499,7 +2511,7 @@ main {
 }
 .taller-card__info p {
   font-family: "Open Sans", sans-serif;
-  color: #333333;
+  color: #1a2536;
   font-size: 0.9rem;
   display: flex;
   gap: 15px;
@@ -2511,7 +2523,7 @@ main {
   }
 }
 .taller-card__info p i {
-  color: #27ae60;
+  color: #00919e;
 }
 @media (max-width: 767px) {
   .taller-card__action {
@@ -2533,7 +2545,7 @@ main {
   text-align: center;
 }
 .event-calendar .calendar-header .section-title {
-  color: #008894;
+  color: #001e54;
   font-family: "Open Sans", sans-serif;
   font-size: 2.5rem;
   position: relative;
@@ -2576,7 +2588,7 @@ main {
 }
 .event-card__date {
   background: var(--color-primario);
-  color: #008894;
+  color: #001e54;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -2606,7 +2618,7 @@ main {
 .event-card__content .category-tag {
   font-size: 0.75rem;
   text-transform: uppercase;
-  color: #f3b131;
+  color: #c19d53;
   font-weight: bold;
   display: block;
   margin-bottom: 0.5rem;
@@ -2631,12 +2643,12 @@ main {
 }
 .event-card__footer .btn-link {
   text-decoration: none;
-  color: #27ae60;
+  color: #00919e;
   font-weight: bold;
   font-size: 0.9rem;
 }
 .event-card__footer .btn-link:hover {
-  color: rgba(243, 177, 49, 0.8);
+  color: rgba(193, 157, 83, 0.8);
 }
 
 /*
@@ -2757,14 +2769,14 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(0, 136, 148, 0.9) 0%, rgba(0, 0, 0, 0.6) 100%);
+  background: linear-gradient(135deg, rgba(0, 30, 84, 0.9) 0%, rgba(0, 0, 0, 0.6) 100%);
   z-index: -1;
 }
 .hero-simple__title.gradient-text {
   font-size: clamp(2rem, 6vw, 2.7rem);
   font-family: "Montserrat", sans-serif;
   margin-bottom: 20px;
-  background: linear-gradient(135deg, #ffffff 20%, #f3b131 50%, #27ae60 90%);
+  background: linear-gradient(135deg, #ffffff 20%, #c19d53 50%, #00919e 90%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2813,13 +2825,13 @@ main {
 }
 .galeria-nav .filter-link {
   margin: 0 15px;
-  color: #008894;
+  color: #001e54;
   font-weight: 700;
   text-decoration: none;
   transition: color 0.3s;
 }
 .galeria-nav .filter-link:hover {
-  color: #f3b131;
+  color: #c19d53;
 }
 
 .galeria-year {
@@ -2837,7 +2849,7 @@ main {
   transform: translateY(-50%);
   width: 12px;
   height: 12px;
-  background-color: #f3b131;
+  background-color: #c19d53;
   border: 2px solid #ffffff;
   border-radius: 50%;
   z-index: 2;
@@ -2845,7 +2857,7 @@ main {
 
 .year-header {
   font-family: "Montserrat", sans-serif;
-  color: #008894;
+  color: #001e54;
   font-size: 3rem;
   margin: 0 0 30px 0;
   display: flex;
@@ -2857,7 +2869,7 @@ main {
   font-family: "Open Sans", sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #f3b131;
+  color: #c19d53;
 }
 .year-header::after {
   content: "";
@@ -2897,7 +2909,7 @@ main {
 .galeria-item__overlay, .galeria .galeria__overlay, .galeria-item .galeria__overlay, .galeria__item__overlay, .galeria__item .galeria__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 136, 148, 0.95) 0%, transparent 80%);
+  background: linear-gradient(to top, rgba(0, 30, 84, 0.95) 0%, transparent 80%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -2920,7 +2932,7 @@ main {
   transition: transform 0.4s ease;
 }
 .galeria-item__date, .galeria__item__date {
-  color: #f3b131;
+  color: #c19d53;
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -2947,7 +2959,7 @@ main {
   padding-bottom: 60px;
 }
 .galeria-year:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #f4f6f9;
 }
 @media (max-width: 1200px) {
   .galeria-year {
@@ -2971,7 +2983,7 @@ main {
   z-index: 1;
   top: 84px;
   bottom: 0;
-  background: linear-gradient(to bottom, #f3b131 0%, rgba(243, 177, 49, 0.9) 20%, rgba(243, 177, 49, 0.8) 40%, rgba(243, 177, 49, 0.6) 60%, rgba(243, 177, 49, 0.4) 80%, rgba(243, 177, 49, 0.2) 100%);
+  background: linear-gradient(to bottom, #c19d53 0%, rgba(193, 157, 83, 0.9) 20%, rgba(193, 157, 83, 0.8) 40%, rgba(193, 157, 83, 0.6) 60%, rgba(193, 157, 83, 0.4) 80%, rgba(193, 157, 83, 0.2) 100%);
 }
 @media (max-width: 1200px) {
   .galeria-timeline-container::before {
@@ -2991,10 +3003,10 @@ main {
   width: 18px;
   height: 18px;
   background-color: #ffffff;
-  border: 4px solid #f3b131;
+  border: 4px solid #c19d53;
   border-radius: 50%;
   z-index: 2;
-  box-shadow: 0 0 10px rgba(243, 177, 49, 0.5);
+  box-shadow: 0 0 10px rgba(193, 157, 83, 0.5);
 }
 @media (max-width: 1200px) {
   .timeline-dot {
