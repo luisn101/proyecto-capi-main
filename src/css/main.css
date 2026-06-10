@@ -261,7 +261,7 @@ body.is-loaded {
 .footer__social a:hover {
   background: #c19d53;
   border-color: #c19d53;
-  color: #ffffff;
+  color: #001e54;
   box-shadow: 0 0 15px rgba(193, 157, 83, 0.4);
   transform: translateY(-3px);
 }
