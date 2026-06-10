@@ -240,6 +240,33 @@ if (menuCheck) {
     });
 }
 
+// Activa automáticamente los pilares y valores en móvil cuando aparecen en pantalla
+document.addEventListener('DOMContentLoaded', function () {
+  const isMobile = window.matchMedia('(max-width: 768px)').matches || /Mobi|Android/i.test(navigator.userAgent);
+  if (!isMobile) return;
+
+  const observerTargets = document.querySelectorAll('.pilar-item, .valor-card');
+  if (!observerTargets.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio >= 0.45) {
+          entry.target.classList.add('is-active');
+        } else {
+          entry.target.classList.remove('is-active');
+        }
+      });
+    },
+    {
+      threshold: [0.45],
+      rootMargin: '0px 0px -20% 0px',
+    }
+  );
+
+  observerTargets.forEach((target) => observer.observe(target));
+});
+
 // Cierra el menú móvil al hacer clic en un enlace de navegación
 const navLinks = document.querySelectorAll('.navbar__links a');
 navLinks.forEach(link => {
