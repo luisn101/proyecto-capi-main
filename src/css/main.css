@@ -385,7 +385,7 @@ body:has(.error-page-fullscreen) main {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background-color: #001e54;
+  background-color: #00919e;
   color: #ffffff !important;
   padding: 10px 25px !important;
   font-family: "Montserrat", sans-serif;
@@ -1238,14 +1238,9 @@ main {
   color: #3399ff;
   transition: all 0.3s ease;
 }
-.pilar-item__icon:hover,
-.pilar-item.is-active .pilar-item__icon {
+.pilar-item__icon:hover {
   background-color: #3399ff;
   color: #ffffff;
-}
-.pilar-item:hover,
-.pilar-item.is-active {
-  transform: translateY(-10px);
 }
 .pilar-item__title {
   font-family: "Montserrat", sans-serif;
@@ -2110,8 +2105,7 @@ html[lang=en] .perfil__img::after {
   transition: all 0.3s ease;
   border-bottom: 4px solid transparent;
 }
-.valor-card:hover,
-.valor-card.is-active {
+.valor-card:hover {
   transform: translateY(-10px);
   border-bottom: 4px solid #c19d53;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -2129,8 +2123,7 @@ html[lang=en] .perfil__img::after {
   font-size: 1.8rem;
   transition: background 0.3s ease;
 }
-.valor-card:hover .valor-card__icon,
-.valor-card.is-active .valor-card__icon {
+.valor-card:hover .valor-card__icon {
   background-color: #00919e;
 }
 .valor-card__title {
