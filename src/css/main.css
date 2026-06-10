@@ -2032,6 +2032,10 @@ main {
   transition: opacity 0.2s ease, transform 0.2s ease;
   pointer-events: none;
 }
+html[lang=en] .perfil__img::after {
+  content: "View profile";
+}
+
 .perfil__img:hover::after, .perfil__img:focus-within::after {
   opacity: 1;
   transform: translateX(-50%) translateY(-2px);
@@ -2043,6 +2047,9 @@ main {
     bottom: 8px;
     font-size: 0.85rem;
     background-color: rgba(0, 0, 0, 0.55);
+  }
+  html[lang=en] .perfil__img::after {
+    content: "Tap to view";
   }
 }
 .perfil__name {

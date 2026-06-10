@@ -264,6 +264,10 @@
             pointer-events: none;
         }
 
+        @at-root html[lang="en"] #{&}::after {
+            content: 'View profile';
+        }
+
         &:hover::after,
         &:focus-within::after {
             opacity: 1;
@@ -278,6 +282,10 @@
                 bottom: 8px;
                 font-size: 0.85rem;
                 background-color: rgba(0,0,0,0.55);
+            }
+
+            @at-root html[lang="en"] #{&}::after {
+                content: 'Tap to view';
             }
         }
     }
