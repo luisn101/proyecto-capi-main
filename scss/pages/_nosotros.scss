@@ -232,6 +232,7 @@
         overflow: hidden;
         border: 5px solid v.$color-dorado-capi;
         box-shadow: v.$sombra-suave;
+        position: relative;
 
         img {
             width: 100%;
@@ -239,10 +240,45 @@
             object-fit: cover;
             object-position: center;
             transition: transform 0.5s ease;
+            cursor: pointer;
         }
 
         &:hover img {
             transform: scale(1.1); // Efecto de zoom suave al pasar el mouse
+        }
+
+        // Overlay affordance: indicates image is clickable/tappable
+        &::after {
+            content: 'Ver perfil';
+            position: absolute;
+            left: 50%;
+            bottom: 12px;
+            transform: translateX(-50%);
+            background-color: rgba(0,0,0,0.6);
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 14px;
+            font-size: 0.85rem;
+            opacity: 0;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            pointer-events: none;
+        }
+
+        &:hover::after,
+        &:focus-within::after {
+            opacity: 1;
+            transform: translateX(-50%) translateY(-2px);
+        }
+
+        // Mobile: show hint text tailored to touch users
+        @media (max-width: 767px) {
+            &::after {
+                content: 'Ver perfil';
+                opacity: 1;
+                bottom: 8px;
+                font-size: 0.85rem;
+                background-color: rgba(0,0,0,0.55);
+            }
         }
     }
 

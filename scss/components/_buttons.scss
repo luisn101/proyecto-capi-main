@@ -21,6 +21,24 @@
         transition: transform v.$transition-normal;
     }
 
+    // Pulsing heart animation (mobile)
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.18); }
+        100% { transform: scale(1); }
+    }
+
+    @media (max-width: 767px) {
+        i {
+            animation: pulse 1.2s infinite ease-in-out;
+            transform-origin: center;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        i { animation: none !important; }
+    }
+
     @media (min-width: v.$bp-tablet) {
         margin-left: v.$spacing-sm;
         width: 85%;

@@ -400,6 +400,28 @@ body:has(.error-page-fullscreen) main {
 .btn-donar i {
   transition: transform 0.3s ease;
 }
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.18);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media (max-width: 767px) {
+  .btn-donar i {
+    animation: pulse 1.2s infinite ease-in-out;
+    transform-origin: center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-donar i {
+    animation: none !important;
+  }
+}
 @media (min-width: 768px) {
   .btn-donar {
     margin-left: 1rem;
@@ -1982,6 +2004,7 @@ main {
   overflow: hidden;
   border: 5px solid #c19d53;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 .perfil__img img {
   width: 100%;
@@ -1989,9 +2012,38 @@ main {
   object-fit: cover;
   object-position: center;
   transition: transform 0.5s ease;
+  cursor: pointer;
 }
 .perfil__img:hover img {
   transform: scale(1.1);
+}
+.perfil__img::after {
+  content: "Ver perfil";
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 14px;
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+.perfil__img:hover::after, .perfil__img:focus-within::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-2px);
+}
+@media (max-width: 767px) {
+  .perfil__img::after {
+    content: "Ver perfil";
+    opacity: 1;
+    bottom: 8px;
+    font-size: 0.85rem;
+    background-color: rgba(0, 0, 0, 0.55);
+  }
 }
 .perfil__name {
   font-family: "Montserrat", sans-serif;

@@ -275,6 +275,25 @@ window.onclick = function(event) {
     }
 }
 
+// Make founder images keyboard-accessible: Enter / Space opens modal
+document.addEventListener('DOMContentLoaded', function () {
+  const perfilImgs = document.querySelectorAll('.perfil__img img[onclick]');
+  perfilImgs.forEach(img => {
+    // Ensure focusability for images that might lack tabindex (templates updated too)
+    if (!img.hasAttribute('tabindex')) img.setAttribute('tabindex', '0');
+    if (!img.hasAttribute('role')) img.setAttribute('role', 'button');
+
+    img.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+        e.preventDefault();
+        const onclick = img.getAttribute('onclick') || '';
+        const m = onclick.match(/openModal\(['\"](.+?)['\"]\)/);
+        if (m && m[1]) openModal(m[1]);
+      }
+    });
+  });
+});
+
 // ==========================================
 // FORMULARIO DE CONTACTO
 // ==========================================
