@@ -21,7 +21,8 @@
     padding: 20px;
     transition: transform 0.3s ease;
 
-    &:hover {
+    &:hover,
+    &.is-active {
         transform: translateY(-10px); // Efecto sutil al pasar el mouse
     }
 
@@ -38,7 +39,8 @@
         color: v.$color-acento; // El azul/turquesa del logo
         transition: all 0.3s ease;
 
-        &:hover {
+        &:hover,
+        .pilar-item.is-active & {
             background-color: v.$color-acento;
             color: v.$color-blanco;
         }
