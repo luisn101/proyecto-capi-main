@@ -883,6 +883,27 @@ main {
     padding: 30px;
   }
 }
+@media (min-width: 992px) {
+  #modal-liliana .modal__content {
+    max-height: 75vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(193, 157, 83, 0.9) rgba(0, 0, 0, 0.08);
+  }
+  #modal-liliana .modal__content::-webkit-scrollbar {
+    width: 8px;
+  }
+  #modal-liliana .modal__content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 999px;
+  }
+  #modal-liliana .modal__content::-webkit-scrollbar-thumb {
+    background: rgba(193, 157, 83, 0.9);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+}
 .modal__close {
   position: absolute;
   right: 20px;
@@ -1267,18 +1288,6 @@ main {
   color: #001e54;
   font-size: 2rem;
   margin-bottom: 10px;
-  position: relative;
-}
-.programas__title::before {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background-color: var(--color-dorado-capi, #d4af37);
-  margin: 0 auto 20px;
-}
-.programas__title::after {
-  display: none;
 }
 @media (min-width: 768px) {
   .programas__title {
@@ -1298,18 +1307,6 @@ main {
 
 .galeria__title {
   font-size: 2rem;
-  position: relative;
-}
-.galeria__title::before {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background-color: var(--color-dorado-capi, #d4af37);
-  margin: 0 auto 20px;
-}
-.galeria__title::after {
-  display: none;
 }
 @media (min-width: 768px) {
   .galeria__title {
@@ -1586,11 +1583,6 @@ main {
   height: 3px;
   background-color: var(--color-dorado-capi, #d4af37);
   margin: 10px auto 0;
-}
-
-.section-title.programas__title::after,
-.section-title.galeria__title::after {
-  display: none;
 }
 
 .contacto-datos .section-title::after {
