@@ -1267,6 +1267,18 @@ main {
   color: #001e54;
   font-size: 2rem;
   margin-bottom: 10px;
+  position: relative;
+}
+.programas__title::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-dorado-capi, #d4af37);
+  margin: 0 auto 20px;
+}
+.programas__title::after {
+  display: none;
 }
 @media (min-width: 768px) {
   .programas__title {
@@ -1286,6 +1298,18 @@ main {
 
 .galeria__title {
   font-size: 2rem;
+  position: relative;
+}
+.galeria__title::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-dorado-capi, #d4af37);
+  margin: 0 auto 20px;
+}
+.galeria__title::after {
+  display: none;
 }
 @media (min-width: 768px) {
   .galeria__title {
@@ -1562,6 +1586,11 @@ main {
   height: 3px;
   background-color: var(--color-dorado-capi, #d4af37);
   margin: 10px auto 0;
+}
+
+.section-title.programas__title::after,
+.section-title.galeria__title::after {
+  display: none;
 }
 
 .contacto-datos .section-title::after {
