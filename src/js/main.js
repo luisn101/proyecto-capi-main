@@ -51,7 +51,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const isEnglish = window.location.pathname.startsWith("/en/");
   const errorMsg = isEnglish
     ? "Please select or enter an amount to continue."
-    : "Por favor seleccioná o ingresá un monto para continuar.";
+    : "Por favor selecciona o ingresa un monto para continuar.";
   let montoSeleccionado = null;
   const langParam = isEnglish ? "&language=en" : "&language=es";
 
