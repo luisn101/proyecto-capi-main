@@ -47,7 +47,7 @@
     <link rel="stylesheet" href="/css/main.css" />
   </head>
 
-  <body>
+  <body class="{% if translationKey == 'home' %}home{% endif %}">
     {% if not isErrorPage %}
     <header>
       {# --- NAVBAR --- #}
