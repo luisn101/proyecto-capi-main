@@ -3130,25 +3130,4 @@ html[lang=en] .perfil__img::after {
   .timeline-dot {
     display: none;
   }
-}
-
-/* Homepage-specific: gold line above section titles only on index */
-section.home-section .programas__title,
-section.home-section .galeria__title {
-  position: relative;
-}
-section.home-section .programas__title::before,
-section.home-section .galeria__title::before {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background-color: var(--color-dorado-capi, #d4af37);
-  margin: 0 auto 20px;
-}
-section.home-section .section-title.programas__title::after,
-section.home-section .section-title.galeria__title::after {
-  display: none !important;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
