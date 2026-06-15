@@ -1129,7 +1129,7 @@ main {
   overflow: hidden;
   color: white;
 }
-.hero__video-box {
+.hero__image-box {
   position: absolute;
   top: 0;
   left: 0;
@@ -1137,7 +1137,7 @@ main {
   height: 100%;
   z-index: -1;
 }
-.hero__video-bg {
+.hero__image-bg {
   width: 100%;
   height: 100%;
   object-fit: cover;
