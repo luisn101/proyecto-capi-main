@@ -2540,6 +2540,17 @@ html[lang=en] .perfil__img::after {
   align-items: center;
   justify-content: center;
 }
+.programa-item__info .bolivia-clasica-link {
+  color: #001e54;
+  font-weight: 600;
+  font-style: italic;
+  text-decoration: underline;
+  transition: color 0.3s;
+  text-underline-offset: 5px;
+}
+.programa-item__info .bolivia-clasica-link:hover {
+  color: #00919e;
+}
 .programa-item__info .programa-item__cta {
   display: flex;
   gap: 1rem;
