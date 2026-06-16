@@ -186,22 +186,27 @@
         }
 
         .programa-item__cta {
-        display: flex;
-        gap: 1rem;
-        flex-wrap: wrap;
-        margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
         
-        @media (max-width: 991px) {
-            justify-content: center;  // Centrado en móvil/tablet
-        }
+            @media (max-width: 991px) {
+                flex-direction: column;  // Centrado en móvil/tablet
+                
+                .btn {
+                    width: 100%; // Botones a full width en móvil/tablet
+                    justify-content: center;
+                }
+            }
         
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
+            .btn {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                text-decoration: none;
+            }
         }
-    }
 
         .btn--primary {
             background-color: v.$color-primario;

@@ -2559,6 +2559,10 @@ html[lang=en] .perfil__img::after {
 }
 @media (max-width: 991px) {
   .programa-item__info .programa-item__cta {
+    flex-direction: column;
+  }
+  .programa-item__info .programa-item__cta .btn {
+    width: 100%;
     justify-content: center;
   }
 }
