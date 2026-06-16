@@ -2540,6 +2540,35 @@ html[lang=en] .perfil__img::after {
   align-items: center;
   justify-content: center;
 }
+.programa-item__info .btn--primary {
+  background-color: #00919e;
+  color: #ffffff;
+  padding: 10px 35px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+.programa-item__info .btn--primary:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #00919e;
+}
+.programa-item__info .btn--whatsapp {
+  background-color: #001e54;
+  color: #ffffff;
+  padding: 10px 25px;
+  border-radius: 8px;
+  border: 2px solid #001e54;
+  border-color: #001e54;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+.programa-item__info .btn--whatsapp:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid #001e54;
+  color: #001e54;
+}
 
 .proximos-talleres {
   padding: 80px 0;

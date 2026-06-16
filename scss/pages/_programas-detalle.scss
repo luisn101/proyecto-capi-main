@@ -171,6 +171,39 @@
                 }
             }
         }
+
+        .btn--primary {
+            background-color: v.$color-secundario;
+            color: v.$color-blanco;
+            padding: 10px 35px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.90rem;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: rgba(v.$color-blanco, 0.9);
+                color: v.$color-secundario;
+            }
+        }
+
+        .btn--whatsapp {
+            background-color: v.$color-primario;
+            color: v.$color-blanco;
+            padding: 10px 25px;
+            border-radius: 8px;
+            border: 2px solid v.$color-primario;
+            border-color: v.$color-primario;
+            font-weight: 600;
+            font-size: 0.90rem;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: rgba(v.$color-blanco, 0.9);
+                border: 2px solid v.$color-primario;
+                color: v.$color-primario;
+            }
+        }
     }
 }
 
