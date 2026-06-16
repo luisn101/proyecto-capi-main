@@ -2494,7 +2494,7 @@ html[lang=en] .perfil__img::after {
 }
 @media (max-width: 991px) {
   .programa-item__info h2 {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
   }
 }
 .programa-item__info p {
@@ -2540,34 +2540,52 @@ html[lang=en] .perfil__img::after {
   align-items: center;
   justify-content: center;
 }
+.programa-item__info .programa-item__cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+@media (max-width: 991px) {
+  .programa-item__info .programa-item__cta {
+    justify-content: center;
+  }
+}
+.programa-item__info .programa-item__cta .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
 .programa-item__info .btn--primary {
-  background-color: #00919e;
+  background-color: #001e54;
   color: #ffffff;
-  padding: 10px 35px;
+  padding: 10px 50px;
   border-radius: 8px;
+  border-color: #001e54;
   font-weight: 600;
   font-size: 0.9rem;
   transition: background-color 0.3s ease;
 }
 .programa-item__info .btn--primary:hover {
   background-color: rgba(255, 255, 255, 0.9);
-  color: #00919e;
+  color: #001e54;
 }
 .programa-item__info .btn--whatsapp {
-  background-color: #001e54;
-  color: #ffffff;
+  background-color: #25D366;
+  color: #001e54;
   padding: 10px 25px;
   border-radius: 8px;
-  border: 2px solid #001e54;
-  border-color: #001e54;
+  border: 2px solid #25D366;
+  border-color: #25D366;
   font-weight: 600;
   font-size: 0.9rem;
   transition: background-color 0.3s ease;
 }
 .programa-item__info .btn--whatsapp:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-  border: 2px solid #001e54;
-  color: #001e54;
+  background-color: #128C7E;
+  border: 2px solid #128C7E;
+  color: #ffffff;
 }
 
 .proximos-talleres {
@@ -2729,7 +2747,7 @@ html[lang=en] .perfil__img::after {
   transform: translateY(-5px);
 }
 .event-card__date {
-  background: var(--color-primario);
+  background: #ffffff;
   color: #001e54;
   padding: 1rem;
   display: flex;
@@ -2742,6 +2760,7 @@ html[lang=en] .perfil__img::after {
   font-size: 2rem;
   font-weight: bold;
   line-height: 1;
+  color: #001e54;
 }
 .event-card__date .month {
   text-transform: uppercase;
