@@ -2370,6 +2370,59 @@ html[lang=en] .perfil__img::after {
   margin: 10px auto 0;
 }
 
+.modal__quote {
+  font-style: italic;
+  color: #00919e;
+  border-left: 3px solid #c19d53;
+  padding-left: 20px;
+  margin-top: 25px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+.modal h4 {
+  color: #001e54;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.modal ul {
+  list-style: none;
+  padding: 0;
+}
+.modal ul li {
+  margin-bottom: 20px;
+  padding-left: 20px;
+  position: relative;
+  line-height: 0.9;
+}
+.modal ul li::before {
+  content: "•";
+  color: #c19d53;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.modal ul li strong {
+  color: #001e54;
+  display: block;
+  margin-bottom: 3px;
+}
+.modal .modal__close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #001e54;
+  transition: color 0.3s ease;
+}
+.modal .modal__close:hover {
+  color: #00919e;
+}
+
 .programas-hero {
   padding: 100px 0;
   text-align: center;

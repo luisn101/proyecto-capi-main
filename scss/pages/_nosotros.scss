@@ -606,3 +606,66 @@
         margin: 10px auto 0;
     }
 }
+
+// Mejoras para los modales
+.modal {
+    &__quote {
+        font-style: italic;
+        color: v.$color-secundario;
+        border-left: 3px solid v.$color-dorado-capi;
+        padding-left: 20px;
+        margin-top: 25px;
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
+
+    h4 {
+        color: v.$color-primario;
+        font-family: v.$font-titles;
+        font-size: 1.2rem;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-weight: 700;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        
+        li {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 0.9;
+            
+            &::before {
+                content: '•';
+                color: v.$color-dorado-capi;
+                font-weight: bold;
+                position: absolute;
+                left: 0;
+                font-size: 1.5rem;
+                line-height: 1;
+            }
+            
+            strong {
+                color: v.$color-primario;
+                display: block;
+                margin-bottom: 3px;
+            }
+        }
+    }
+
+    .modal__close {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 2rem;
+        color: v.$color-primario;
+        transition: color 0.3s ease;
+        
+        &:hover {
+            color: v.$color-secundario;
+        }
+    }
+}
