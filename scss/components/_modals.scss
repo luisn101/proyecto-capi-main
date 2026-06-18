@@ -57,6 +57,32 @@
         }
     }
 
+    /* Make Monica modal scrollable like Liliana */
+    #modal-monica &__content {
+        @media (min-width: 992px) {
+            max-height: 75vh;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(193, 157, 83, 0.9) rgba(0, 0, 0, 0.08);
+
+            &::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background: rgba(0, 0, 0, 0.08);
+                border-radius: 999px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: rgba(193, 157, 83, 0.9);
+                border-radius: 999px;
+                border: 2px solid transparent;
+                background-clip: content-box;
+            }
+        }
+    }
+
     &__close {
         position: absolute;
         right: 20px;
@@ -83,8 +109,14 @@
 
     &__body {
         h4 { color: v.$color-primario; margin-top: 20px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-        p, li { font-size: 1rem; color: v.$color-texto; line-height: 1.6; }
+        p, li { font-size: 1rem; color: v.$color-texto; line-height: 1.7; }
         ul { padding-left: 20px; margin-top: 10px; }
+        li strong { display: block; line-height: 1.2; margin-bottom: 0.25rem; }
+
+        @media (max-width: v.$bp-mobile) {
+            p, li { line-height: 1.95; }
+            li strong { margin-bottom: 0.2rem; }
+        }
     }
 }
 

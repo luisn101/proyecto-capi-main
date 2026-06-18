@@ -904,6 +904,30 @@ main {
     background-clip: content-box;
   }
 }
+.modal {
+  /* Make Monica modal scrollable like Liliana */
+}
+@media (min-width: 992px) {
+  #modal-monica .modal__content {
+    max-height: 75vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(193, 157, 83, 0.9) rgba(0, 0, 0, 0.08);
+  }
+  #modal-monica .modal__content::-webkit-scrollbar {
+    width: 8px;
+  }
+  #modal-monica .modal__content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 999px;
+  }
+  #modal-monica .modal__content::-webkit-scrollbar-thumb {
+    background: rgba(193, 157, 83, 0.9);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+}
 .modal__close {
   position: absolute;
   right: 20px;
@@ -941,11 +965,24 @@ main {
 .modal__body p, .modal__body li {
   font-size: 1rem;
   color: #1a2536;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 .modal__body ul {
   padding-left: 20px;
   margin-top: 10px;
+}
+.modal__body li strong {
+  display: block;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+@media (max-width: 480px) {
+  .modal__body p, .modal__body li {
+    line-height: 1.95;
+  }
+  .modal__body li strong {
+    margin-bottom: 0.2rem;
+  }
 }
 
 @keyframes modalFade {
@@ -2395,7 +2432,7 @@ html[lang=en] .perfil__img::after {
   margin-bottom: 20px;
   padding-left: 20px;
   position: relative;
-  line-height: 0.9;
+  line-height: 1.5;
 }
 .modal ul li::before {
   content: "•";
