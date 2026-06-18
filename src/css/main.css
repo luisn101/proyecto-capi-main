@@ -1941,6 +1941,12 @@ main {
   color: #001e54;
   font-weight: 800;
 }
+.historia__content p #fundadora-liliana,
+.historia__content p #fundadora-monica {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 5px;
+}
 .historia__image {
   flex: 1;
   min-width: 300px;

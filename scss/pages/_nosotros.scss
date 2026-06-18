@@ -140,6 +140,13 @@
                 color: v.$color-primario; // O v.$color-secundario si quieres que resalten más
                 font-weight: 800;
             }
+
+            #fundadora-liliana, 
+            #fundadora-monica {
+                text-decoration: underline;
+                text-decoration-style: dotted;
+                text-underline-offset: 5px;
+            }
         }
     }
 
