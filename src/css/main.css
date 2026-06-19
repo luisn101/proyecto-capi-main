@@ -1944,7 +1944,7 @@ main {
   display: block;
   width: 60px;
   height: 3px;
-  background-color: var(--color-dorado-capi, #d4af37);
+  background-color: #c19d53;
   margin: 10px auto 0;
 }
 @media (max-width: 767px) {
@@ -2273,11 +2273,6 @@ html[lang=en] .perfil__img::after {
 .btn--outline-light:hover {
   background-color: #001e54;
   color: #ffffff;
-}
-
-.btn--primary:hover {
-  background-color: #ffffff;
-  color: #00919e;
 }
 
 .testimonios {

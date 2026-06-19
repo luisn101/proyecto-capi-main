@@ -107,7 +107,7 @@
             display: block;
             width: 60px;
             height: 3px;
-            background-color: var(--color-dorado-capi, #d4af37);
+            background-color: v.$color-dorado-capi;
             margin: 10px auto 0;
         }
 
@@ -466,13 +466,6 @@
     &:hover {
         background-color: v.$color-primario;
         color: v.$color-blanco;
-    }
-}
-
-.btn--primary {
-    &:hover {
-        background-color: v.$color-blanco;
-        color: v.$color-secundario;
     }
 }
 
