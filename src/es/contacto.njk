@@ -7,9 +7,9 @@ translationKey: "contact"
 
 <section class="contacto-hero">
   <div class="container">
-    <h1 class="contacto-hero__title">Estamos para escucharte</h1>
+    <h1 class="contacto-hero__title">¿Listo para ser parte de CAPI?</h1>
     <p class="contacto-hero__text">
-      ¿Tienes dudas sobre nuestros programas o quieres visitarnos? Escríbenos.
+      Ya sea que quieras inscribirte, ser voluntario o simplemente conocernos, estamos aquí para ayudarte.
     </p>
   </div>
 </section>
@@ -33,9 +33,17 @@ translationKey: "contact"
         <div class="dato-item">
           <i class="fa-solid fa-phone"></i>
           <div>
-            <h3>Teléfono</h3>
-            <p><a href="https://wa.me/59167847027" target="_blank">+591 6784 7027</a></p>
-          </div>
+            <h3>Teléfono / WhatsApp</h3>
+            <p>
+              <a href="https://wa.me/59167847027" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+              </a>
+              <span class="separator">|</span>
+              <a href="tel:+59167847027" aria-label="Llamar por teléfono">
+                <i class="fa-solid fa-phone"></i> +591 6784 7027
+              </a>
+            </p>
+        </div>
         </div>
         <div class="dato-item">
           <i class="fa-solid fa-envelope"></i>
@@ -44,7 +52,16 @@ translationKey: "contact"
             <p><a href="mailto:info@capisamaipata.org">info@capisamaipata.org</a></p>
           </div>
         </div>
+        <div class="dato-item">
+          <i class="fa-solid fa-clock"></i>
+          <div>
+            <h3>Horarios de atención</h3>
+            <p>Lunes a Viernes: 15:00 - 19:00<br>
+               Sábados: 15:00 - 17:00</p>
+          </div>
+        </div>
       </div>
+      
     </div>
 
     <div class="contacto-form">
@@ -52,9 +69,15 @@ translationKey: "contact"
         name="contacto-capi"
         method="POST"
         data-netlify="true" 
-        class="form-container"
+        class="form"
+        aria-labelledby="form-title"
       >
+      <h2 id="form-title" class="sr-only">Formulario de contacto</h2>
         <input type="hidden" name="form-name" value="contacto-capi" />
+        <!-- 🐝 Honeypot Antispam -->
+          <p class="honeypot" style="display: none;">
+            <label>¿Eres un robot? <input name="botfield" /></label>
+          </p>
         <div class="form-group">
           <label for="nombre">Nombre Completo</label>
           <input

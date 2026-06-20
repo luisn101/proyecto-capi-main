@@ -582,6 +582,13 @@
     }
 }
 
+.btn--primary {
+    &:hover {
+        background-color: v.$color-blanco;
+        color: v.$color-secundario;
+    }
+}
+
 // Aplicar el estilo de línea dorada a todos los títulos de sección en la página
 .section-title {
     font-size: 2.5rem;
