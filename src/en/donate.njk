@@ -42,19 +42,55 @@ translationKey: "donate"
           </p>
         </div>
       </div>
+      <div class="donacion__historia">
+        <h3>Stories that inspire</h3>
+        <div class="historia-card">
+        <div class="historia-card__content">
+          <p class="historia-card__texto">
+            "Thanks to CAPI, my daughter discovered her passion for music. She now plays the violin and dreams of being part of the youth orchestra."
+          </p>
+          <div class="historia-card__autor">
+          <strong>María Gonzáles</strong>
+            <span>Family Mother</span>
+          </div>
+    </div>
+  </div>
+</div>
     </div>
 
     <div class="donacion__form-card">
       <h3>Select an amount</h3>
+      <div class="donacion__tipo">
+        <button class="btn-tipo is-active" data-tipo="unica">
+        <i class="fa-solid fa-hand-holding-heart"></i>
+        One-time donation
+      </button>
+      <button class="btn-tipo" data-tipo="mensual">
+        <i class="fa-solid fa-repeat"></i>
+        Monthly donation
+      </button>
+    </div>
       <div class="donacion__grid-montos">
-        <button class="btn-monto" data-monto="10">$10</button>
-        <button class="btn-monto" data-monto="25">$25</button>
-        <button class="btn-monto" data-monto="50">$50</button>
-        <button class="btn-monto" data-monto="100">$100</button>
-        <button class="btn-monto btn-monto--custom" id="btn-custom">
-          Other amount
-        </button>
-      </div>
+  <button class="btn-monto" data-monto="10">
+    <span class="monto-valor">$10</span>
+    <span class="monto-descripcion">Materials for 1 student</span>
+  </button>
+  <button class="btn-monto" data-monto="25">
+    <span class="monto-valor">$25</span>
+    <span class="monto-descripcion">1 month of art classes</span>
+  </button>
+  <button class="btn-monto" data-monto="50">
+    <span class="monto-valor">$50</span>
+    <span class="monto-descripcion">Instrument on loan</span>
+  </button>
+  <button class="btn-monto" data-monto="100">
+    <span class="monto-valor">$100</span>
+    <span class="monto-descripcion">Full scholarship for 1 month</span>
+  </button>
+  <button class="btn-monto btn-monto--custom" id="btn-custom">
+    Other amount
+  </button>
+</div>
 
       <div class="donacion__custom-input" id="custom-amount-wrapper">
         <div class="input-group">
@@ -75,6 +111,53 @@ translationKey: "donate"
       <p class="donacion__secure">
         <i class="fa-solid fa-lock"></i> 100% secure and encrypted payment
       </p>
+    </div>
+  </div>
+</section>
+
+<section class="transparencia">
+  <div class="container">
+    <h2 class="section-title">Your donation makes a difference</h2>
+    <div class="transparencia__grid">
+      <div class="transparencia-item">
+        <div class="transparencia-item__numero">85%</div>
+        <p>goes directly to educational and artistic programs</p>
+      </div>
+      <div class="transparencia-item">
+        <div class="transparencia-item__numero">150+</div>
+        <p>students benefited this year</p>
+      </div>
+      <div class="transparencia-item">
+        <div class="transparencia-item__numero">9</div>
+        <p>active programs in the community</p>
+      </div>
+    </div>
+    <p class="transparencia__nota">
+      <i class="fa-solid fa-file-invoice"></i>
+      We emit tax-deductible receipts for all donations.
+    </p>
+  </div>
+</section>
+
+<section class="otras-formas">
+  <div class="container">
+    <h2 class="section-title">Other ways to help</h2>
+    <div class="otras-formas__grid">
+      <a href="/en/contact/" class="otra-forma-card">
+        <i class="fa-solid fa-hands-helping"></i>
+        <h3>Be a volunteer</h3>
+        <p>Donate your time and skills to support our programs</p>
+      </a>
+      <a href="/en/contact/" class="otra-forma-card">
+        <i class="fa-solid fa-box-open"></i>
+        <h3>Donate materials</h3>
+        <p>Instruments, art materials, books and more</p>
+      </a>
+      <a href="/en/contact/" class="otra-forma-card">
+        <i class="fa-solid fa-share-nodes"></i>
+        <h3>Spread the word</h3>
+        <p>Share on social media and help more people get to know us</p>
+      </a>
     </div>
   </div>
 </section>
