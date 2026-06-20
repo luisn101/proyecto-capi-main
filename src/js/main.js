@@ -44,6 +44,72 @@ window.addEventListener("DOMContentLoaded", () => {
 // ==========================================
 
 // --- Lógica de la página de donaciones ---
+// --- Lógica de la página de donaciones ---
+(function () {
+  if (!document.querySelector(".donacion")) return;
+
+  const BASE_URL = "https://donorbox.org/c-a-p-i";
+  const isEnglish = window.location.pathname.startsWith("/en/");
+  const errorMsg = isEnglish
+    ? "Please select or enter an amount to continue."
+    : "Por favor seleccioná o ingresá un monto para continuar.";
+  
+  let montoSeleccionado = null;
+  let tipoDonacion = "unica"; // Variable para tracking tipo de donación
+  const langParam = isEnglish ? "&language=en" : "&language=es";
+
+  // Selección de tipo de donación (única vs mensual)
+  document.querySelectorAll(".btn-tipo").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".btn-tipo").forEach((b) => b.classList.remove("is-active"));
+      this.classList.add("is-active");
+      tipoDonacion = this.dataset.tipo; // Guarda "unica" o "mensual"
+    });
+  });
+
+  // Selección de montos predefinidos
+  document.querySelectorAll(".btn-monto:not(#btn-custom)").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      document.querySelectorAll(".btn-monto").forEach((b) => b.classList.remove("is-active"));
+      this.classList.add("is-active");
+      montoSeleccionado = this.dataset.monto;
+
+      // Ocultar input personalizado si estaba abierto
+      document.getElementById("custom-amount-wrapper").classList.remove("is-visible");
+      document.getElementById("custom-amount").value = "";
+    });
+  });
+
+  // Botón "Otro monto"
+  document.getElementById("btn-custom").addEventListener("click", function () {
+    document.querySelectorAll(".btn-monto").forEach((b) => b.classList.remove("is-active"));
+    this.classList.add("is-active");
+    montoSeleccionado = null;
+    document.getElementById("custom-amount-wrapper").classList.toggle("is-visible");
+  });
+
+  // Botón principal — redirige a Donorbox con el monto y tipo
+  document.getElementById("btn-donar").addEventListener("click", function () {
+    const customInput = document.getElementById("custom-amount").value;
+    const monto = montoSeleccionado || customInput;
+
+    if (!monto || isNaN(monto) || Number(monto) <= 0) {
+      alert(errorMsg);
+      return;
+    }
+
+    // Construir URL con parámetros
+    let url = `${BASE_URL}?amount=${monto}${langParam}`;
+    
+    // Si es donación mensual, agregar parámetro recurring
+    if (tipoDonacion === "mensual") {
+      url += "&recurring=1";
+    }
+
+    window.open(url, "_blank");
+  });
+})();
+/*
 (function () {
   if (!document.querySelector(".donacion")) return;
 
@@ -106,7 +172,7 @@ document.querySelectorAll('.btn-tipo').forEach(btn => {
     window.open(`${BASE_URL}?amount=${monto}${langParam}`, "_blank");
   });
 })();
-
+*/
 // Maneja los clics en los botones de monto de donación
 /*
 botonesMonto.forEach(boton => {

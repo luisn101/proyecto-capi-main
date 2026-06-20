@@ -1968,6 +1968,25 @@ main {
 .btn-monto.is-active .monto-descripcion {
   color: #ffffff;
 }
+.btn-monto--custom {
+  grid-column: span 2;
+  font-size: 0.95rem;
+  border-style: dashed;
+  flex-direction: row;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-monto--custom .monto-valor,
+.btn-monto--custom .monto-descripcion {
+  display: none;
+}
+.btn-monto--custom:hover {
+  border-style: dashed;
+  border-color: #00919e;
+}
+.btn-monto--custom.is-active {
+  border-style: solid;
+}
 
 .donacion__custom-input {
   max-height: 0;

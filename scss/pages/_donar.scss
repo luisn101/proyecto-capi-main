@@ -285,6 +285,29 @@
             color: v.$color-blanco;
         }
     }
+
+    &--custom {
+        grid-column: span 2; // Ocupa las dos columnas
+        font-size: 0.95rem;
+        border-style: dashed; // Borde punteado
+        flex-direction: row; // Texto en una sola línea
+        justify-content: center;
+        gap: 8px;
+        
+        .monto-valor,
+        .monto-descripcion {
+            display: none; // Ocultamos las descripciones para este botón
+        }
+        
+        &:hover {
+            border-style: dashed; // Mantiene punteado en hover
+            border-color: v.$color-secundario;
+        }
+        
+        &.is-active {
+            border-style: solid; // Cuando está activo, el borde es sólido
+        }
+    }
 }
 
 .donacion__custom-input {
