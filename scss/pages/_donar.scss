@@ -107,6 +107,60 @@
         }
     }
 
+    &__historia {
+        margin-top: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(v.$color-primario, 0.05) 0%, rgba(v.$color-secundario, 0.05) 100%);
+    border-radius: 12px;
+    border-left: 4px solid v.$color-dorado-capi;
+    
+    h3 {
+        color: v.$color-primario;
+        font-family: v.$font-titles;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
+    }
+    
+    .historia-card {
+        &__texto {
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: v.$color-texto;
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 20px;
+            
+            &::before {
+                content: '"';
+                position: absolute;
+                left: 0;
+                top: -10px;
+                font-size: 3rem;
+                color: v.$color-dorado-capi;
+                font-family: serif;
+                line-height: 1;
+            }
+        }
+        
+        &__autor {
+            display: flex;
+            flex-direction: column;
+            padding-left: 20px;
+            
+            strong {
+                color: v.$color-primario;
+                font-size: 0.95rem;
+            }
+            
+            span {
+                color: v.$color-secundario;
+                font-size: 0.85rem;
+            }
+        }
+    }
+    }
+
     &__form-card {
         flex: 1;
         min-width: 300px;
@@ -145,6 +199,41 @@
         margin-bottom: 25px;
     }
 
+    &__tipo {
+        display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    
+    .btn-tipo {
+        flex: 1;
+        padding: 15px;
+        border: 2px solid v.$color-fondo-claro;
+        background: transparent;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        
+        &:hover {
+            border-color: v.$color-secundario;
+        }
+        
+        &.is-active {
+            background-color: v.$color-primario;
+            border-color: v.$color-primario;
+            color: v.$color-blanco;
+        }
+        
+        i {
+            font-size: 1.2rem;
+        }
+    }
+    }
+
     &__secure {
         margin-top: 20px;
         font-size: 0.8rem;
@@ -153,32 +242,48 @@
 }
 
 .btn-monto {
-    padding: 15px;
+    padding: 15px 10px;
     border: 2px solid v.$color-fondo-claro;
     background: transparent;
     font-weight: bold;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    
+    .monto-valor {
+        font-size: 1.3rem;
+        font-weight: 700;
+    }
+    
+    .monto-descripcion {
+        font-size: 0.75rem;
+        font-weight: 400;
+        color: v.$color-texto;
+        opacity: 0.8;
+        line-height: 1.3;
+    }
+    
     &:hover {
         border-color: v.$color-secundario;
         color: v.$color-secundario;
+        
+        .monto-descripcion {
+            color: v.$color-secundario;
+        }
     }
-
-    // ESTADO SELECCIONADO (Activo)
+    
     &.is-active {
         background-color: v.$color-secundario;
         border-color: v.$color-secundario;
         color: v.$color-blanco;
-        box-shadow: 0 4px 12px rgba(v.$color-secundario, 0.3);
-        transform: translateY(-2px);
-    }
-
-    &--custom {
-        grid-column: span 2; // El botón "Otro monto" ocupa todo el ancho
-        font-size: 0.95rem;
-        border-style: dashed; // Un toque visual diferente
+        
+        .monto-descripcion {
+            color: v.$color-blanco;
+        }
     }
 }
 
@@ -250,5 +355,107 @@
     &:hover {
         border-color: v.$color-secundario;
         color: v.$color-secundario;
+    }
+}
+
+.transparencia {
+    padding: 80px 0;
+    background-color: v.$color-blanco;
+    
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        max-width: 900px;
+        margin: 0 auto 40px;
+    }
+    
+    .transparencia-item {
+        text-align: center;
+        
+        &__numero {
+            font-size: 3rem;
+            font-weight: 800;
+            color: v.$color-secundario;
+            font-family: v.$font-titles;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            color: v.$color-texto;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+    }
+    
+    &__nota {
+        text-align: center;
+        color: v.$color-texto;
+        font-size: 0.9rem;
+        margin-top: 30px;
+        
+        i {
+            color: v.$color-secundario;
+            margin-right: 8px;
+        }
+    }
+}
+
+.otras-formas {
+    padding: 80px 0;
+    background-color: v.$color-fondo-claro;
+    
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .otra-forma-card {
+        background: v.$color-blanco;
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        
+        &:hover {
+            transform: translateY(-5px);
+            border-color: v.$color-secundario;
+            box-shadow: v.$sombra-media;
+        }
+        
+        i {
+            font-size: 2.5rem;
+            color: v.$color-secundario;
+            margin-bottom: 15px;
+        }
+        
+        h3 {
+            color: v.$color-primario;
+            font-family: v.$font-titles;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        p {
+            color: v.$color-texto;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
     }
 }

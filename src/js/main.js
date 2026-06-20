@@ -72,6 +72,15 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Lógica de tipo de donación (única vs mensual)
+document.querySelectorAll('.btn-tipo').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.btn-tipo').forEach(b => b.classList.remove('is-active'));
+        this.classList.add('is-active');
+        // Aquí puedes agregar lógica adicional si necesitas cambiar la URL de Donorbox
+    });
+});
+
   // Botón "Otro monto"
   document.getElementById("btn-custom").addEventListener("click", function () {
     document

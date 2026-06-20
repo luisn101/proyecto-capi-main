@@ -1824,6 +1824,51 @@ main {
   color: #1a2536;
   margin: 0;
 }
+.donacion__historia {
+  margin-top: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(0, 30, 84, 0.05) 0%, rgba(0, 145, 158, 0.05) 100%);
+  border-radius: 12px;
+  border-left: 4px solid #c19d53;
+}
+.donacion__historia h3 {
+  color: #001e54;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+.donacion__historia .historia-card__texto {
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #1a2536;
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 20px;
+}
+.donacion__historia .historia-card__texto::before {
+  content: '"';
+  position: absolute;
+  left: 0;
+  top: -10px;
+  font-size: 3rem;
+  color: #c19d53;
+  font-family: serif;
+  line-height: 1;
+}
+.donacion__historia .historia-card__autor {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+.donacion__historia .historia-card__autor strong {
+  color: #001e54;
+  font-size: 0.95rem;
+}
+.donacion__historia .historia-card__autor span {
+  color: #00919e;
+  font-size: 0.85rem;
+}
 .donacion__form-card {
   flex: 1;
   min-width: 300px;
@@ -1848,6 +1893,36 @@ main {
   gap: 15px;
   margin-bottom: 25px;
 }
+.donacion__tipo {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+.donacion__tipo .btn-tipo {
+  flex: 1;
+  padding: 15px;
+  border: 2px solid #f4f6f9;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.donacion__tipo .btn-tipo:hover {
+  border-color: #00919e;
+}
+.donacion__tipo .btn-tipo.is-active {
+  background-color: #001e54;
+  border-color: #001e54;
+  color: #ffffff;
+}
+.donacion__tipo .btn-tipo i {
+  font-size: 1.2rem;
+}
 .donacion__secure {
   margin-top: 20px;
   font-size: 0.8rem;
@@ -1855,29 +1930,43 @@ main {
 }
 
 .btn-monto {
-  padding: 15px;
+  padding: 15px 10px;
   border: 2px solid #f4f6f9;
   background: transparent;
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.btn-monto .monto-valor {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.btn-monto .monto-descripcion {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #1a2536;
+  opacity: 0.8;
+  line-height: 1.3;
 }
 .btn-monto:hover {
   border-color: #00919e;
+  color: #00919e;
+}
+.btn-monto:hover .monto-descripcion {
   color: #00919e;
 }
 .btn-monto.is-active {
   background-color: #00919e;
   border-color: #00919e;
   color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 145, 158, 0.3);
-  transform: translateY(-2px);
 }
-.btn-monto--custom {
-  grid-column: span 2;
-  font-size: 0.95rem;
-  border-style: dashed;
+.btn-monto.is-active .monto-descripcion {
+  color: #ffffff;
 }
 
 .donacion__custom-input {
@@ -1938,6 +2027,94 @@ main {
 .btn--full:hover {
   border-color: #00919e;
   color: #00919e;
+}
+
+.transparencia {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+.transparencia .section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.transparencia__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+.transparencia .transparencia-item {
+  text-align: center;
+}
+.transparencia .transparencia-item__numero {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #00919e;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.transparencia .transparencia-item p {
+  color: #1a2536;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.transparencia__nota {
+  text-align: center;
+  color: #1a2536;
+  font-size: 0.9rem;
+  margin-top: 30px;
+}
+.transparencia__nota i {
+  color: #00919e;
+  margin-right: 8px;
+}
+
+.otras-formas {
+  padding: 80px 0;
+  background-color: #f4f6f9;
+}
+.otras-formas .section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.otras-formas__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.otras-formas .otra-forma-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+.otras-formas .otra-forma-card:hover {
+  transform: translateY(-5px);
+  border-color: #00919e;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.otras-formas .otra-forma-card i {
+  font-size: 2.5rem;
+  color: #00919e;
+  margin-bottom: 15px;
+}
+.otras-formas .otra-forma-card h3 {
+  color: #001e54;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.otras-formas .otra-forma-card p {
+  color: #1a2536;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .nosotros-hero {

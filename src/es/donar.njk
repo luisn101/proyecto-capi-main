@@ -18,22 +18,7 @@ translationKey: "donate"
   <div class="container donacion__wrapper">
     <div class="donacion__info">
       <h2 class="donacion__subtitle">¿A dónde va tu donación?</h2>
-      <!--
-                    <div class="donacion__impacto">
-                        <div class="impacto-item">
-                            <i class="fa-solid fa-paint-brush"></i>
-                            <p><strong>Materiales:</strong> Compra de pinturas, lienzos e instrumentos.</p>
-                        </div>
-                        <div class="impacto-item">
-                            <i class="fa-solid fa-graduation-cap"></i>
-                            <p><strong>Becas:</strong> Apoyo económico para alumnos con talento.</p>
-                        </div>
-                        <div class="impacto-item">
-                            <i class="fa-solid fa-hand-sparkles"></i>
-                            <p><strong>Mantenimiento:</strong> Cuidado, limpieza y mejora de nuestras instalaciones.</p>
-                        </div>
-                    </div>
-                    -->
+      
       <div class="donacion__impacto">
         <div class="impacto-item">
           <i class="fa-solid fa-guitar"></i>
@@ -62,19 +47,55 @@ translationKey: "donate"
           </p>
         </div>
       </div>
+      <div class="donacion__historia">
+        <h3>Historias que inspiran</h3>
+        <div class="historia-card">
+        <div class="historia-card__content">
+          <p class="historia-card__texto">
+            "Gracias a CAPI, mi hija descubrió su pasión por la música. Ahora toca el violín y sueña con ser parte de la orquesta juvenil."
+          </p>
+          <div class="historia-card__autor">
+          <strong>María Gonzáles</strong>
+            <span>Madre de familia</span>
+          </div>
+    </div>
+  </div>
+</div>
     </div>
 
     <div class="donacion__form-card">
       <h3>Selecciona un monto</h3>
+      <div class="donacion__tipo">
+        <button class="btn-tipo is-active" data-tipo="unica">
+        <i class="fa-solid fa-hand-holding-heart"></i>
+        Donación única
+      </button>
+      <button class="btn-tipo" data-tipo="mensual">
+        <i class="fa-solid fa-repeat"></i>
+        Donación mensual
+      </button>
+    </div>
       <div class="donacion__grid-montos">
-        <button class="btn-monto" data-monto="10">$10</button>
-        <button class="btn-monto" data-monto="25">$25</button>
-        <button class="btn-monto" data-monto="50">$50</button>
-        <button class="btn-monto" data-monto="100">$100</button>
-        <button class="btn-monto btn-monto--custom" id="btn-custom">
-          Otro monto
-        </button>
-      </div>
+  <button class="btn-monto" data-monto="10">
+    <span class="monto-valor">$10</span>
+    <span class="monto-descripcion">Materiales para 1 estudiante</span>
+  </button>
+  <button class="btn-monto" data-monto="25">
+    <span class="monto-valor">$25</span>
+    <span class="monto-descripcion">1 mes de clases de arte</span>
+  </button>
+  <button class="btn-monto" data-monto="50">
+    <span class="monto-valor">$50</span>
+    <span class="monto-descripcion">Instrumento en préstamo</span>
+  </button>
+  <button class="btn-monto" data-monto="100">
+    <span class="monto-valor">$100</span>
+    <span class="monto-descripcion">Beca completa por 1 mes</span>
+  </button>
+  <button class="btn-monto btn-monto--custom" id="btn-custom">
+    Otro monto
+  </button>
+</div>
 
       <div class="donacion__custom-input" id="custom-amount-wrapper">
         <div class="input-group">
@@ -95,6 +116,53 @@ translationKey: "donate"
       <p class="donacion__secure">
         <i class="fa-solid fa-lock"></i> Pago 100% seguro y encriptado
       </p>
+    </div>
+  </div>
+</section>
+
+<section class="transparencia">
+  <div class="container">
+    <h2 class="section-title">Tu donación hace la diferencia</h2>
+    <div class="transparencia__grid">
+      <div class="transparencia-item">
+        <div class="transparencia-item__numero">85%</div>
+        <p>va directamente a programas educativos y artísticos</p>
+      </div>
+      <div class="transparencia-item">
+        <div class="transparencia-item__numero">150+</div>
+        <p>estudiantes beneficiados este año</p>
+      </div>
+      <div class="transparencia-item">
+        <div class="transparencia-item__numero">9</div>
+        <p>programas activos en la comunidad</p>
+      </div>
+    </div>
+    <p class="transparencia__nota">
+      <i class="fa-solid fa-file-invoice"></i>
+      Emitimos recibos deducibles de impuestos para todas las donaciones.
+    </p>
+  </div>
+</section>
+
+<section class="otras-formas">
+  <div class="container">
+    <h2 class="section-title">Otras formas de ayudar</h2>
+    <div class="otras-formas__grid">
+      <a href="/es/contacto/" class="otra-forma-card">
+        <i class="fa-solid fa-hands-helping"></i>
+        <h3>Sé voluntario</h3>
+        <p>Dona tu tiempo y habilidades para apoyar nuestros programas</p>
+      </a>
+      <a href="/es/contacto/" class="otra-forma-card">
+        <i class="fa-solid fa-box-open"></i>
+        <h3>Dona materiales</h3>
+        <p>Instrumentos, materiales de arte, libros y más</p>
+      </a>
+      <a href="/es/contacto/" class="otra-forma-card">
+        <i class="fa-solid fa-share-nodes"></i>
+        <h3>Difunde nuestra causa</h3>
+        <p>Comparte en redes sociales y ayuda a más personas a conocernos</p>
+      </a>
     </div>
   </div>
 </section>
