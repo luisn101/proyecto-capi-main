@@ -1663,6 +1663,71 @@ main {
   display: none;
 }
 
+.faq {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+.faq .section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.faq__grid {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq .faq-item {
+  background-color: #f4f6f9;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 30, 84, 0.1);
+}
+.faq .faq-item:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.faq .faq-item summary {
+  padding: 20px 25px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #001e54;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+.faq .faq-item summary:hover {
+  background-color: rgba(0, 145, 158, 0.05);
+}
+.faq .faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.faq .faq-item summary::after {
+  content: "+";
+  font-size: 1.5rem;
+  color: #00919e;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+}
+.faq .faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+.faq .faq-item[open] summary {
+  border-bottom: 1px solid rgba(0, 30, 84, 0.1);
+}
+.faq .faq-item .faq-content {
+  padding: 20px 25px;
+  color: #1a2536;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+.faq .faq-item .faq-content p {
+  margin: 0;
+}
+
 .donar-hero {
   padding: 100px 0;
   background-color: #001e54;

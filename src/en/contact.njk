@@ -63,13 +63,25 @@ translationKey: "contact"
         </div>
       </div>
     </div>
-
     <div class="contacto-form">
-      <form class="form-container">
+      <form
+        name="contacto-capi"
+        method="POST"
+        data-netlify="true" 
+        class="form"
+        aria-labelledby="form-title"
+      >
+      <h2 id="form-title" class="sr-only">Contact Form</h2>
+        <input type="hidden" name="form-name" value="contacto-capi" />
+        <!-- 🐝 Honeypot Antispam -->
+          <p class="honeypot" style="display: none;">
+            <label>Are you a robot? <input name="botfield" /></label>
+          </p>
         <div class="form-group">
           <label for="nombre">Full Name</label>
           <input
             type="text"
+            name="nombre"
             id="nombre"
             placeholder="e.g., Jane Doe"
             required
@@ -79,6 +91,7 @@ translationKey: "contact"
           <label for="email">Email Address</label>
           <input
             type="email"
+            name="email"
             id="email"
             placeholder="jane@example.com"
             required
@@ -88,6 +101,7 @@ translationKey: "contact"
           <label for="mensaje">How can we help you?</label>
           <textarea
             id="mensaje"
+            name="mensaje"
             rows="5"
             placeholder="Tell us about your inquiry..."
             required
@@ -110,6 +124,47 @@ translationKey: "contact"
         >
         </iframe>
       </div>
+    </div>
+  </div>
+</section>
+<section class="faq">
+  <div class="container">
+    <h2 class="section-title">Frequently Asked Questions (FAQ)</h2>
+    <div class="faq__grid">
+      <details class="faq-item">
+        <summary>What are the costs of the programs?</summary>
+        <div class="faq-content">
+          <p>We offer different payment options and scholarships for families who need them. The costs vary depending on the program. Contact us via WhatsApp or phone to receive detailed information.</p>
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary>At what age can children enroll?</summary>
+        <div class="faq-content">
+          <p>We accept students starting at 5 years old. Each program has different age ranges. For example, the pottery workshop for children is for ages 5 to 12, while the academic support is for elementary and high school.</p>
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary>Can I visit the facilities before enrolling?</summary>
+        <div class="faq-content">
+          <p>Of course! We invite you to visit our space. Just schedule a visit via WhatsApp or phone and we will show you our facilities with pleasure.</p>
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary>Do I need to bring materials for the workshops?</summary>
+        <div class="faq-content">
+          <p>The majority of materials are included in the program cost. For some specific workshops (like painting), we will inform you if you need to bring anything additional at the time of registration.</p>
+        </div>
+      </details>
+      
+      <details class="faq-item">
+        <summary>Do you offer scholarships or discounts?</summary>
+        <div class="faq-content">
+          <p>Yes, we have scholarship options for families who need them and discounts for multiple child enrollments. Contact us to learn about the requirements and availability.</p>
+        </div>
+      </details>
     </div>
   </div>
 </section>
