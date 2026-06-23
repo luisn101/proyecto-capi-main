@@ -1,0 +1,79 @@
+@use "../abstract/variables" as v;
+@use "../abstract/mixins" as m;
+
+.page-legal {
+  padding: 150px 0 100px; // Aumentamos padding-top para el navbar sticky
+  background-color: v.$color-blanco;
+  min-height: 60vh;
+
+  h1 {
+    font-family: v.$font-titles;
+    color: v.$color-primario;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .legal-intro {
+    text-align: center;
+    color: v.$color-texto;
+    opacity: 0.7;
+    font-size: 0.9rem;
+    margin-bottom: 50px;
+    font-style: italic;
+  }
+
+  .legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: v.$font-body;
+    color: v.$color-texto;
+    line-height: 1.8;
+
+    h2 {
+      font-family: v.$font-titles;
+      color: v.$color-primario;
+      font-size: 1.5rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid rgba(v.$color-dorado-capi, 0.3);
+      padding-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+
+      li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 10px;
+
+        &::before {
+          content: "•";
+          color: v.$color-dorado-capi;
+          font-weight: bold;
+          position: absolute;
+          left: 0;
+          font-size: 1.5rem;
+          line-height: 1;
+        }
+      }
+    }
+
+    a {
+      color: v.$color-secundario;
+      text-decoration: none;
+      font-weight: 600;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

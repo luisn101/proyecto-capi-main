@@ -471,3 +471,25 @@ if (contactForm) {
           .catch((error) => alert("Error al enviar: " + error));
     });
 }
+
+// Botón "Volver arriba"
+const scrollTopBtn = document.querySelector('.footer__scroll-top');
+
+if (scrollTopBtn) {
+    // Mostrar/ocultar botón según el scroll
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add('is-visible');
+        } else {
+            scrollTopBtn.classList.remove('is-visible');
+        }
+    });
+
+    // Scroll suave al hacer clic
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
