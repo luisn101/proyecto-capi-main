@@ -472,7 +472,10 @@ if (contactForm) {
     });
 }
 
-// Botón "Volver arriba"
+// 
+// ==========================================
+// Botón "VOLVER ARRIBA" (Scroll to Top)
+// ==========================================
 const scrollTopBtn = document.querySelector('.footer__scroll-top');
 
 if (scrollTopBtn) {

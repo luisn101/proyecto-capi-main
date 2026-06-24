@@ -170,6 +170,17 @@ body.is-loaded {
     width: 100%;
   }
 }
+.footer__column .footer__contact-item--address {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@media (max-width: 991px) {
+  .footer__column .footer__contact-item--address {
+    justify-content: center;
+    max-width: 250px;
+  }
+}
 .footer__logo {
   height: 80px;
   width: 80px;

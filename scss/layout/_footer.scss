@@ -37,6 +37,18 @@
             align-items: center; // Asegura que los elementos internos (como el logo) se centren
             width: 100%;
         }
+
+        .footer__contact-item--address {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            @media (max-width: 991px) {
+                justify-content: center; // Centra el icono y el texto en móvil
+                max-width: 250px; // Limita el ancho para que no se vea demasiado largo
+            }
+        }
+
     }
 
     &__logo {
