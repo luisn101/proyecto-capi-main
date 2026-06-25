@@ -1402,6 +1402,18 @@ main {
 .programas__header {
   text-align: center;
   margin-bottom: 50px;
+  position: relative;
+  padding-bottom: 20px;
+}
+.programas__header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #c19d53;
 }
 .programas__title {
   color: #001e54;
@@ -1412,6 +1424,9 @@ main {
   .programas__title {
     font-size: 2.5rem;
   }
+}
+.programas__title::after {
+  display: none !important;
 }
 .programas__subtitle {
   color: #1a2536;
@@ -1424,6 +1439,22 @@ main {
   gap: 30px;
 }
 
+.galeria__header {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  padding-bottom: 20px;
+}
+.galeria__header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: #c19d53;
+}
 .galeria__title {
   font-size: 2rem;
 }
@@ -1431,6 +1462,9 @@ main {
   .galeria__title {
     font-size: 2.5rem;
   }
+}
+.galeria__title::after {
+  display: none !important;
 }
 
 .card {
