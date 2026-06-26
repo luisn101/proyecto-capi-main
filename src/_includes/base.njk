@@ -3,55 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Centro Artístico Pedagógico Integral en Samaipata. Un espacio de referencia dedicado al bienestar emocional, apoyo pedagógico y formación artística para niños y jóvenes."
-    />
+    
+    {# TÍTULO DINÁMICO #}
+    <title>{% if title %}{{ title }} | CAPI Samaipata{% else %}CAPI - Centro Artístico Pedagógico Integral{% endif %}</title>
 
-    <meta
-      name="keywords"
-      content="CAPI Samaipata, centro cultural Bolivia, apoyo pedagógico, clases de música, artes plásticas, formación integral, bienestar emocional jóvenes"
-    />
+    {# DESCRIPCIÓN DINÁMICA #}
+    <meta name="description" content="{{ description | default('Centro Artístico Pedagógico Integral en Samaipata. Un espacio dedicado al bienestar emocional, apoyo pedagógico y formación artística.') }}" />
 
+    {# CANONICAL URL (NUEVO) #}
+    <link rel="canonical" href="https://www.capisamaipata.org{{ page.url }}" />
+
+    <meta name="keywords" content="CAPI Samaipata, centro cultural Bolivia, apoyo pedagógico, clases de música, artes plásticas, formación integral, bienestar emocional jóvenes" />
     <meta name="author" content="CAPI Samaipata" />
+
+    {# OPEN GRAPH DINÁMICO #}
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.capisamaipata.org/" />
-    <meta
-      property="og:title"
-      content="CAPI - Centro Artístico Pedagógico Integral"
-    />
-    <meta
-      property="og:description"
-      content="Un refugio para el talento en Samaipata. Formación en arte, música y apoyo escolar con un enfoque humano."
-    />
-    <meta property="og:image" content="assets/img/og-image.jpg" />
+    <meta property="og:url" content="https://www.capisamaipata.org{{ page.url }}" />
+    <meta property="og:title" content="{% if title %}{{ title }} | CAPI{% else %}CAPI - Centro Artístico Pedagógico Integral{% endif %}" />
+    <meta property="og:description" content="{{ description | default('Un refugio para el talento en Samaipata. Formación en arte, música y apoyo escolar.') }}" />
+    <meta property="og:image" content="https://www.capisamaipata.org/{{ og_image | default('assets/img/og-image.jpg') }}" />
+
+    {# TWITTER CARDS #}
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="C.A.P.I. Samaipata" />
-    <meta
-      property="twitter:description"
-      content="Formando talentos, proyectando futuros. Espacio autónomo de dinamización cultural."
-    />
-    <meta property="twitter:image" content="assets/img/og-image.jpg" />
-    <title>{{ title }}</title>
+    <meta property="twitter:title" content="{% if title %}{{ title }}{% else %}C.A.P.I. Samaipata{% endif %}" />
+    <meta property="twitter:description" content="{{ description | default('Formando talentos, proyectando futuros. Espacio autónomo de dinamización cultural.') }}" />
+    <meta property="twitter:image" content="https://www.capisamaipata.org/{{ og_image | default('assets/img/og-image.jpg') }}" />
+
     <link rel="icon" href="/assets/icon/capi_icon.png" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+    
+    {# PRECONNECT PARA FUENTES #}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link 
-      rel="preload" 
-      as="image" 
-      href="/assets/img/momentos2.webp"
-      fetchpriority="high"
-    />
+    
+    {# PRELOAD DEL HERO (CORREGIDO) #}
+    {% if hero_image %}
+      <link rel="preload" as="image" href="{{ hero_image }}" fetchpriority="high" />
+    {% endif %}
+    
+    {# CSS #}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/css/main.css" />
-  </head>
+    
+    {# STRUCTURED DATA (NUEVO) #}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "CAPI Samaipata",
+      "alternateName": "Centro Artístico Pedagógico Integral",
+      "url": "https://www.capisamaipata.org",
+      "logo": "https://www.capisamaipata.org/assets/img/capi.png",
+      "description": "Centro Artístico Pedagógico Integral en Samaipata, Bolivia. Formación en arte, música y apoyo escolar.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle Bolívar al lado del Museo",
+        "addressLocality": "Samaipata",
+        "addressCountry": "BO"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+591-6784-7027",
+        "contactType": "customer service",
+        "email": "info@capisamaipata.org"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=100078096283586",
+        "https://www.instagram.com/capi_samaipata/"
+      ]
+    }
+    </script>
+</head>
 
   <body class="{% if translationKey == 'home' %}home{% endif %}">
     {% if not isErrorPage %}
