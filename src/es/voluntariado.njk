@@ -1,0 +1,135 @@
+---
+layout: base.njk
+title: Voluntariado | CAPI Samaipata
+lang: es
+translationKey: "voluntariado"
+permalink: /es/voluntariado/
+---
+
+<section class="voluntariado-hero">
+  <div class="container">
+    <h1 class="voluntariado-hero__title">Sé parte del cambio en Samaipata</h1>
+    <p class="voluntariado-hero__text">
+      Tu tiempo y talento pueden transformar la vida de niños y jóvenes. Únete a nuestra comunidad de voluntarios.
+    </p>
+  </div>
+</section>
+
+<section class="voluntariado-intro">
+  <div class="container">
+    <div class="voluntariado-intro__content">
+      <h2 class="section-title">¿Por qué ser voluntario en CAPI?</h2>
+      <p>
+        En CAPI, creemos que la educación y el arte son herramientas poderosas para construir comunidad. Como voluntario, no solo estarás ayudando a otros, sino que también formarás parte de una red de personas apasionadas que están dejando una huella positiva en Samaipata.
+      </p>
+      <p>
+        Ya seas estudiante, profesional, expatriado o simplemente alguien con ganas de aportar, hay un espacio para ti.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="areas-voluntariado">
+  <div class="container">
+    <h2 class="section-title text-center">¿Cómo puedes ayudar?</h2>
+    <div class="areas-grid">
+      <div class="area-card">
+        <i class="fa-solid fa-chalkboard-user"></i>
+        <h3>Enseñanza y Talleres</h3>
+        <p>Comparte tus habilidades: inglés, música, danza, ajedrez, informática o refuerzo escolar.</p>
+      </div>
+      <div class="area-card">
+        <i class="fa-solid fa-calendar-check"></i>
+        <h3>Eventos y Festivales</h3>
+        <p>Apoya en la organización, logística y producción de nuestros eventos culturales y comunitarios.</p>
+      </div>
+      <div class="area-card">
+        <i class="fa-solid fa-laptop-code"></i>
+        <h3>Comunicación y Diseño</h3>
+        <p>Ayúdanos a contar nuestra historia: fotografía, redes sociales, traducción o diseño gráfico.</p>
+      </div>
+      <div class="area-card">
+        <i class="fa-solid fa-hands-helping"></i>
+        <h3>Apoyo Administrativo</h3>
+        <p>Colabora con la gestión, búsqueda de fondos o mantenimiento de nuestros espacios.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="requisitos-voluntariado">
+  <div class="container">
+    <div class="requisitos-wrapper">
+      <div class="requisitos-content">
+        <h2 class="section-title text-center">Lo que buscamos en ti</h2>
+        <ul class="requisitos-list">
+          <li><i class="fa-solid fa-check"></i> Pasión por la educación, el arte o el trabajo social.</li>
+          <li><i class="fa-solid fa-check"></i> Compromiso y responsabilidad con las tareas asignadas.</li>
+          <li><i class="fa-solid fa-check"></i> Respeto por la cultura local y la comunidad de Samaipata.</li>
+          <li><i class="fa-solid fa-check"></i> Disponibilidad mínima de 4 horas semanales (flexible).</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="formulario-voluntariado">
+  <div class="container">
+    <div class="form-card">
+      <h2 class="section-title text-center">Postúlate como voluntario</h2>
+      <p class="form-intro">Completa el siguiente formulario y nos pondremos en contacto contigo para explorar cómo puedes unirte a nuestro equipo.</p>
+      
+      <form
+        name="voluntariado-capi"
+        method="POST"
+        data-netlify="true" 
+        class="form"
+        aria-labelledby="form-vol-title"
+      >
+        <h2 id="form-vol-title" class="sr-only">Formulario de voluntariado</h2>
+        <input type="hidden" name="form-name" value="voluntariado-capi" />
+        
+        <!-- 🐝 Honeypot Antispam -->
+        <p class="honeypot" style="display: none;">
+          <label>¿Eres un robot? <input name="botfield" /></label>
+        </p>
+
+        <div class="form-group">
+          <label for="nombre-vol">Nombre Completo</label>
+          <input type="text" name="nombre" id="nombre-vol" placeholder="Ej. Juan Pérez" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email-vol">Correo Electrónico</label>
+          <input type="email" name="email" id="email-vol" placeholder="juan@ejemplo.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="tel-vol">Teléfono / WhatsApp</label>
+          <input type="tel" name="telefono" id="tel-vol" placeholder="+591 ..." />
+        </div>
+
+        <div class="form-group">
+          <label for="area-vol">Área de interés</label>
+          <select name="area" id="area-vol" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="Enseñanza y Talleres">Enseñanza y Talleres</option>
+            <option value="Eventos y Festivales">Eventos y Festivales</option>
+            <option value="Comunicación y Diseño">Comunicación y Diseño</option>
+            <option value="Apoyo Administrativo">Apoyo Administrativo</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje-vol">Cuéntanos sobre ti y cómo te gustaría ayudar</label>
+          <textarea id="mensaje-vol" name="mensaje" rows="5" placeholder="Tus habilidades, experiencia o motivación..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--full">
+          Enviar Postulación
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

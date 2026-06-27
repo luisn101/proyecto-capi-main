@@ -3705,6 +3705,179 @@ html[lang=en] .perfil__img::after {
   }
 }
 
+.voluntariado-hero {
+  padding: 120px 0;
+  text-align: center;
+  background: linear-gradient(rgba(0, 30, 84, 0.85), rgba(0, 30, 84, 0.7)), url("https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=2074&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+.voluntariado-hero__title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.8rem;
+  background: linear-gradient(135deg, #ffffff 20%, #c19d53 50%, #00919e 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.3));
+  margin-bottom: 1rem;
+}
+.voluntariado-hero__text {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.voluntariado-intro {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+.voluntariado-intro .section-title {
+  margin-bottom: 2.5rem;
+}
+@media (max-width: 767px) {
+  .voluntariado-intro .section-title {
+    margin-bottom: 2rem;
+  }
+}
+.voluntariado-intro__content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.voluntariado-intro__content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #1a2536;
+  margin-bottom: 20px;
+}
+
+.areas-voluntariado {
+  padding: 80px 0;
+  background-color: #f4f6f9;
+}
+.areas-voluntariado .section-title {
+  margin-bottom: 50px;
+}
+.areas-voluntariado .areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.area-card {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border-bottom: 4px solid transparent;
+}
+.area-card:hover {
+  transform: translateY(-10px);
+  border-bottom-color: #c19d53;
+}
+.area-card i {
+  font-size: 3rem;
+  color: #00919e;
+  margin-bottom: 20px;
+}
+.area-card h3 {
+  font-family: "Montserrat", sans-serif;
+  color: #001e54;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+.area-card p {
+  color: #1a2536;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.requisitos-voluntariado {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+.requisitos-voluntariado .requisitos-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.requisitos-voluntariado .requisitos-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+.requisitos-voluntariado .requisitos-list li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #1a2536;
+}
+.requisitos-voluntariado .requisitos-list li i {
+  color: #c19d53;
+  font-size: 1.2rem;
+}
+
+.formulario-voluntariado {
+  padding: 80px 0;
+  background-color: #f4f6f9;
+}
+.formulario-voluntariado .section-title {
+  margin-bottom: 1.5rem;
+}
+.formulario-voluntariado .form-card {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(193, 157, 83, 0.3);
+}
+@media (max-width: 767px) {
+  .formulario-voluntariado .form-card {
+    padding: 30px 20px;
+  }
+}
+.formulario-voluntariado .form-card .form-intro {
+  text-align: center;
+  color: #1a2536;
+  margin-bottom: 40px;
+  font-size: 1.05rem;
+}
+.formulario-voluntariado .form-card .form-group {
+  margin-bottom: 20px;
+}
+.formulario-voluntariado .form-card .form-group label {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  color: #001e54;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.formulario-voluntariado .form-card .form-group input,
+.formulario-voluntariado .form-card .form-group select,
+.formulario-voluntariado .form-card .form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #f4f6f9;
+  border-radius: 8px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+.formulario-voluntariado .form-card .form-group input:focus,
+.formulario-voluntariado .form-card .form-group select:focus,
+.formulario-voluntariado .form-card .form-group textarea:focus {
+  outline: none;
+  border-color: #00919e;
+}
+
 .page-legal {
   padding: 150px 0 100px;
   background-color: #ffffff;
