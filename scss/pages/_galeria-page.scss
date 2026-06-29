@@ -316,3 +316,110 @@
         display: none;
     }
 }
+
+// Ajustes específicos para móvil
+@media (max-width: 768px) {
+    // Reducir padding del contenedor de timeline
+    .galeria-timeline-container {
+        &::before {
+            display: none; // Ocultar línea vertical en móvil
+        }
+    }
+
+    // Quitar padding izquierdo excesivo y ajustar años
+    .galeria-year {
+        padding-left: 20px; // Reducido de 100px a 20px
+        padding-right: 20px;
+        padding-top: 60px; // Reducido de 80px
+        padding-bottom: 40px; // Reducido de 60px
+        margin: 0;
+        
+        // Ocultar el dot dorado en móvil
+        .timeline-dot {
+            display: none;
+        }
+    }
+
+    // Ajustar títulos de año para móvil
+    .year-header {
+        font-size: 2.2rem; // Reducido de 3rem
+        margin-bottom: 25px;
+        padding-left: 0;
+        
+        span {
+            display: block; // Poner el subtítulo debajo en móvil
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+        
+        &::after {
+            display: none; // Ocultar línea horizontal en móvil
+        }
+    }
+
+    // Reducir espacio entre fotos en móvil
+    .galeria-grid {
+        gap: 15px; // Reducido de 25px
+        padding: 15px 0 40px; // Reducido padding
+        grid-auto-rows: 250px; // Altura base más pequeña
+    }
+
+    // Ajustar items de galería
+    .galeria-item {
+        border-radius: 10px; // Bordes un poco más pequeños
+        
+        &--wide {
+            grid-column: span 1; // En móvil, que no ocupe 2 columnas
+        }
+        
+        &--tall {
+            grid-row: span 1; // En móvil, que no sea tan alta
+        }
+    }
+
+    // Ajustar navegación de años
+    .galeria-nav {
+        top: 70px; // Ajustado para navbar móvil
+        padding: 15px 0;
+        
+        a {
+            display: inline-block;
+            margin: 5px 10px; // Más espacio entre años
+            font-size: 0.95rem;
+        }
+    }
+
+    // Ajustar hero en móvil
+    .hero-simple {
+        padding: 100px 0 60px; // Reducido padding
+        
+        &__title {
+            font-size: 2rem;
+        }
+        
+        &__subtitle {
+            font-size: 1rem;
+            padding: 0 15px;
+        }
+    }
+}
+
+// Ajustes adicionales para pantallas muy pequeñas
+@media (max-width: 480px) {
+    .galeria-grid {
+        gap: 12px; // Aún más compacto
+        grid-auto-rows: 220px;
+    }
+    
+    .galeria-item__overlay {
+        padding: 15px;
+        
+        .galeria-item__text {
+            font-size: 1.1rem; // Texto más pequeño
+        }
+    }
+    
+    .year-header {
+        font-size: 2rem;
+    }
+}

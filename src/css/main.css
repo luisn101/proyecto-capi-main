@@ -3713,6 +3713,82 @@ html[lang=en] .perfil__img::after {
   }
 }
 
+@media (max-width: 768px) {
+  .galeria-timeline-container::before {
+    display: none;
+  }
+  .galeria-year {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    margin: 0;
+  }
+  .galeria-year .timeline-dot {
+    display: none;
+  }
+  .year-header {
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    padding-left: 0;
+  }
+  .year-header span {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+  .year-header::after {
+    display: none;
+  }
+  .galeria-grid, .galeria .galeria__grid {
+    gap: 15px;
+    padding: 15px 0 40px;
+    grid-auto-rows: 250px;
+  }
+  .galeria-item, .galeria .galeria__item {
+    border-radius: 10px;
+  }
+  .galeria-item--wide {
+    grid-column: span 1;
+  }
+  .galeria-item--tall {
+    grid-row: span 1;
+  }
+  .galeria-nav {
+    top: 70px;
+    padding: 15px 0;
+  }
+  .galeria-nav a {
+    display: inline-block;
+    margin: 5px 10px;
+    font-size: 0.95rem;
+  }
+  .hero-simple {
+    padding: 100px 0 60px;
+  }
+  .hero-simple__title {
+    font-size: 2rem;
+  }
+  .hero-simple__subtitle {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+}
+@media (max-width: 480px) {
+  .galeria-grid, .galeria .galeria__grid {
+    gap: 12px;
+    grid-auto-rows: 220px;
+  }
+  .galeria-item__overlay, .galeria .galeria__overlay {
+    padding: 15px;
+  }
+  .galeria-item__overlay .galeria-item__text, .galeria .galeria__overlay .galeria-item__text, .galeria-item__overlay .galeria .galeria__text, .galeria .galeria-item__overlay .galeria__text, .galeria .galeria__overlay .galeria__text {
+    font-size: 1.1rem;
+  }
+  .year-header {
+    font-size: 2rem;
+  }
+}
 .voluntariado-hero {
   padding: 120px 0;
   text-align: center;
