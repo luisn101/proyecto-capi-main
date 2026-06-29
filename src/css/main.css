@@ -3677,8 +3677,16 @@ html[lang=en] .perfil__img::after {
   }
 }
 @media (max-width: 768px) {
-  .galeria-timeline-container::before {
-    display: none;
+  .galeria-timeline-container::before .galeria-year {
+    padding-left: 0;
+    border-left: 3px solid #c19d53;
+    margin-left: 20px;
+    padding-left: 20px;
+  }
+  .galeria-timeline-container::before .timeline-dot {
+    left: -12px;
+    width: 14px;
+    height: 14px;
   }
 }
 
@@ -3723,6 +3731,11 @@ html[lang=en] .perfil__img::after {
   display: inline-block;
   filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.3));
   margin-bottom: 1rem;
+}
+@media (max-width: 767px) {
+  .voluntariado-hero__title {
+    font-size: 2rem;
+  }
 }
 .voluntariado-hero__text {
   font-size: 1.2rem;

@@ -279,7 +279,20 @@
             left: 21px;
         }
 
-        @media (max-width: 768px) { display: none; }
+        @media (max-width: 768px) { 
+            .galeria-year {
+                padding-left: 0;
+                border-left: 3px solid v.$color-dorado-capi; // Línea vertical simple
+                margin-left: 20px;
+                padding-left: 20px;
+            }
+    
+            .timeline-dot {
+                left: -12px; // Posiciona el dot sobre la línea
+                width: 14px;
+                height: 14px;
+            } 
+        }
     }
 }
 
