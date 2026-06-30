@@ -319,20 +319,36 @@
 
 // Ajustes específicos para móvil
 @media (max-width: 768px) {
-    // Reducir padding del contenedor de timeline
+    // Ocultar línea vertical continua del contenedor principal
     .galeria-timeline-container {
         &::before {
-            display: none; // Ocultar línea vertical en móvil
+            display: none;
         }
     }
 
-    // Quitar padding izquierdo excesivo y ajustar años
+    // Cada año con su propia línea vertical
     .galeria-year {
-        padding-left: 20px; // Reducido de 100px a 20px
+        position: relative;
+        padding-left: 20px;
         padding-right: 20px;
-        padding-top: 60px; // Reducido de 80px
-        padding-bottom: 40px; // Reducido de 60px
+        padding-top: 60px;
+        padding-bottom: 40px;
         margin: 0;
+        
+        // Línea vertical individual para cada sección
+        &::before {
+            content: '';
+            position: absolute;
+            left: 19%;
+            transform: translateX(-50%);
+            top: 120px; // Empieza debajo del título del año
+            width: 3px;
+            height: calc(100% - 120px); // Se extiende hasta el final de la sección
+            background: linear-gradient(to bottom,
+                rgba(v.$color-dorado-capi, 0.8) 0%,
+                rgba(v.$color-dorado-capi, 0.3) 100%);
+            z-index: 1; // Detrás de las fotos
+        }
         
         // Ocultar el dot dorado en móvil
         .timeline-dot {
@@ -340,58 +356,65 @@
         }
     }
 
-    // Ajustar títulos de año para móvil
+    // Títulos de año
     .year-header {
-        font-size: 2.2rem; // Reducido de 3rem
+        font-size: 2.2rem;
         margin-bottom: 25px;
         padding-left: 0;
+        position: relative;
+        z-index: 2; // Sobre la línea
+        text-align: left;
         
         span {
-            display: block; // Poner el subtítulo debajo en móvil
+            display: block;
             font-size: 0.9rem;
             margin-top: 5px;
         }
         
         &::after {
-            display: none; // Ocultar línea horizontal en móvil
+            display: none;
         }
     }
 
-    // Reducir espacio entre fotos en móvil
+    // Grid con z-index para estar sobre la línea
     .galeria-grid {
-        gap: 15px; // Reducido de 25px
-        padding: 15px 0 40px; // Reducido padding
-        grid-auto-rows: 250px; // Altura base más pequeña
+        position: relative;
+        z-index: 2; // Sobre la línea vertical
+        gap: 15px;
+        padding: 15px 0 40px;
+        grid-auto-rows: 250px;
     }
 
-    // Ajustar items de galería
+    // Ajustar items
     .galeria-item {
-        border-radius: 10px; // Bordes un poco más pequeños
+        position: relative;
+        z-index: 2; // Sobre la línea
+        border-radius: 10px;
         
         &--wide {
-            grid-column: span 1; // En móvil, que no ocupe 2 columnas
+            grid-column: span 1;
         }
         
         &--tall {
-            grid-row: span 1; // En móvil, que no sea tan alta
+            grid-row: span 1;
         }
     }
 
-    // Ajustar navegación de años
+    // Navegación de años
     .galeria-nav {
-        top: 70px; // Ajustado para navbar móvil
+        top: 70px;
         padding: 15px 0;
         
         a {
             display: inline-block;
-            margin: 5px 10px; // Más espacio entre años
+            margin: 5px 10px;
             font-size: 0.95rem;
         }
     }
 
-    // Ajustar hero en móvil
+    // Hero en móvil
     .hero-simple {
-        padding: 100px 0 60px; // Reducido padding
+        padding: 100px 0 60px;
         
         &__title {
             font-size: 2rem;
@@ -402,12 +425,44 @@
             padding: 0 15px;
         }
     }
+
+    // Forzar gap en TODOS los grids, incluyendo 2021
+    .galeria-grid {
+        gap: 15px !important; // !important para sobrescribir cualquier conflicto
+        padding: 15px 0 40px !important;
+        grid-auto-rows: 250px;
+        display: grid; // Asegurar que sea grid
+    }
+    
+    // Asegurar que bg-light no interfiera
+    .galeria-year.bg-light {
+        padding-top: 60px;
+        padding-bottom: 40px;
+        
+        .galeria-grid {
+            gap: 15px;
+        }
+    }
+    
+    // Asegurar que las fotos tengan margen
+    .galeria-item {
+        margin: 0 !important; // Resetear márgenes
+        position: relative;
+        z-index: 2;
+    }
 }
 
-// Ajustes adicionales para pantallas muy pequeñas
+// Pantallas muy pequeñas
 @media (max-width: 480px) {
+    .galeria-year {
+        &::before {
+            top: 110px; // Ajuste para pantallas pequeñas
+            height: calc(100% - 110px);
+        }
+    }
+    
     .galeria-grid {
-        gap: 12px; // Aún más compacto
+        gap: 12px;
         grid-auto-rows: 220px;
     }
     
@@ -415,7 +470,7 @@
         padding: 15px;
         
         .galeria-item__text {
-            font-size: 1.1rem; // Texto más pequeño
+            font-size: 1.1rem;
         }
     }
     
