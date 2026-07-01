@@ -193,6 +193,29 @@
     }
 }
 
+// Para galería en homepage (flexible)
+.galeria__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+
+    @media (max-width: 991px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
 // ============================================
 // ITEM DE GALERÍA (TODOS IGUALES)
 // ============================================
@@ -200,6 +223,84 @@
     display: block;
     text-decoration: none;
     color: inherit;
+    width: 100%;
+    height: 100%;
+}
+
+// Para galería en homepage (flexible)
+.galeria__item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    aspect-ratio: 4 / 3;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    &:hover img {
+        transform: scale(1.08);
+    }
+
+    .galeria__overlay,
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(v.$color-primario, 0.95) 0%, transparent 70%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+
+        @media (max-width: 768px) {
+            padding: 15px;
+        }
+    }
+
+    &:hover .galeria__overlay,
+    &:hover &__overlay {
+        opacity: 1;
+    }
+
+    .galeria__text,
+    &__text {
+        color: v.$color-blanco;
+        font-family: v.$font-titles;
+        font-size: 1.2rem;
+        margin: 0;
+        transform: translateY(15px);
+        transition: transform 0.4s ease;
+        line-height: 1.3;
+
+        @media (max-width: 768px) {
+            font-size: 1rem;
+        }
+    }
+
+    &:hover .galeria__text,
+    &:hover &__text {
+        transform: translateY(0);
+    }
+
+    i.fa-eye {
+        color: v.$color-blanco;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
 }
 
 .galeria-item {
