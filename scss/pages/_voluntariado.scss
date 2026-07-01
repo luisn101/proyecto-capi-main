@@ -143,10 +143,10 @@
   background-color: v.$color-fondo-claro;
 
   .section-title {
-    margin-bottom: 1.5rem; // 👈 Espacio justo tras la línea
+    margin-bottom: 3rem; // Aumentado para separar del formulario
   }
 
-  .form-card {
+  .form {
     max-width: 700px;
     margin: 0 auto;
     background: v.$color-blanco;
@@ -180,7 +180,6 @@
       }
 
       input,
-      select,
       textarea {
         width: 100%;
         padding: 12px 15px;
@@ -194,6 +193,34 @@
           outline: none;
           border-color: v.$color-secundario;
         }
+      }
+
+      select {
+        width: 100%;
+        padding: 12px 15px;
+        padding-right: 45px; // Más espacio para la flecha
+        border: 2px solid v.$color-fondo-claro;
+        border-radius: 8px;
+        font-family: v.$font-body;
+        font-size: v.$font-size-base;
+        transition: border-color 0.3s;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23333' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 15px center;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:focus {
+          outline: none;
+          border-color: v.$color-secundario;
+        }
+      }
+    }
+
+    @media (max-width: 767px) {
+      .form-group select {
+        font-size: 0.95rem; // Disminuir tamaño en móvil
       }
     }
   }
