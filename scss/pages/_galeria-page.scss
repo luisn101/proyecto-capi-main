@@ -1,6 +1,8 @@
 @use '../abstract/variables' as v;
 
-// Reutilizamos el estilo del Hero de las otras páginas
+// ============================================
+// HERO DE GALERÍA
+// ============================================
 .hero-simple {
     position: relative;
     padding: 120px 0 80px;
@@ -18,7 +20,6 @@
     &__overlay {
         position: absolute;
         top: 0; left: 0; width: 100%; height: 100%;
-        // Gradiente oscuro para que el texto resalte
         background: linear-gradient(135deg, rgba(v.$color-primario, 0.9) 0%, rgba(0,0,0,0.6) 100%);
         z-index: -1;
     }
@@ -27,19 +28,14 @@
         font-size: clamp(2rem, 6vw, 2.7rem);
         font-family: v.$font-titles;
         margin-bottom: 20px;
-        // GRADIENTE DORADO (Estilo unificado)
         background: linear-gradient(135deg,
                 v.$color-blanco 20%,
                 v.$color-dorado-capi 50%,
                 v.$color-secundario 90%);
-        -webkit-background-clip: text; // Corta el fondo con la forma del texto
+        -webkit-background-clip: text;
         background-clip: text;
-        -webkit-text-fill-color: transparent; // Hace el color sólido transparente para ver el fondo
-        display: inline-block; // Asegura que el gradiente se aplique bien al bloque de texto
-
-        @media (max-width: v.$bp-mobile) {
-            font-size: 2rem;
-        }
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
     }
 
     &__subtitle {
@@ -48,433 +44,331 @@
         margin: 0 auto;
         font-size: 1.1rem;
         opacity: 0.9;
+        padding: 0 20px;
     }
 }
 
-// Estilos generales para sección galería en homepage
-.galeria {
-    padding: 80px 0 20px; // Reducido padding-bottom para que el botón esté más cerca
-    background-color: v.$color-blanco;
-
-    .galeria__header {
-        max-width: 900px;
-        margin: 0 auto 40px;
-        text-align: center;
-    }
-
-    .galeria__grid {
-        @extend .galeria-grid;
-    }
-
-    .galeria__item {
-        @extend .galeria-item;
-    }
-
-    .galeria__overlay {
-        @extend .galeria-item__overlay;
-
-        i.fa-eye {
-            color: v.$color-blanco;
-            font-size: 2rem; // Más grande que el default
-            margin-bottom: 10px; // Espacio antes del texto
-        }
-    }
-
-    .galeria__text {
-        @extend .galeria-item__text;
-    }
-
-    .galeria__footer {
-        text-align: center; // Centra el botón
-        margin-top: 0; // Reducido para menos espacio arriba
-    }
-}
-
-// Navegación de años
+// ============================================
+// NAVEGACIÓN DE AÑOS (Sticky)
+// ============================================
 .galeria-nav {
     background: v.$color-blanco;
-    padding: 20px 0;
+    padding: 18px 0;
     position: sticky;
-    top: 82px; // Altura de tu navbar
+    top: 77px;
     z-index: 100;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     text-align: center;
 
     .filter-link {
-        margin: 0 15px;
+        margin: 0 12px;
         color: v.$color-primario;
         font-weight: 700;
         text-decoration: none;
-        transition: color 0.3s;
-        
-        &:hover { color: v.$color-dorado-capi; }
-    }
-}
-
-// Estilo de los años
-.galeria-year {
-    scroll-margin-top: 190px; // Ajusta el scroll para posicionarse justo en el título, considerando el navbar sticky (110px) + padding extra
-}
-
-.galeria-year__title {
-    position: relative;
-    
-    &::before {
-        content: '';
-        position: absolute;
-        left: -51px; // Centrado exacto sobre la línea (55px - radio del círculo)
-        top: 50%;
-        transform: translateY(-50%);
-        width: 12px;
-        height: 12px;
-        background-color: v.$color-dorado-capi;
-        border: 2px solid v.$color-blanco;
-        border-radius: 50%;
-        z-index: 2;
-    }
-}
-
-.year-header {
-    font-family: v.$font-titles;
-    color: v.$color-primario;
-    font-size: 3rem;
-    margin: 0 0 30px 0;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    span {
         font-size: 1rem;
+        transition: color 0.3s;
+
+        &:hover {
+            color: v.$color-dorado-capi;
+        }
+
+        @media (max-width: 768px) {
+            margin: 0 8px;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+// ============================================
+// TIMELINE CONTAINER
+// ============================================
+.galeria-timeline {
+    position: relative;
+}
+
+// ============================================
+// SECCIÓN POR AÑO
+// ============================================
+.galeria-year {
+    position: relative;
+    padding: 80px 0;
+    scroll-margin-top: 160px;
+
+    // Fondo alternado para separar secciones
+    &:nth-child(even) {
+        background-color: v.$color-fondo-claro;
+    }
+
+    @media (max-width: 768px) {
+        padding: 50px 0;
+        scroll-margin-top: 140px;
+    }
+}
+
+// ============================================
+// HEADER DE CADA AÑO
+// ============================================
+.year-header {
+    margin-bottom: 40px;
+
+    &__content {
+        display: flex;
+        align-items: baseline;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 8px;
+        }
+    }
+
+    &__title {
+        font-family: v.$font-titles;
+        color: v.$color-primario;
+        font-size: 3rem;
+        margin: 0;
+        line-height: 1;
+
+        @media (max-width: 768px) {
+            font-size: 2.5rem;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 2rem;
+        }
+    }
+
+    &__subtitle {
         font-family: v.$font-body;
+        font-size: 1rem;
         text-transform: uppercase;
         letter-spacing: 2px;
         color: v.$color-dorado-capi;
+        font-weight: 600;
+
+        @media (max-width: 768px) {
+            font-size: 0.85rem;
+        }
     }
 
+    // Línea dorada debajo del título
     &::after {
-        content: "";
-        flex: 1;
-        height: 1px;
-        background: #eee;
+        content: '';
+        display: block;
+        width: 60px;
+        height: 3px;
+        background-color: v.$color-dorado-capi;
+        margin-top: 20px;
+
+        @media (max-width: 768px) {
+            margin: 15px auto 0;
+        }
     }
 }
 
-.galeria-grid, .galeria__grid {
+// ============================================
+// GRID DE FOTOS (UNIFORME)
+// ============================================
+.galeria-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    grid-auto-rows: 200px; // Definimos una altura base para las filas
-    gap: 25px;
-    padding: 20px 0 50px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    @media (max-width: 991px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
 }
 
-.galeria-item, .galeria__item {
-    position: relative;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    cursor: pointer;
-    
-    // Por defecto todas ocupan 1 celda (200px de alto)
-    grid-row: span 1; 
+// ============================================
+// ITEM DE GALERÍA (TODOS IGUALES)
+// ============================================
+.galeria-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
 
-    // CLASES DE VARIEDAD
-    &--tall { grid-row: span 2; } // Foto vertical (400px + gap)
-    &--wide { grid-column: span 2; } // Foto horizontal doble
+.galeria-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    aspect-ratio: 4 / 3; // Todas las fotos con la misma proporción
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    }
 
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: block;
         transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
 
-    // Estilo del overlay (Copiamos el anterior mejorado)
-    &__overlay, .galeria__overlay {
+    &:hover img {
+        transform: scale(1.08);
+    }
+
+    &__overlay {
         position: absolute;
         inset: 0;
-        background: linear-gradient(to top, rgba(v.$color-primario, 0.95) 0%, transparent 80%);
+        background: linear-gradient(to top, rgba(v.$color-primario, 0.95) 0%, transparent 70%);
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         padding: 20px;
         opacity: 0;
         transition: opacity 0.4s ease;
+
+        @media (max-width: 768px) {
+            padding: 15px;
+        }
     }
 
-    &:hover {
-        img { transform: scale(1.08); }
-        .galeria-item__overlay, .galeria__overlay { opacity: 1; }
+    &:hover .galeria-item__overlay {
+        opacity: 1;
     }
 
-    &__text, .galeria__text {
+    &__text {
         color: v.$color-blanco;
         font-family: v.$font-titles;
-        font-size: 1.3rem;
-        margin-bottom: 15px;
-        transform: translateY(20px);
+        font-size: 1.2rem;
+        margin: 0 0 8px 0;
+        transform: translateY(15px);
         transition: transform 0.4s ease;
+        line-height: 1.3;
+
+        @media (max-width: 768px) {
+            font-size: 1rem;
+        }
+    }
+
+    &:hover .galeria-item__text {
+        transform: translateY(0);
     }
 
     &__date {
         color: v.$color-dorado-capi;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 1px;
+        transform: translateY(15px);
+        transition: transform 0.4s ease 0.05s;
+    }
+
+    &:hover .galeria-item__date {
+        transform: translateY(0);
     }
 }
 
-// Responsive: En móviles quitamos los spans para que no se rompa el diseño
-@media (max-width: 768px) {
-    .galeria-item--wide { grid-column: span 1; }
-    .galeria-grid { grid-auto-rows: 300px; }
-}
+// ============================================
+// LIGHTBOX
+// ============================================
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 
-.galeria-page {
-    position: relative;
-}
-
-.galeria-year {
-    position: relative;
-    padding-left: 100px;
-    // Quitamos márgenes para que los años se toquen y la línea sea continua
-    margin: 0; 
-    padding-top: 80px; // El espacio que antes era margen del título
-    padding-bottom: 60px;
-
-    // EL FONDO DE AÑOS PARES (¡Aquí vuelve!)
-    &:nth-child(even) {
-        background-color: v.$color-fondo-claro;
+    &.is-active {
+        display: flex;
     }
 
-    @media (max-width: 1200px) {
-        padding-left: 60px;
-    }
-
-    @media (max-width: 768px) {
-        padding-left: 0;
-    }
-}
-
-.galeria-timeline-container {
-    position: relative;
-
-    &::before {
-        content: '';
+    &__close {
         position: absolute;
-        left: 54px;
-        width: 2px;
-        z-index: 1;
-        top: 84px; // Empieza después del título del primer año
-        bottom: 0; // Llega hasta el final de todos los años
-        background: linear-gradient(to bottom,
-            rgba(v.$color-dorado-capi, 1) 0%,
-            rgba(v.$color-dorado-capi, 0.9) 20%,
-            rgba(v.$color-dorado-capi, 0.8) 40%,
-            rgba(v.$color-dorado-capi, 0.6) 60%,
-            rgba(v.$color-dorado-capi, 0.4) 80%,
-            rgba(v.$color-dorado-capi, 0.2) 100%);
+        top: 20px;
+        right: 30px;
+        color: v.$color-blanco;
+        font-size: 2.5rem;
+        cursor: pointer;
+        z-index: 10000;
+        transition: color 0.3s;
 
-        @media (max-width: 1200px) {
-            left: 21px;
-        }
-
-        @media (max-width: 768px) { 
-            .galeria-year {
-                padding-left: 0;
-                border-left: 3px solid v.$color-dorado-capi; // Línea vertical simple
-                margin-left: 20px;
-                padding-left: 20px;
-            }
-    
-            .timeline-dot {
-                left: -12px; // Posiciona el dot sobre la línea
-                width: 14px;
-                height: 14px;
-            } 
-        }
-    }
-}
-
-.timeline-dot {
-    position: absolute;
-    left: 46px; // Centrado con la línea al usar el radio del dot
-    top: 75px; // Alineado con el centro del título H2
-    width: 18px;
-    height: 18px;
-    background-color: v.$color-blanco;
-    border: 4px solid v.$color-dorado-capi;
-    border-radius: 50%;
-    z-index: 2;
-    box-shadow: 0 0 10px rgba(v.$color-dorado-capi, 0.5);
-
-    @media (max-width: 1200px) {
-        left: 12px;
-    }
-
-    @media (max-width: 768px) {
-        display: none;
-    }
-}
-
-// Ajustes específicos para móvil
-@media (max-width: 768px) {
-    // Ocultar línea vertical continua del contenedor principal
-    .galeria-timeline-container {
-        &::before {
-            display: none;
+        &:hover {
+            color: v.$color-dorado-capi;
         }
     }
 
-    // Cada año con su propia línea vertical
-    .galeria-year {
-        position: relative;
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 60px;
-        padding-bottom: 40px;
-        margin: 0;
-        
-        // Línea vertical individual para cada sección
-        &::before {
-            content: '';
-            position: absolute;
-            left: 19%;
-            transform: translateX(-50%);
-            top: 120px; // Empieza debajo del título del año
-            width: 3px;
-            height: calc(100% - 120px); // Se extiende hasta el final de la sección
-            background: linear-gradient(to bottom,
-                rgba(v.$color-dorado-capi, 0.8) 0%,
-                rgba(v.$color-dorado-capi, 0.3) 100%);
-            z-index: 1; // Detrás de las fotos
-        }
-        
-        // Ocultar el dot dorado en móvil
-        .timeline-dot {
-            display: none;
-        }
+    img {
+        max-width: 90%;
+        max-height: 80vh;
+        object-fit: contain;
+        border-radius: 8px;
     }
 
-    // Títulos de año
-    .year-header {
-        font-size: 2.2rem;
-        margin-bottom: 25px;
-        padding-left: 0;
-        position: relative;
-        z-index: 2; // Sobre la línea
-        text-align: left;
-        
-        span {
-            display: block;
-            font-size: 0.9rem;
-            margin-top: 5px;
-        }
-        
-        &::after {
-            display: none;
-        }
+    &__caption {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: v.$color-blanco;
+        font-family: v.$font-titles;
+        font-size: 1.1rem;
+        text-align: center;
+        max-width: 80%;
     }
 
-    // Grid con z-index para estar sobre la línea
-    .galeria-grid {
-        position: relative;
-        z-index: 2; // Sobre la línea vertical
-        gap: 15px;
-        padding: 15px 0 40px;
-        grid-auto-rows: 250px;
+    &__counter {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: v.$color-blanco;
+        font-size: 0.9rem;
+        opacity: 0.7;
     }
 
-    // Ajustar items
-    .galeria-item {
-        position: relative;
-        z-index: 2; // Sobre la línea
-        border-radius: 10px;
-        
-        &--wide {
-            grid-column: span 1;
-        }
-        
-        &--tall {
-            grid-row: span 1;
-        }
-    }
+    &-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(v.$color-blanco, 0.1);
+        border: none;
+        color: v.$color-blanco;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: background 0.3s;
 
-    // Navegación de años
-    .galeria-nav {
-        top: 70px;
-        padding: 15px 0;
-        
-        a {
-            display: inline-block;
-            margin: 5px 10px;
-            font-size: 0.95rem;
+        &:hover {
+            background: rgba(v.$color-dorado-capi, 0.3);
         }
-    }
 
-    // Hero en móvil
-    .hero-simple {
-        padding: 100px 0 60px;
-        
-        &__title {
-            font-size: 2rem;
-        }
-        
-        &__subtitle {
-            font-size: 1rem;
-            padding: 0 15px;
-        }
-    }
+        &.prev { left: 20px; }
+        &.next { right: 20px; }
 
-    // Forzar gap en TODOS los grids, incluyendo 2021
-    .galeria-grid {
-        gap: 15px !important; // !important para sobrescribir cualquier conflicto
-        padding: 15px 0 40px !important;
-        grid-auto-rows: 250px;
-        display: grid; // Asegurar que sea grid
-    }
-    
-    // Asegurar que bg-light no interfiera
-    .galeria-year.bg-light {
-        padding-top: 60px;
-        padding-bottom: 40px;
-        
-        .galeria-grid {
-            gap: 15px;
-        }
-    }
-    
-    // Asegurar que las fotos tengan margen
-    .galeria-item {
-        margin: 0 !important; // Resetear márgenes
-        position: relative;
-        z-index: 2;
-    }
-}
+        @media (max-width: 768px) {
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
 
-// Pantallas muy pequeñas
-@media (max-width: 480px) {
-    .galeria-year {
-        &::before {
-            top: 110px; // Ajuste para pantallas pequeñas
-            height: calc(100% - 110px);
+            &.prev { left: 10px; }
+            &.next { right: 10px; }
         }
-    }
-    
-    .galeria-grid {
-        gap: 12px;
-        grid-auto-rows: 220px;
-    }
-    
-    .galeria-item__overlay {
-        padding: 15px;
-        
-        .galeria-item__text {
-            font-size: 1.1rem;
-        }
-    }
-    
-    .year-header {
-        font-size: 2rem;
     }
 }
