@@ -1248,6 +1248,11 @@ main {
   overflow: hidden;
   color: white;
 }
+@media (max-width: 480px) {
+  .hero {
+    min-height: 70vh;
+  }
+}
 .hero__image-box {
   position: absolute;
   top: 0;
@@ -1268,6 +1273,11 @@ main {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
+}
+@media (max-width: 480px) {
+  .hero__overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
 }
 .hero__container {
   width: 100%;
@@ -2264,6 +2274,105 @@ main {
   line-height: 1.5;
 }
 
+@media (min-width: 400px) and (max-width: 416px) {
+  .donacion {
+    padding: 40px 0;
+  }
+  .donacion__impacto .impacto-item {
+    gap: 12px;
+    margin-bottom: 1rem;
+    padding: 12px;
+  }
+  .donacion__impacto .impacto-item i {
+    font-size: 1.5rem;
+    min-width: 40px;
+  }
+  .donacion__impacto .impacto-item p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+  .donacion__historia {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  .donacion__historia h3 {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+  }
+  .donacion__historia .historia-card__texto {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    padding-left: 15px;
+  }
+  .donacion__historia .historia-card__texto::before {
+    font-size: 2rem;
+    top: -5px;
+  }
+  .donacion__historia .historia-card__autor {
+    padding-left: 15px;
+  }
+  .donacion__historia .historia-card__autor strong {
+    font-size: 0.85rem;
+  }
+  .donacion__historia .historia-card__autor span {
+    font-size: 0.75rem;
+  }
+  .donacion__form-card {
+    min-width: auto;
+    padding: 20px;
+    border-radius: 12px;
+  }
+  .donacion__form-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  .donacion__grid-montos {
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  .donacion__tipo {
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+  .donacion__tipo .btn-tipo {
+    padding: 12px;
+    font-size: 0.8rem;
+    gap: 6px;
+  }
+  .donacion__tipo .btn-tipo i {
+    font-size: 1rem;
+  }
+  .donacion__secure {
+    margin-top: 15px;
+    font-size: 0.7rem;
+  }
+  .btn-monto {
+    padding: 12px 8px;
+    gap: 3px;
+  }
+  .btn-monto .monto-valor {
+    font-size: 1.1rem;
+  }
+  .btn-monto .monto-descripcion {
+    font-size: 0.65rem;
+    line-height: 1.2;
+  }
+  .btn-monto--custom {
+    font-size: 0.8rem;
+  }
+  .input-group {
+    padding: 8px 12px;
+  }
+  .input-group__symbol {
+    margin-right: 8px;
+    font-size: 0.9rem;
+  }
+  .input-group input {
+    font-size: 1rem;
+  }
+}
 .nosotros-hero {
   padding: 100px 0;
   background-color: #001e54;

@@ -482,3 +482,135 @@
         }
     }
 }
+
+// ============================================
+// MEDIA QUERY ESPECÍFICA: Galaxy Z Fold 5
+// Ancho de 408px cuando está plegado
+// ============================================
+@media (min-width: 400px) and (max-width: 416px) {
+    .donacion {
+        padding: 40px 0;
+
+        &__impacto {
+            .impacto-item {
+                gap: 12px;
+                margin-bottom: 1rem;
+                padding: 12px;
+
+                i {
+                    font-size: 1.5rem;
+                    min-width: 40px;
+                }
+
+                p {
+                    font-size: 0.85rem;
+                    line-height: 1.5;
+                }
+            }
+        }
+
+        &__historia {
+            margin-top: 25px;
+            padding: 15px;
+            border-radius: 8px;
+
+            h3 {
+                margin-bottom: 15px;
+                font-size: 1.1rem;
+            }
+
+            .historia-card {
+                &__texto {
+                    font-size: 0.9rem;
+                    line-height: 1.6;
+                    margin-bottom: 12px;
+                    padding-left: 15px;
+
+                    &::before {
+                        font-size: 2rem;
+                        top: -5px;
+                    }
+                }
+
+                &__autor {
+                    padding-left: 15px;
+
+                    strong {
+                        font-size: 0.85rem;
+                    }
+
+                    span {
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+        }
+
+        &__form-card {
+            min-width: auto;
+            padding: 20px;
+            border-radius: 12px;
+
+            h3 {
+                margin-bottom: 1rem;
+                font-size: 1.1rem;
+            }
+        }
+
+        &__grid-montos {
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        &__tipo {
+            gap: 8px;
+            margin-bottom: 15px;
+
+            .btn-tipo {
+                padding: 12px;
+                font-size: 0.8rem;
+                gap: 6px;
+
+                i {
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        &__secure {
+            margin-top: 15px;
+            font-size: 0.7rem;
+        }
+    }
+
+    .btn-monto {
+        padding: 12px 8px;
+        gap: 3px;
+
+        .monto-valor {
+            font-size: 1.1rem;
+        }
+
+        .monto-descripcion {
+            font-size: 0.65rem;
+            line-height: 1.2;
+        }
+
+        &--custom {
+            font-size: 0.8rem;
+        }
+    }
+
+    .input-group {
+        padding: 8px 12px;
+
+        &__symbol {
+            margin-right: 8px;
+            font-size: 0.9rem;
+        }
+
+        input {
+            font-size: 1rem;
+        }
+    }
+}
