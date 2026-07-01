@@ -84,7 +84,7 @@
     color: white;
 
     @media (max-width: v.$bp-mobile) {
-        min-height: 70vh; // Reduce la altura en móvil para no tapar las caras
+        min-height: 80vh; // Reduce la altura en móvil pero mantiene balance
     }
 
     &__image-box {
@@ -122,6 +122,10 @@
         padding: 0 20px;
         position: relative; 
         z-index: 1; // Asegura que el texto esté por encima del overlay
+
+        @media (max-width: v.$bp-mobile) {
+            padding: 40px 20px; // Agrega padding vertical en móvil
+        }
     }
 
     &__content {

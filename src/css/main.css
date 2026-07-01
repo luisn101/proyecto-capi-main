@@ -1250,7 +1250,7 @@ main {
 }
 @media (max-width: 480px) {
   .hero {
-    min-height: 70vh;
+    min-height: 80vh;
   }
 }
 .hero__image-box {
@@ -1286,6 +1286,11 @@ main {
   padding: 0 20px;
   position: relative;
   z-index: 1;
+}
+@media (max-width: 480px) {
+  .hero__container {
+    padding: 40px 20px;
+  }
 }
 .hero__content {
   max-width: 650px;
