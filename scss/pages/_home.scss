@@ -61,6 +61,37 @@
     }
 }
 
+.estadisticas {
+    padding: 60px 0;
+    background-color: v.$color-primario;
+    color: v.$color-blanco;
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        text-align: center;
+    }
+}
+
+.stat-item {
+    &__number {
+        font-family: v.$font-titles;
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: v.$color-dorado-capi;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+
+    &__label {
+        font-size: 1rem;
+        opacity: 0.9;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+}
+
 // Sección de programas (cartas de homepage)
 .programas {
     padding: 80px 0;
@@ -230,6 +261,141 @@
 
         @media (max-width: 767px) {
             justify-content: center; // Centra el enlace/botón en móvil
+        }
+    }
+}
+
+.cta-final {
+    padding: 80px 0 100px;
+    margin-top: 60px;
+    background: linear-gradient(135deg, rgba(v.$color-primario, 0.95) 0%, rgba(v.$color-primario, 0.85) 100%),
+        url('/assets/img/cta-background.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+    color: v.$color-blanco;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(180deg, rgba(v.$color-dorado-capi, 0.1) 0%, transparent 50%, rgba(v.$color-secundario, 0.05) 100%);
+        pointer-events: none;
+    }
+
+    &__content {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        padding: 0 20px;
+    }
+
+    &__title {
+        font-family: v.$font-titles;
+        font-size: 2.8rem;
+        margin-bottom: 25px;
+        font-weight: 700;
+        line-height: 1.2;
+        
+        // Gradiente dorado sutil
+        background: linear-gradient(135deg,
+                v.$color-blanco 0%,
+                v.$color-dorado-capi 50%,
+                v.$color-blanco 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        
+        @media (max-width: 991px) {
+            font-size: 2.3rem;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 1.7rem;
+            margin-bottom: 15px;
+        }
+    }
+
+    &__text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 50px;
+        opacity: 0.95;
+        color: rgba(v.$color-blanco, 0.98);
+        font-weight: 300;
+        
+        @media (max-width: 991px) {
+            font-size: 1.05rem;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            font-size: 0.95rem;
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+        .btn {
+            min-width: 220px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+            &:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            }
+
+            i {
+                margin-right: 8px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            gap: 15px;
+            flex-direction: column;
+            align-items: center;
+
+            .btn {
+                min-width: 250px;
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            gap: 12px;
+
+            .btn {
+                min-width: auto;
+                width: 100%;
+                max-width: none;
+                font-size: 0.95rem;
+            }
         }
     }
 }

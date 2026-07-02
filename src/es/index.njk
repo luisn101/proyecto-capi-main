@@ -56,6 +56,28 @@ translationKey: "home"
                 </article>
             </div>
         </section>
+        <section class="estadisticas">
+            <div class="container">
+                <div class="estadisticas__grid">
+                    <div class="stat-item">
+                        <div class="stat-item__number">150+</div>
+                        <p class="stat-item__label">Estudiantes beneficiados</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-item__number">9</div>
+                        <p class="stat-item__label">Programas activos</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-item__number">5</div>
+                        <p class="stat-item__label">Años transformando vidas</p>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-item__number">20+</div>
+                        <p class="stat-item__label">Eventos comunitarios al año</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="programas home-section">
             <div class="container">
                 <div class="programas__header">
@@ -195,6 +217,25 @@ translationKey: "home"
                 </div>
             </div>
         </section>
+        <section class="cta-final">
+    <div class="container">
+        <div class="cta-final__content">
+            <h2 class="cta-final__title">¿Listo para ser parte de CAPI?</h2>
+            <p class="cta-final__text">
+                Ya sea inscribiendo a tu hijo, apoyándonos como voluntario o haciendo una donación, 
+                cada acción cuenta para seguir transformando vidas a través del arte.
+            </p>
+            <div class="cta-final__actions">
+                <a href="/es/donar/" class="btn btn--primary btn--large">
+                    <i class="fas fa-heart"></i> Apóyanos
+                </a>
+                <a href="/es/voluntariado/" class="btn btn--outline btn--large">
+                    <i class="fas fa-hands-helping"></i> Sé Voluntario
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
         <section class="contacto">
             <div class="container">
                 <div class="contacto__wrapper">
@@ -214,8 +255,15 @@ translationKey: "home"
                         name="contacto-capi"
                         method="POST"
                         data-netlify="true"
+                        aria-labelledby="form-home-title"
                     >
+                    <h2 id="form-home-title" class="sr-only">Formulario de contacto rápido</h2>
                     <input type="hidden" name="form-name" value="contacto-capi" />
+
+                    <!-- 🐝 Honeypot Antispam -->
+                    <p class="honeypot" style="display: none;">
+                        <label>¿Eres un robot? <input name="botfield" /></label>
+                    </p>
                         <div class="form__group">
                             <input 
                                 type="text"
