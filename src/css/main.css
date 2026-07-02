@@ -1654,13 +1654,13 @@ main {
 }
 @media (max-width: 991px) {
   .cta-final__text {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     margin-bottom: 40px;
   }
 }
 @media (max-width: 768px) {
   .cta-final__text {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 35px;
     line-height: 1.7;
   }
