@@ -1634,13 +1634,13 @@ main {
 }
 @media (max-width: 768px) {
   .cta-final__title {
-    font-size: 2rem;
+    font-size: 2.1rem;
     margin-bottom: 20px;
   }
 }
 @media (max-width: 480px) {
   .cta-final__title {
-    font-size: 1.7rem;
+    font-size: 1.85rem;
     margin-bottom: 15px;
   }
 }
@@ -1660,14 +1660,14 @@ main {
 }
 @media (max-width: 768px) {
   .cta-final__text {
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin-bottom: 35px;
     line-height: 1.7;
   }
 }
 @media (max-width: 480px) {
   .cta-final__text {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     margin-bottom: 30px;
   }
 }
