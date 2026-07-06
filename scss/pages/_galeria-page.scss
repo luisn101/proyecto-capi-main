@@ -383,6 +383,106 @@
 }
 
 // ============================================
+// TARJETA DE VIDEO EN GALERÍA
+// ============================================
+.galeria-item--video {
+    position: relative;
+    
+    // Badge "Video" en la esquina
+    .galeria-item__badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: v.$color-dorado-capi;
+        color: v.$color-primario;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        z-index: 3;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    
+    // Ícono de play centrado
+    .galeria-item__play-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70px;
+        height: 70px;
+        background-color: rgba(v.$color-blanco, 0.95);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        z-index: 2;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        
+        i {
+            color: v.$color-primario;
+            font-size: 1.8rem;
+            margin-left: 5px; // Ajuste óptico para que el play se vea centrado
+        }
+    }
+    
+    // Efecto hover en el play
+    &:hover .galeria-item__play-icon {
+        background-color: v.$color-dorado-capi;
+        transform: translate(-50%, -50%) scale(1.1);
+        
+        i {
+            color: v.$color-blanco;
+        }
+    }
+    
+    // Overlay específico para video
+    .galeria-item__overlay {
+        background: linear-gradient(to top, rgba(v.$color-primario, 0.95) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
+    }
+
+    // 🎯 EN MÓVIL: Play icon siempre visible
+    @media (max-width: 768px) {
+        .galeria-item__play-icon {
+            opacity: 1 !important;
+            visibility: visible !important;
+            background-color: v.$color-dorado-capi; // Color dorado siempre
+            
+            i {
+                color: v.$color-blanco; // Ícono blanco siempre
+            }
+        }
+        
+        // Badge más pequeño en móvil
+        .galeria-item__badge {
+            padding: 4px 10px;
+            font-size: 0.7rem;
+            top: 10px;
+            right: 10px;
+        }
+        
+        // Play icon más pequeño en móvil
+        .galeria-item__play-icon {
+            width: 60px;
+            height: 60px;
+            
+            i {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+// Asegurar que el link de video no tenga subrayado
+.galeria-link--video {
+    text-decoration: none;
+    color: inherit;
+}
+
+// ============================================
 // LIGHTBOX
 // ============================================
 .lightbox {

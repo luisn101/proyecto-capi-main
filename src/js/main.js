@@ -285,8 +285,12 @@ document.addEventListener('DOMContentLoaded', () => {
         openLightbox(currentIndex, currentCollection);
     }
 
-    const homeGalleryLinks = Array.from(document.querySelectorAll('.galeria-link'));
-    const pageGalleryItems = Array.from(document.querySelectorAll('.galeria-item'));
+    const homeGalleryLinks = Array.from(
+      document.querySelectorAll(".galeria-link:not(.galeria-link--video)"),
+    );
+    const pageGalleryItems = Array.from(
+      document.querySelectorAll(".galeria-item:not(.galeria-item--video)"),
+    );
 
     if (homeGalleryLinks.length) {
         homeGalleryLinks.forEach((link, index) => {
