@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", () => {
 (function () {
   if (!document.querySelector(".donacion")) return;
 
-  const BASE_URL = "https://donorbox.org/c-a-p-i";
+  const BASE_URL = "https://donorbox.org/capi-donations";
   const isEnglish = window.location.pathname.startsWith("/en/");
   const errorMsg = isEnglish
     ? "Please select or enter an amount to continue."
