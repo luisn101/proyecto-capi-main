@@ -2653,6 +2653,266 @@ main {
     font-size: 1rem;
   }
 }
+.donar-hero {
+  padding: 100px 0 60px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(0, 30, 84, 0.95) 0%, rgba(0, 30, 84, 0.85) 100%);
+  color: #ffffff;
+}
+.donar-hero__title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+@media (max-width: 768px) {
+  .donar-hero__title {
+    font-size: 2rem;
+  }
+}
+.donar-hero__text {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+.donacion-impacto {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+.donacion-impacto .section-title {
+  margin-bottom: 50px;
+}
+.donacion-impacto .impacto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.impacto-item {
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+.impacto-item:hover {
+  transform: translateY(-5px);
+}
+.impacto-item__icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(193, 157, 83, 0.1);
+  color: #c19d53;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 20px;
+}
+.impacto-item__title {
+  font-family: "Montserrat", sans-serif;
+  color: #001e54;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+.impacto-item__text {
+  color: #1a2536;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.donacion-testimonio {
+  padding: 60px 0;
+  background-color: #f4f6f9;
+}
+.donacion-testimonio .testimonio-card {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+.donacion-testimonio .testimonio-card__icon {
+  font-size: 2rem;
+  color: #c19d53;
+  opacity: 0.5;
+  margin-bottom: 20px;
+}
+.donacion-testimonio .testimonio-card__texto {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #1a2536;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+.donacion-testimonio .testimonio-card__autor {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.donacion-testimonio .testimonio-card__autor strong {
+  color: #001e54;
+  font-family: "Montserrat", sans-serif;
+}
+.donacion-testimonio .testimonio-card__autor span {
+  font-size: 0.9rem;
+  color: #1a2536;
+  opacity: 0.8;
+}
+
+.como-donar {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+.como-donar__header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.como-donar__header .section-title {
+  margin-bottom: 15px;
+}
+.como-donar__intro {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: #1a2536;
+  line-height: 1.6;
+}
+.como-donar .metodos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+.como-donar__cta {
+  text-align: center;
+  padding-top: 40px;
+  border-top: 2px solid rgba(193, 157, 83, 0.2);
+}
+.como-donar__cta p {
+  font-size: 1.1rem;
+  color: #1a2536;
+  margin-bottom: 20px;
+}
+.como-donar__cta .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.05rem;
+  padding: 15px 30px;
+}
+
+.metodo-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 35px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(193, 157, 83, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.metodo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+.metodo-card__header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.metodo-card__icon {
+  font-size: 1.5rem;
+  color: #c19d53;
+  background: rgba(193, 157, 83, 0.1);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.metodo-card h3 {
+  font-family: "Montserrat", sans-serif;
+  color: #001e54;
+  font-size: 1.3rem;
+  margin: 0;
+}
+.metodo-card__desc {
+  color: #1a2536;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+.metodo-card__datos {
+  background-color: rgba(0, 30, 84, 0.03);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #c19d53;
+}
+.metodo-card__datos p {
+  margin: 0 0 10px 0;
+  font-size: 0.9rem;
+  color: #1a2536;
+}
+.metodo-card__datos p:last-child {
+  margin-bottom: 0;
+}
+.metodo-card__datos p strong {
+  color: #001e54;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .como-donar {
+    padding: 60px 0;
+  }
+  .como-donar .metodos-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.metodo-card--highlight {
+  border: 2px solid #c19d53;
+  box-shadow: 0 15px 40px rgba(193, 157, 83, 0.15);
+  position: relative;
+}
+.metodo-card--highlight::before {
+  content: "Opción actual";
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background-color: #c19d53;
+  color: #001e54;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.como-donar__cta .btn--outline {
+  color: #001e54;
+  border: 2px solid #001e54;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+.como-donar__cta .btn--outline:hover {
+  background-color: #001e54;
+  color: #ffffff;
+}
+
+.metodo-card .btn--full {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  width: 100%;
+}
+
 .nosotros-hero {
   padding: 100px 0;
   background-color: #001e54;

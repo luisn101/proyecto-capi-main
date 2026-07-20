@@ -5,117 +5,125 @@ lang: es
 translationKey: "donate"
 ---
 
+<!-- HERO -->
 <section class="donar-hero">
   <div class="container">
     <h1 class="donar-hero__title">Haz la diferencia hoy</h1>
     <p class="donar-hero__text">
-      Tu contribución permite que el arte y la educación lleguen a más familias.
+      Tu contribución permite que el arte y la educación lleguen a más familias en Samaipata.
     </p>
   </div>
 </section>
 
-<section class="donacion">
-  <div class="container donacion__wrapper">
-    <div class="donacion__info">
-      <h2 class="donacion__subtitle">¿A dónde va tu donación?</h2>
-      
-      <div class="donacion__impacto">
-        <div class="impacto-item">
-          <i class="fa-solid fa-guitar"></i>
-          <p>
-            <strong>Compra de instrumentos:</strong> Adquisición de instrumentos
-            de cuerda para asegurar que cada estudiante tenga acceso a uno para
-            sus prácticas y ensayos.
-          </p>
-        </div>
-
-        <div class="impacto-item">
-          <i class="fa-solid fa-masks-theater"></i>
-          <p>
-            <strong>Cultura Viva:</strong> Sostenimiento de festivales,
-            conciertos, presentaciones de teatro y cine independiente que
-            fortalecen el tejido social de Samaipata.
-          </p>
-        </div>
-
-        <div class="impacto-item">
-          <i class="fa-solid fa-shield-heart"></i>
-          <p>
-            <strong>Espacio Seguro:</strong> Mantenimiento y adquisición de un
-            seguro para el establecimiento, garantizando un entorno protegido y
-            la continuidad de nuestras operaciones.
-          </p>
-        </div>
+<!-- IMPACTO -->
+<section class="donacion-impacto">
+  <div class="container">
+    <h2 class="section-title text-center">¿A dónde va tu donación?</h2>
+    <div class="impacto-grid">
+      <div class="impacto-item">
+        <div class="impacto-item__icon"><i class="fa-solid fa-guitar"></i></div>
+        <h3 class="impacto-item__title">Instrumentos Musicales</h3>
+        <p class="impacto-item__text">
+          Adquisición y mantenimiento de instrumentos de cuerda para asegurar que cada estudiante tenga acceso a uno.
+        </p>
       </div>
-      <div class="donacion__historia">
-        <h3>Historias que inspiran</h3>
-        <div class="historia-card">
-        <div class="historia-card__content">
-          <p class="historia-card__texto">
-            "Gracias a CAPI, mi hija descubrió su pasión por la música. Ahora toca el violín y sueña con ser parte de la orquesta juvenil."
-          </p>
-          <div class="historia-card__autor">
-          <strong>María Gonzáles</strong>
-            <span>Madre de familia</span>
-          </div>
+
+      <div class="impacto-item">
+        <div class="impacto-item__icon"><i class="fa-solid fa-masks-theater"></i></div>
+        <h3 class="impacto-item__title">Cultura Viva</h3>
+        <p class="impacto-item__text">
+          Sostenimiento de festivales, conciertos y presentaciones de teatro que fortalecen el tejido social.
+        </p>
+      </div>
+
+      <div class="impacto-item">
+        <div class="impacto-item__icon"><i class="fa-solid fa-shield-heart"></i></div>
+        <h3 class="impacto-item__title">Espacio Seguro</h3>
+        <p class="impacto-item__text">
+          Mantenimiento de nuestro centro y garantías de un entorno protegido para la continuidad de nuestras operaciones.
+        </p>
+      </div>
     </div>
   </div>
-</div>
+</section>
+
+<!-- TESTIMONIO -->
+<section class="donacion-testimonio">
+  <div class="container">
+    <div class="testimonio-card">
+      <i class="fa-solid fa-quote-left testimonio-card__icon"></i>
+      <blockquote class="testimonio-card__texto">
+        "Gracias a CAPI, mi hija descubrió su pasión por la música. Ahora toca el violín y sueña con ser parte de la orquesta juvenil."
+      </blockquote>
+      <div class="testimonio-card__autor">
+        <strong>María Gonzáles</strong>
+        <span>Madre de familia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO DONAR (ESTADO ACTUAL: EN TRÁMITE) -->
+<section class="como-donar">
+  <div class="container">
+    <div class="como-donar__header">
+      <h2 class="section-title">Cómo realizar tu donación</h2>
+      <p class="como-donar__intro">
+        Estamos finalizando los trámites legales para habilitar nuestra cuenta bancaria internacional y recibir tus aportes de forma automatizada. 
+        Mientras tanto, puedes coordinar tu donación directamente con nosotras.
+      </p>
     </div>
 
-    <div class="donacion__form-card">
-      <h3>Selecciona un monto</h3>
-      <div class="donacion__tipo">
-        <button class="btn-tipo is-active" data-tipo="unica">
-        <i class="fa-solid fa-hand-holding-heart"></i>
-        Donación única
-      </button>
-      <button class="btn-tipo" data-tipo="mensual">
-        <i class="fa-solid fa-repeat"></i>
-        Donación mensual
-      </button>
-    </div>
-      <div class="donacion__grid-montos">
-  <button class="btn-monto" data-monto="10">
-    <span class="monto-valor">$10</span>
-    <span class="monto-descripcion">Materiales para 1 estudiante</span>
-  </button>
-  <button class="btn-monto" data-monto="25">
-    <span class="monto-valor">$25</span>
-    <span class="monto-descripcion">1 mes de clases de arte</span>
-  </button>
-  <button class="btn-monto" data-monto="50">
-    <span class="monto-valor">$50</span>
-    <span class="monto-descripcion">Instrumento en préstamo</span>
-  </button>
-  <button class="btn-monto" data-monto="100">
-    <span class="monto-valor">$100</span>
-    <span class="monto-descripcion">Beca completa por 1 mes</span>
-  </button>
-  <button class="btn-monto btn-monto--custom" id="btn-custom">
-    Otro monto
-  </button>
-</div>
-
-      <div class="donacion__custom-input" id="custom-amount-wrapper">
-        <div class="input-group">
-          <span class="input-group__symbol">$</span>
-          <input
-            type="number"
-            id="custom-amount"
-            placeholder="Ingresa el monto"
-            min="1"
-            step="any"
-          />
+    <div class="metodos-grid">
+      <!-- Tarjeta de Coordinación Directa -->
+      <div class="metodo-card metodo-card--highlight">
+        <div class="metodo-card__header">
+          <i class="fab fa-whatsapp metodo-card__icon"></i>
+          <h3>Coordinación Directa</h3>
         </div>
+        <p class="metodo-card__desc">
+          Si deseas hacer una donación ahora, escríbenos por WhatsApp. Te brindaremos los datos de nuestra cuenta local o te guiaremos en el proceso de transferencia internacional paso a paso.
+        </p>
+        <div class="metodo-card__datos">
+          <p><strong>Atención personalizada:</strong> Lun - Vie</p>
+          <p><strong>Respuesta inmediata:</strong> Te ayudamos con el proceso</p>
+          <p><strong>Transparencia total:</strong> Recibo de donación garantizado</p>
+        </div>
+        <a href="https://wa.me/59167847027?text=Hola,%20quiero%20hacer%20una%20donación%20a%20CAPI%20y%20me%20gustaría%20coordinar%20el%20proceso" 
+           class="btn btn--primary btn--full" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           style="margin-top: 20px;">
+          <i class="fab fa-whatsapp"></i> Coordinar mi donación
+        </a>
       </div>
 
-      <button class="btn btn--primary btn--full" id="btn-donar">
-        Continuar con la donación
-      </button>
-      <p class="donacion__secure">
-        <i class="fa-solid fa-lock"></i> Pago 100% seguro y encriptado
-      </p>
+      <!-- Tarjeta de Próximamente (Wise/SWIFT) -->
+      <div class="metodo-card">
+        <div class="metodo-card__header">
+          <i class="fas fa-clock metodo-card__icon"></i>
+          <h3>Canales Internacionales (Próximamente)</h3>
+        </div>
+        <p class="metodo-card__desc">
+          Muy pronto habilitaremos nuestra cuenta en <strong>Wise</strong> y las transferencias <strong>SWIFT</strong> directas para que puedas donar desde cualquier parte del mundo de forma automática y con las menores comisiones.
+        </p>
+        <div class="metodo-card__datos">
+          <p><i class="fa-solid fa-check" style="color: v.$color-dorado-capi;"></i> Cuenta en USD y EUR</p>
+          <p><i class="fa-solid fa-check" style="color: v.$color-dorado-capi;"></i> Transferencias seguras</p>
+          <p><i class="fa-solid fa-check" style="color: v.$color-dorado-capi;"></i> Reportes de transparencia</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA FINAL -->
+    <div class="como-donar__cta">
+      <p>¿Tienes dudas sobre cómo apoyar a CAPI desde el extranjero?</p>
+      <a href="mailto:info@capisamaipata.org?subject=Consulta%20sobre%20donación%20internacional" 
+         class="btn btn--outline" 
+         target="_blank" 
+         rel="noopener noreferrer">
+        <i class="fa-solid fa-envelope"></i> Escríbenos un correo
+      </a>
     </div>
   </div>
 </section>

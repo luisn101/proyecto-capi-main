@@ -614,3 +614,312 @@
         }
     }
 }
+
+// ============================================
+// PÁGINA DE DONACIONES (REDISEÑO)
+// ============================================
+
+// Hero
+.donar-hero {
+    padding: 100px 0 60px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(v.$color-primario, 0.95) 0%, rgba(v.$color-primario, 0.85) 100%);
+    color: v.$color-blanco;
+
+    &__title {
+        font-family: v.$font-titles;
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+
+    &__text {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+        opacity: 0.9;
+    }
+}
+
+// Sección de Impacto
+.donacion-impacto {
+    padding: 80px 0;
+    background-color: v.$color-blanco;
+
+    .section-title {
+        margin-bottom: 50px;
+    }
+
+    .impacto-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+}
+
+.impacto-item {
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    &__icon {
+        width: 80px;
+        height: 80px;
+        background: rgba(v.$color-dorado-capi, 0.1);
+        color: v.$color-dorado-capi;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin: 0 auto 20px;
+    }
+
+    &__title {
+        font-family: v.$font-titles;
+        color: v.$color-primario;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    &__text {
+        color: v.$color-texto;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
+
+// Testimonio
+.donacion-testimonio {
+    padding: 60px 0;
+    background-color: v.$color-fondo-claro;
+
+    .testimonio-card {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 40px;
+        background: v.$color-blanco;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        position: relative;
+
+        &__icon {
+            font-size: 2rem;
+            color: v.$color-dorado-capi;
+            opacity: 0.5;
+            margin-bottom: 20px;
+        }
+
+        &__texto {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: v.$color-texto;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        &__autor {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            strong {
+                color: v.$color-primario;
+                font-family: v.$font-titles;
+            }
+
+            span {
+                font-size: 0.9rem;
+                color: v.$color-texto;
+                opacity: 0.8;
+            }
+        }
+    }
+}
+
+// Cómo Donar (Métodos de pago)
+.como-donar {
+    padding: 80px 0;
+    background-color: v.$color-blanco;
+
+    &__header {
+        text-align: center;
+        margin-bottom: 50px;
+
+        .section-title {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__intro {
+        max-width: 700px;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        color: v.$color-texto;
+        line-height: 1.6;
+    }
+
+    .metodos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+
+    &__cta {
+        text-align: center;
+        padding-top: 40px;
+        border-top: 2px solid rgba(v.$color-dorado-capi, 0.2);
+
+        p {
+            font-size: 1.1rem;
+            color: v.$color-texto;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.05rem;
+            padding: 15px 30px;
+        }
+    }
+}
+
+// Tarjetas de Métodos de Pago
+.metodo-card {
+    background: v.$color-blanco;
+    border-radius: 15px;
+    padding: 35px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid rgba(v.$color-dorado-capi, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    &__icon {
+        font-size: 1.5rem;
+        color: v.$color-dorado-capi;
+        background: rgba(v.$color-dorado-capi, 0.1);
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    h3 {
+        font-family: v.$font-titles;
+        color: v.$color-primario;
+        font-size: 1.3rem;
+        margin: 0;
+    }
+
+    &__desc {
+        color: v.$color-texto;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+    &__datos {
+        background-color: rgba(v.$color-primario, 0.03);
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 4px solid v.$color-dorado-capi;
+
+        p {
+            margin: 0 0 10px 0;
+            font-size: 0.9rem;
+            color: v.$color-texto;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            strong {
+                color: v.$color-primario;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .como-donar {
+        padding: 60px 0;
+        
+        .metodos-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+// Destacar la tarjeta principal de donación
+.metodo-card--highlight {
+    border: 2px solid v.$color-dorado-capi;
+    box-shadow: 0 15px 40px rgba(v.$color-dorado-capi, 0.15);
+    position: relative;
+    
+    &::before {
+        content: 'Opción actual';
+        position: absolute;
+        top: -12px;
+        right: 20px;
+        background-color: v.$color-dorado-capi;
+        color: v.$color-primario;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+}
+
+// ============================================
+// CORRECCIONES VISUALES - BOTONES DONAR
+// ============================================
+
+// 1. Hacer visible el botón de correo (outline)
+.como-donar__cta .btn--outline {
+    color: v.$color-primario;
+    border: 2px solid v.$color-primario;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        background-color: v.$color-primario;
+        color: v.$color-blanco;
+    }
+}
+
+// 2. Centrar el texto del botón de WhatsApp dentro de las tarjetas
+.metodo-card .btn--full {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    width: 100%;
+}
