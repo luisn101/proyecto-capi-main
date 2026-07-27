@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/*
+$color-primario:      #001e54; // Azul Marino Profundo (El del texto "CAPI" - Perfecto para Navbar, Títulos y Botones principales)
+$color-secundario:    #00919e; // Turquesa Orgánico (La gota superior y curvas - Para enlaces activos, Hover y detalles pedagógicos)
+$color-celeste-capi:  #3399ff; // Celeste Vivo (Los pétalos intermedios - Excelente para tags de categorías de eventos)
+$color-azul-pétalo:   #0055d4; // Azul Eléctrico (Los pétalos centrales - Para acentos secundarios)
+$color-dorado-capi:   #c19d53; // Dorado Elegante (El hilo sutil del logo - Para líneas decorativas, bordes de tarjetas y acentos artísticos)
+
+// --- COLORES DE SOPORTE ---
+$color-texto:         #1a2536; // Un gris casi negro azulado (Mucho más orgánico que el #333)
+$color-blanco:        #ffffff;
+$color-fondo-claro:   #f4f6f9; // Gris claro limpio con un toque frío para que contrasten las tarjetas blancas
+*/
+.page-legal {
+  padding: 150px 0 100px;
+  background-color: #ffffff;
+  min-height: 60vh;
+}
+.page-legal h1 {
+  font-family: "Montserrat", sans-serif;
+  color: #001e54;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.page-legal .legal-intro {
+  text-align: center;
+  color: #1a2536;
+  opacity: 0.7;
+  font-size: 0.9rem;
+  margin-bottom: 50px;
+  font-style: italic;
+}
+.page-legal .legal-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: "Open Sans", sans-serif;
+  color: #1a2536;
+  line-height: 1.8;
+}
+.page-legal .legal-content h2 {
+  font-family: "Montserrat", sans-serif;
+  color: #001e54;
+  font-size: 1.5rem;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid rgba(193, 157, 83, 0.3);
+  padding-bottom: 10px;
+}
+.page-legal .legal-content p {
+  margin-bottom: 20px;
+}
+.page-legal .legal-content ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+.page-legal .legal-content ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 10px;
+}
+.page-legal .legal-content ul li::before {
+  content: "•";
+  color: #c19d53;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.page-legal .legal-content a {
+  color: #00919e;
+  text-decoration: none;
+  font-weight: 600;
+}
+.page-legal .legal-content a:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=legal.css.map */
