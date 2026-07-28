@@ -40,6 +40,46 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==========================================
+// GESTIÓN AUTOMÁTICA DE EVENTOS PASADOS
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const hoy = new Date();
+    // Normalizar a medianoche para evitar problemas de zona horaria
+    hoy.setHours(0, 0, 0, 0); 
+
+    const eventos = document.querySelectorAll('.evento-card');
+
+    eventos.forEach(card => {
+        const fechaStr = card.getAttribute('data-fecha');
+        if (!fechaStr) return;
+
+        // Crear fecha basada en el string (YYYY-MM-DD)
+        const fechaEvento = new Date(fechaStr + 'T00:00:00'); 
+
+        if (fechaEvento < hoy) {
+            // 1. Agregar clase para estilos visuales
+            card.classList.add('evento-pasado');
+            
+            // 2. Deshabilitar y cambiar el botón
+            const btn = card.querySelector('.evento-btn');
+            if (btn) {
+                btn.classList.remove('btn--primary'); // Quitar color principal
+                btn.classList.add('btn--disabled');   // Poner estilo deshabilitado
+                btn.innerHTML = '<i class="fa-solid fa-calendar-check"></i> Evento finalizado';
+                btn.style.pointerEvents = 'none';     // Evitar clics
+                btn.setAttribute('aria-disabled', 'true');
+            }
+
+            // 3. (Opcional) Agregar badge de "Finalizado"
+            const badge = document.createElement('span');
+            badge.className = 'evento-card__badge-pasado';
+            badge.innerText = 'Finalizado';
+            card.querySelector('.evento-card__image').appendChild(badge);
+        }
+    });
+});
+
+// ==========================================
 // LÓGICA DE DONACIONES
 // ==========================================
 

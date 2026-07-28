@@ -525,3 +525,44 @@
         }
     }
 }
+
+// ============================================
+// ESTILOS PARA EVENTOS PASADOS
+// ============================================
+.evento-card.evento-pasado {
+    opacity: 0.75; // Un poco más transparente
+    
+    .evento-card__image img {
+        filter: grayscale(100%); // Imagen en blanco y negro
+        transition: filter 0.5s ease;
+    }
+
+    // Badge de "Finalizado"
+    .evento-card__badge-pasado {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: v.$color-blanco;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        z-index: 2;
+    }
+}
+
+// Botón deshabilitado
+.btn--disabled {
+    background-color: #e0e0e0 !important;
+    color: #888 !important;
+    border-color: #e0e0e0 !important;
+    cursor: not-allowed;
+    box-shadow: none !important;
+    
+    &:hover {
+        transform: none !important;
+    }
+}
