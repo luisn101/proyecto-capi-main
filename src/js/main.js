@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Normalizar a medianoche para evitar problemas de zona horaria
     hoy.setHours(0, 0, 0, 0); 
 
-    const eventos = document.querySelectorAll('.evento-card');
+    const eventos = document.querySelectorAll('.eventos-home .evento-card');
 
     eventos.forEach(card => {
         const fechaStr = card.getAttribute('data-fecha');
@@ -63,9 +63,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // 2. Deshabilitar y cambiar el botón
             const btn = card.querySelector('.evento-btn');
             if (btn) {
+                const isEnglishPage = window.location.pathname.startsWith('/en/');
+                const finishedLabel = isEnglishPage ? 'Event completed' : 'Evento finalizado';
+
                 btn.classList.remove('btn--primary'); // Quitar color principal
                 btn.classList.add('btn--disabled');   // Poner estilo deshabilitado
-                btn.innerHTML = '<i class="fa-solid fa-calendar-check"></i> Evento finalizado';
+                btn.innerHTML = `<i class="fa-solid fa-calendar-check"></i> ${finishedLabel}`;
                 btn.style.pointerEvents = 'none';     // Evitar clics
                 btn.setAttribute('aria-disabled', 'true');
             }
@@ -73,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // 3. (Opcional) Agregar badge de "Finalizado"
             const badge = document.createElement('span');
             badge.className = 'evento-card__badge-pasado';
-            badge.innerText = 'Finalizado';
+            badge.innerText = window.location.pathname.startsWith('/en/') ? 'Completed' : 'Finalizado';
             card.querySelector('.evento-card__image').appendChild(badge);
         }
     });

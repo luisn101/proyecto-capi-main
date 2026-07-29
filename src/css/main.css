@@ -1607,6 +1607,30 @@ main {
   border: 1px solid rgba(193, 157, 83, 0.1);
 }
 
+.evento-card.evento-pasado {
+  opacity: 0.75;
+}
+
+.evento-card.evento-pasado .evento-card__image img {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.evento-card.evento-pasado .evento-card__badge-pasado {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
 .evento-card__image {
   height: 220px;
   overflow: hidden;

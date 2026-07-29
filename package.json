@@ -1,8 +1,17 @@
 {
+  "name": "capi-web",
+  "version": "1.0.0",
+  "description": "Sitio web de CAPI Samaipata",
+  "scripts": {
+    "sass": "sass scss:css --watch --no-source-map",
+    "eleventy": "eleventy --serve",
+    "start": "concurrently \"npm run sass\" \"npm run eleventy\""
+  },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.5",
     "@11ty/eleventy-img": "^6.0.4",
-    "sass": "^1.99.0"
+    "sass": "^1.99.0",
+    "concurrently": "^8.2.2"
   },
   "dependencies": {
     "luxon": "^3.7.2"

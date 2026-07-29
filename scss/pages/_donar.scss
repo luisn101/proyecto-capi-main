@@ -883,7 +883,7 @@
     position: relative;
     
     &::before {
-        content: 'Opción actual';
+        content: attr(data-highlight-text);
         position: absolute;
         top: -12px;
         right: 20px;
@@ -894,6 +894,7 @@
         font-size: 0.75rem;
         font-weight: 700;
         text-transform: uppercase;
+        white-space: nowrap;
     }
 }
 
